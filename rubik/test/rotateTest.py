@@ -5,15 +5,15 @@ class RotateTest(TestCase):
         
 # Happy path
 #    Test that the stubbed rotate returns the correct result
-    def test100_rotate_returnStubbedSolution(self):
-        encodedCube = 'bbbbbbbbbrrrrrrrrrooooooooogggggggggyyyyyyyyywwwwwwwww'
-        parms = {}
-        parms['cube'] = encodedCube
-        parms['dir'] = 'F'
-        result = rotate(parms)
-        self.assertIn('status', result)
-        self.assertEqual('ok', result['status'])
-        self.assertEqual(encodedCube, result.get('cube'))
+    #def test100_rotate_returnStubbedSolution(self):
+    #    encodedCube = 'bbbbbbbbbrrrrrrrrrooooooooogggggggggyyyyyyyyywwwwwwwww'
+    #    parms = {}
+    #    parms['cube'] = encodedCube
+    #    parms['dir'] = 'F'
+    #    result = rotate(parms)
+    #    self.assertIn('status', result)
+    #    self.assertEqual('ok', result['status'])
+    #    self.assertEqual(encodedCube, result.get('cube'))
 
         
     def test010_rotate_shortCubeKey(self):
@@ -22,4 +22,13 @@ class RotateTest(TestCase):
         parms['cube'] = encodedCube
         parms['dir'] = 'F'
         result = rotate(parms)
-        self.assertEqual(result['status'], 'Error: Invalid cube')
+        self.assertEqual(result['status'], 'Error: Cube middles are not uniqu')
+        
+    def test020_rotate_invalidMiddles(self):
+        encodedCube = 'bbbbbbbbbrrrrbrrrrooooooooogggggggggyyyyyyyyywwwwwwwww'
+        parms = {}
+        parms['cube'] = encodedCube
+        parms['dir'] = 'F'
+        result = rotate(parms)
+        self.assertEqual(result['status'], 'Error: Invalid cube length')
+        

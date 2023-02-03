@@ -13,7 +13,7 @@ class Cube:
         self._cube = encodedCube
     
     def get(self):
-        return self.cube
+        return self._cube
   
     def rotate(self, directions):
           
