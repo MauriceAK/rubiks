@@ -19,7 +19,7 @@ class Cube:
         try:   
             if directions == '':
                 self._rotateF()
-                
+                return self._cube
             else:    
                 for direction in directions:
                             
