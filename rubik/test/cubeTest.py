@@ -85,6 +85,6 @@ class CubeTest(unittest.TestCase):
     def test_rotate_910_InvalidDirection(self):
         cubeToRotate = 'ygrwbgyggbobrryrrwobrggrgwywyryorbbggwwbyybwwooyowbooo'
         theCube = cube.Cube(cubeToRotate)
-        rotatedCube = theCube.rotate('Z')
-        self.assertTrue(rotatedCube, 'Invalid Direction Input') 
+        #rotatedCube = theCube.rotate('Z')
+        self.assertRaises(Exception, theCube.rotate('Z'))
     
