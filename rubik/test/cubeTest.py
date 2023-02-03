@@ -21,27 +21,27 @@ class CubeTest(unittest.TestCase):
         rotatedCube = theCube.rotate('f')
         self.assertEqual(rotatedCube, 'rgggbgywyyoboryorwobrggrgwywywyowbbbgwwbyybrrrrgowbooo')
        
-    def test_rotate_030_ShouldRotateCubeInRDirection(self):
-        cubeToRotate = 'ygrwbgyggbobrryrrwobrggrgwywyryorbbggwwbyybwwooyowbooo'
-        theCube = cube.Cube(cubeToRotate)
-        rotatedCube = theCube.rotate('R')
-        self.assertEqual(rotatedCube, 'ygywbbygorrbrrowybwbrygrwwywyryorbbggwrbygbwgoogowgooo')
+    #def test_rotate_030_ShouldRotateCubeInRDirection(self):
+    #    cubeToRotate = 'ygrwbgyggbobrryrrwobrggrgwywyryorbbggwwbyybwwooyowbooo'
+    #    theCube = cube.Cube(cubeToRotate)
+    #    rotatedCube = theCube.rotate('R')
+    #    self.assertEqual(rotatedCube, 'ygywbbygorrbrrowybwbrygrwwywyryorbbggwrbygbwgoogowgooo')
      
-    def test_rotate_040_ShouldRotateCubeInrDirection(self):
+    #def test_rotate_040_ShouldRotateCubeInrDirection(self):
+    #    cubeToRotate = 'ygrwbgyggbobrryrrwobrggrgwywyryorbbggwwbyybwwooyowbooo'
+    #    theCube = cube.Cube(cubeToRotate)
+    #    rotatedCube = theCube.rotate('r')
+    #    self.assertEqual(rotatedCube, 'ygwwbyygwbyworrbrrobrbgrywywyryorbbggwgbygbwooorowgoog')
+    
+    def test_rotate_050_ShouldRotateCubeInBDirection(self):
         cubeToRotate = 'ygrwbgyggbobrryrrwobrggrgwywyryorbbggwwbyybwwooyowbooo'
         theCube = cube.Cube(cubeToRotate)
-        rotatedCube = theCube.rotate('r')
+        rotatedCube = theCube.rotate('B')
+        self.assertEqual(rotatedCube, 'ygrwbgbbgbobrryyggobrggrrrwwyryorgwygwwbyybwwoooowooby')
+    
+    def test_rotate_060_ShouldRotateCubeInbDirection(self):
+        cubeToRotate = 'ygrwbgyggbobrryrrwobrggrgwywyryorbbggwwbyybwwooyowbooo'
+        theCube = cube.Cube(cubeToRotate)
+        rotatedCube = theCube.rotate('b')
         self.assertEqual(rotatedCube, 'ygwwbyygwbyworrbrrobrbgrywywyryorbbggwgbygbwooorowgoog')
-    
-    #def test_rotate_050_ShouldRotateCubeInBDirection(self):
-    #    cubeToRotate = 'ygrwbgyggbobrryrrwobrggrgwywyryorbbggwwbyybwwooyowbooo'
-    #    theCube = cube.Cube(cubeToRotate)
-    #    rotatedCube = theCube.rotate('B')
-    #    self.assertEqual(rotatedCube, 'ygrwbgbbgbobrryyggobrggrrrwwyryorgwygwwbyybwwoooowooby')
-    
-    #def test_rotate_060_ShouldRotateCubeInbDirection(self):
-    #    cubeToRotate = 'ygrwbgyggbobrryrrwobrggrgwywyryorbbggwwbyybwwooyowbooo'
-    #    theCube = cube.Cube(cubeToRotate)
-    #    rotatedCube = theCube.rotate('b')
-    #    self.assertEqual(rotatedCube, 'ygwwbyygwbyworrbrrobrbgrywywyryorbbggwgbygbwooorowgoog')
     

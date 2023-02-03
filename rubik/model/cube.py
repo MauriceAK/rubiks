@@ -87,7 +87,7 @@ class Cube:
         rotatedCubeList[UBL] = cubeList[LBR]
         self._cube = "".join(rotatedCubeList)
 
-    def _rotateR(self):
+    def _rotateB(self):
         cubeList = list(self._cube)
         rotatedCubeList = cubeList[:]
         #rotate right
@@ -118,7 +118,7 @@ class Cube:
         rotatedCubeList[UTR] = cubeList[FTR]
         self._cube = "".join(rotatedCubeList)
         
-    #def _rotateB(self):
+    #def _rotateR(self):
     #    cubeList = list(self._cube)
     #    rotatedCubeList = cubeList[:]
     #    #rotate bottom
