@@ -12,54 +12,54 @@ class Cube:
         return self.cube
   
     def rotate(self, directions):
-        try:
-            if directions == '':
-                self._rotateF()
-            else:    
-                for direction in directions:
+        
+        if directions == '':
+            self._rotateF()
+        else:    
+            for direction in directions:
                         
-                    if direction == 'F':
-                        self._rotateF()
+                if direction == 'F':
+                    self._rotateF()
                     
-                    if direction == 'f':
-                        self._rotateF()
-                        self._rotateF()
-                        self._rotateF()
+                if direction == 'f':
+                    self._rotateF()
+                    self._rotateF()
+                    self._rotateF()
                     
-                    if direction == 'R':
-                        self._rotateR()
+                if direction == 'R':
+                    self._rotateR()
                     
-                    if direction == 'r':
-                        self._rotateR()
-                        self._rotateR()
-                        self._rotateR()
+                if direction == 'r':
+                    self._rotateR()
+                    self._rotateR()
+                    self._rotateR()
                     
-                    if direction == 'B':
-                        self._rotateB()
+                if direction == 'B':
+                    self._rotateB()
                     
-                    if direction == 'b':
-                        self._rotateB()
-                        self._rotateB()
-                        self._rotateB()
+                if direction == 'b':
+                    self._rotateB()
+                    self._rotateB()
+                    self._rotateB()
                     
-                    if direction == 'L':
-                        self._rotateL()
+                if direction == 'L':
+                    self._rotateL()
                     
-                    if direction == 'l':
-                        self._rotateL()
-                        self._rotateL()
-                        self._rotateL()
+                if direction == 'l':
+                    self._rotateL()
+                    self._rotateL()
+                    self._rotateL()
                     
-                    if direction == 'U':
-                        self._rotateU()
+                if direction == 'U':
+                    self._rotateU()
                     
-                    if direction == 'u':
-                        self._rotateU()
-                        self._rotateU()
-                        self._rotateU()
-        except: 
-            print("Invalid Direction Input: Cannot Rotate Cube")      
-     
+                if direction == 'u':
+                    self._rotateU()
+                    self._rotateU()
+                    self._rotateU()
+        
+                else:
+                    raise Exception('Invalid Direction Input')
         return self._cube
     
    
