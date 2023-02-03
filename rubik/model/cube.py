@@ -11,8 +11,13 @@ class Cube:
     def get(self):
         return self.cube
   
-    def rotate(self, directions):
-        self._rotateF()
+    def rotate(self, directions='F'):
+        if directions is 'F':
+            self._rotateF()
+        
+        if directions is 'f':
+            self._rotatef()
+            
         return self._cube
     
    
