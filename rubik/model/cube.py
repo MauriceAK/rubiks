@@ -64,8 +64,8 @@ class Cube:
                             self._rotateU()
                             self._rotateU()
                             
-                except DirException:
-                    print("Exception occurred: Invalid Direction") 
+                except:
+                    return "DirException occurred: Invalid Direction" 
             return self._cube
                   
             
