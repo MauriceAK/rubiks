@@ -81,4 +81,10 @@ class CubeTest(unittest.TestCase):
         theCube = cube.Cube(cubeToRotate)
         rotatedCube = theCube.rotate('FR')
         self.assertEqual(rotatedCube, 'ywbgbbggowwbrrowybrbrygrwwywyoyoobbygwybyggrrrrgowgooo')
+        
+    def test_rotate_910_InvalidDirection(self):
+        cubeToRotate = 'ygrwbgyggbobrryrrwobrggrgwywyryorbbggwwbyybwwooyowbooo'
+        theCube = cube.Cube(cubeToRotate)
+        rotatedCube = theCube.rotate('Z')
+        self.assertEqual(rotatedCube, "Invalid Direction Input: Cannot Rotate Cube") 
     
