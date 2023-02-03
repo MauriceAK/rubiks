@@ -12,8 +12,8 @@ class Cube:
         return self.cube
   
     def rotate(self, directions='F'):
-        if directions is 'F':
-            self._rotateF()
+        if directions is 'f':
+            self._rotatef()
         
         if directions is 'f':
             self._rotatef()
@@ -21,7 +21,7 @@ class Cube:
         return self._cube
     
    
-    def _rotateF(self):
+    def _rotatef(self):
         cubeList = list(self._cube)
         rotatedCubeList = cubeList[:]
         #rotate front
