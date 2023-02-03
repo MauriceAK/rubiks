@@ -58,8 +58,7 @@ class Cube:
                     self._rotateU()
                     self._rotateU()
         
-                else:
-                    raise Exception('Invalid Direction Input')
+                
         return self._cube
     
    
