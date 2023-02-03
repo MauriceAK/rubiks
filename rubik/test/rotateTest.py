@@ -39,4 +39,11 @@ class RotateTest(TestCase):
         parms['dir'] = 'F'
         result = rotate(parms)
         self.assertEqual(result['status'], 'Error: Invalid characters present')
-        
+    
+    def test040_rotate_valid(self):
+        encodedCube = 'bbbbbbbbbrrrrrrrrrooooooooogggggggggyyyyyyyyywwwwwwwww'
+        parms = {}
+        parms['cube'] = encodedCube
+        parms['dir'] = 'F'
+        result = rotate(parms)
+        self.assertEqual(result['status'], 'ok!')
