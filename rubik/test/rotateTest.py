@@ -46,4 +46,4 @@ class RotateTest(TestCase):
         parms['cube'] = encodedCube
         parms['dir'] = 'F'
         result = rotate(parms)
-        self.assertEqual(result['status'], 'ok!')
+        self.assertEqual(result['status'], 'ok')
