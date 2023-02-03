@@ -14,7 +14,8 @@ class Cube:
     def rotate(self, directions='F'):
         if directions is 'F':
             self._rotatef()
-        
+            
+            
         if directions is 'f':
             self._rotatef()
             
