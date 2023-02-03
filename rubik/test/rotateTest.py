@@ -33,7 +33,7 @@ class RotateTest(TestCase):
         self.assertEqual(result['status'], 'Error: Cube middles are not unique')
     
     def test030_rotate_notAlphaNum(self):
-        encodedCube = 'bbbbbbbbbrrrrrrrrrooooooooogggggggggyyyyyyyyywwwwwwwww'
+        encodedCube = 'bbbbbbbbbrrrrrrrrrooooooooogggggggggyyyyyyyyywwwwwwww!'
         parms = {}
         parms['cube'] = encodedCube
         parms['dir'] = 'F'
