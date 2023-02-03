@@ -13,7 +13,10 @@ class Cube:
   
     def rotate(self, directions):
         for direction in directions:
-            if direction == 'F' or '':
+            if direction == '':
+                self._rotateF()
+            
+            if direction == 'F':
                 self._rotateF()
             
             if direction == 'f':
