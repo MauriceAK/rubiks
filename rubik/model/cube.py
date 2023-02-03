@@ -179,3 +179,34 @@ class Cube:
         rotatedCubeList[UML] = cubeList[BMR]
         rotatedCubeList[UBL] = cubeList[BTR]
         self._cube = "".join(rotatedCubeList) 
+        
+    def _rotateU(self):
+        cubeList = list(self._cube)
+        rotatedCubeList = cubeList[:]
+        #rotate up
+        rotatedCubeList[UTR] = cubeList[UTL]
+        rotatedCubeList[UMR] = cubeList[UTM]
+        rotatedCubeList[UBR] = cubeList[UTR]
+        rotatedCubeList[UTM] = cubeList[UML]
+        rotatedCubeList[UMM] = cubeList[UMM]
+        rotatedCubeList[UBM] = cubeList[UMR]
+        rotatedCubeList[UTL] = cubeList[UBL]
+        rotatedCubeList[UML] = cubeList[UBM]
+        rotatedCubeList[UBL] = cubeList[UBR]
+        #rotate front to right
+        rotatedCubeList[RTL] = cubeList[FTL]
+        rotatedCubeList[RTM] = cubeList[FTM]
+        rotatedCubeList[RTR] = cubeList[FTR]
+        #rotate right to back
+        rotatedCubeList[BTL] = cubeList[RTL]
+        rotatedCubeList[BTM] = cubeList[RTM]
+        rotatedCubeList[BTR] = cubeList[RTR]
+        #rotate back to left
+        rotatedCubeList[LTL] = cubeList[BTL]
+        rotatedCubeList[LTM] = cubeList[BTM]
+        rotatedCubeList[LTR] = cubeList[BTR]
+        #rotate left to front
+        rotatedCubeList[FTL] = cubeList[LTL]
+        rotatedCubeList[FTM] = cubeList[LTM]
+        rotatedCubeList[FTR] = cubeList[LTR]
+        self._cube = "".join(rotatedCubeList) 
