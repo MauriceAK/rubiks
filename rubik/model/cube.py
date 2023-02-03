@@ -17,7 +17,7 @@ class Cube:
     
    
     def _rotateF(self):
-        cubeList = list(self.cube)
+        cubeList = list(self._cube)
         rotatedCubeList = cubeList[:]
         #rotate front
         rotatedCubeList[FTR] = cubeList[FTL]
