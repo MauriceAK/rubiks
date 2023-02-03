@@ -12,10 +12,9 @@ def check_middles(string):
     return True    
 
 def check_alphanum(string):
-    for char in string:
-        if char.isalnum() != False:
-            return False
-        return True;
+    if string.isalnum() != True:
+        return False;
+    return True;
     
 def rotate(parms):
     """Return rotated cube""" 
@@ -36,7 +35,7 @@ def rotate(parms):
     elif check_middles(encodedCube) == False:
         result['status'] = 'Error: Cube middles are not unique'
         return result
-    elif check_alphanum(encodedCube) == True:
+    elif check_alphanum(encodedCube) == False:
         result['status'] = 'Error: Invalid characters present'
         return result
     else:
