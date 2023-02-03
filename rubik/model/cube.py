@@ -19,6 +19,7 @@ class Cube:
         try:   
             if directions == '':
                 self._rotateF()
+                
             else:    
                 for direction in directions:
                             
@@ -62,7 +63,7 @@ class Cube:
                         self._rotateU()
                         self._rotateU()
             
-                    return self._cube
+                return self._cube
         except DirException:
             print("Exception occurred: Invalid Direction")           
             
