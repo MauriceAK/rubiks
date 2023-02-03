@@ -11,11 +11,11 @@ class Cube:
     def get(self):
         return self.cube
   
-    def rotate(self, directions):
+    def rotate(self, directions = None):
         for direction in directions:
-            if direction == '':
+            if direction is None:
                 self._rotateF()
-            
+                
             if direction == 'F':
                 self._rotateF()
             
