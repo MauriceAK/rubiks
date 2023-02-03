@@ -26,6 +26,6 @@ class CubeTest(unittest.TestCase):
     def test_rotate_030_ShouldRotateCubeInRDirection(self):
         cubeToRotate = 'ygrwbgyggbobrryrrwobrggrgwywyryorbbggwwbyybwwooyowbooo'
         theCube = cube.Cube(cubeToRotate)
-        rotatedCube = theCube.rotate('f')
+        rotatedCube = theCube.rotate('R')
         self.assertEqual(rotatedCube, 'ygywbbygorrbrrowybwbrygrwwywyryorbbggwrbygbwgoogowgooo')
         
