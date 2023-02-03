@@ -12,12 +12,38 @@ class Cube:
         return self.cube
   
     def rotate(self, directions='F'):
-        if directions is 'F':
-            self._rotatef()
+        for direction in directions:
+            if direction == 'F':
+                self._rotateF()
             
+            if direction == 'f':
+                self._rotateF()
+                self._rotateF()
+                self._rotateF()
             
-        if directions is 'f':
-            self._rotatef()
+            if direction == 'R':
+                self._rotatef()
+            
+            if direction == 'r':
+                self._rotatef()
+            
+            if direction == 'B':
+                self._rotatef()
+            
+            if direction == 'b':
+                self._rotatef()
+            
+            if direction == 'L':
+                self._rotatef()
+            
+            if direction == 'l':
+                self._rotatef()
+            
+            if direction == 'U':
+                self._rotatef()
+            
+            if direction == 'u':
+                self._rotatef()
             
         return self._cube
     
