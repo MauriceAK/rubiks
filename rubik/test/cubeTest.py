@@ -86,6 +86,6 @@ class CubeTest(unittest.TestCase):
         cubeToRotate = 'ygrwbgyggbobrryrrwobrggrgwywyryorbbggwwbyybwwooyowbooo'
         theCube = cube.Cube(cubeToRotate)
         rotatedCube = theCube.rotate('Q')
-        self.assertEqual(rotatedCube, 'DirException occurred: Invalid Directin')
+        self.assertEqual(rotatedCube, 'DirException occurred: Invalid Direction')
         #self.assertRaises(DirException, theCube.rotate('Z'))
     
