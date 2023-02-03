@@ -86,5 +86,5 @@ class CubeTest(unittest.TestCase):
         cubeToRotate = 'ygrwbgyggbobrryrrwobrggrgwywyryorbbggwwbyybwwooyowbooo'
         theCube = cube.Cube(cubeToRotate)
         #rotatedCube = theCube.rotate('Z')
-        self.assertRaises(Exception, theCube.rotate('Z'))
+        self.assertRaises(Exception, theCube.rotate('F'))
     
