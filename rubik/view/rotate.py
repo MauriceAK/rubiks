@@ -32,10 +32,13 @@ def rotate(parms):
     
     if check_length(encodedCube) == False: 
         result['status'] = 'Error: Invalid cube length'
+        return result
     elif check_middles(encodedCube) == False:
         result['status'] = 'Error: Cube middles are not unique'
+        return result
     elif check_alphanum(encodedCube) == True:
         result['status'] = 'Error: Invalid characters present'
+        return result
     else:
         result['status'] = 'ok'
     

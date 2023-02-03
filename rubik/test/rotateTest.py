@@ -22,7 +22,7 @@ class RotateTest(TestCase):
         parms['cube'] = encodedCube
         parms['dir'] = 'F'
         result = rotate(parms)
-        self.assertEqual(result['status'], 'Error: Cube middles are not uniqu')
+        self.assertEqual(result['status'], 'Error: Invalid cube length')
         
     def test020_rotate_invalidMiddles(self):
         encodedCube = 'bbbbbbbbbrrrrbrrrrooooooooogggggggggyyyyyyyyywwwwwwwww'
@@ -30,5 +30,5 @@ class RotateTest(TestCase):
         parms['cube'] = encodedCube
         parms['dir'] = 'F'
         result = rotate(parms)
-        self.assertEqual(result['status'], 'Error: Invalid cube length')
+        self.assertEqual(result['status'], 'Error: Cube middles are not unique')
         
