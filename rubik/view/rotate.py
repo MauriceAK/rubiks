@@ -46,15 +46,16 @@ def rotate(parms):
         result['status'] = 'Error: Invalid rotation'
         return result
     
-    if check_validamount(encodedCube) == False:
+    if check_alphanum(encodedCube) == False:
+        result['status'] = 'Error: Invalid characters present'
+        return result
+    elif check_validamount(encodedCube) == False:
         result['status'] = 'Error: Invalid amount of valid colors'
         return result
     elif check_middles(encodedCube) == False:
         result['status'] = 'Error: Cube middles are not unique'
         return result
-    elif check_alphanum(encodedCube) == False:
-        result['status'] = 'Error: Invalid characters present'
-        return result
+    
     else:
         result['status'] = 'ok'
     
