@@ -1,4 +1,5 @@
 import rubik.model.constants
+from rubik.model.constants import *
 from rubik.model.cube import Cube
 
 def solveBottomCross(theCube: Cube) -> str:
@@ -9,4 +10,10 @@ def solveBottomCross(theCube: Cube) -> str:
         input:  an instance of the cube class
         output: the rotations required to transform the input cube into the down-face cross 
     '''  
-    return 'F'      #TODO:  remove this stubbed value
+    
+    moves = []
+    cubeList = list(theCube)
+    botColor = cubeList[DMM]
+    
+    
+    return botColor      #TODO:  remove this stubbed value
