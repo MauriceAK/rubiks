@@ -16,4 +16,4 @@ def solveBottomCross(theCube: Cube) -> str:
     botColor = cubeList[DMM]
     
     
-    return botColor      #TODO:  remove this stubbed value
+    return theCube      #TODO:  remove this stubbed value
