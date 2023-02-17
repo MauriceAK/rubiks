@@ -25,7 +25,7 @@ class RotateTest(TestCase):
         self.assertEqual(result['status'], 'Error: Invalid cube length')
         
     def test020_rotate_invalidMiddles(self):
-        encodedCube = 'bbbbbbbbbrrrrbrrrrooooooooogggggggggyyyyyyyyywwwwwwwww'
+        encodedCube = 'bbbbbbrbbrrrrbrrrrooooooooogggggggggyyyyyyyyywwwwwwwww'
         parms = {}
         parms['cube'] = encodedCube
         parms['dir'] = 'F'
