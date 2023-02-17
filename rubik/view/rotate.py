@@ -15,6 +15,12 @@ def check_alphanum(string):
     if string.isalnum() != True:
         return False;
     return True;
+
+def check_validamount(string):
+    for letter in string:
+        if string.count(letter) != 9:
+            return False;
+    return True;
     
 def rotate(parms):
     """Return rotated cube""" 
@@ -22,15 +28,26 @@ def rotate(parms):
     
     result = {}
     
+    if parms.get('cube') == None:
+        result['status'] = 'Error: Missing cube'
+        return result
     encodedCube = parms.get('cube')
-    theCube = Cube(encodedCube)
     
-    directions = parms.get('dir')
-    theCube.rotate(directions)
-    result['cube'] = theCube.get()
+    theCube = Cube(encodedCube)
     
     if check_length(encodedCube) == False: 
         result['status'] = 'Error: Invalid cube length'
+        return result
+    
+    directions = parms.get('dir')
+    rotatedCube = theCube.rotate(directions)
+    
+    if rotatedCube == 'DirException':
+        result['status'] = 'Error: Invalid rotation'
+        return result
+    
+    if check_validamount(encodedCube) == False:
+        result['status'] = 'Error: Invalid amount of valid colors'
         return result
     elif check_middles(encodedCube) == False:
         result['status'] = 'Error: Cube middles are not unique'
@@ -41,5 +58,6 @@ def rotate(parms):
     else:
         result['status'] = 'ok'
     
+    result['cube'] = rotatedCube
                          
     return result

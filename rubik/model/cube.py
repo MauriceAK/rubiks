@@ -1,8 +1,5 @@
 from rubik.model.constants import *
 
-class DirException(Exception):
-    "Raised when invalid Direction is input"
-    pass
 
 class Cube:
     '''
@@ -16,7 +13,9 @@ class Cube:
         return self._cube
   
     def rotate(self, directions):
-          
+            if directions == None:
+                self._rotateF()
+                return self._cube
             if directions == '':
                 self._rotateF()
                 return self._cube
@@ -64,7 +63,8 @@ class Cube:
                             self._rotateU()
                         
                         else:
-                            return 'DirException occurred: Invalid Direction'
+                            return 'DirException'
+            
             return self._cube
                   
             
