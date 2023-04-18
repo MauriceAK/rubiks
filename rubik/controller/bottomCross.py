@@ -16,7 +16,7 @@ def     solveBottomCross(theCube: Cube) -> str:
         output: the rotations required to transform the input cube into the down-face cross 
     '''  
     cubeList = theCube.get()
-    return cubeList
+    
     moves = []
     
     
@@ -28,7 +28,7 @@ def     solveBottomCross(theCube: Cube) -> str:
     l_edges = [LTM, LML, LMR, LBM]
     d_edges = [DTM, DML, DMR, DBM]
     
-    
+    return cubeList
     # checks completion
     if cubeList[DTM] == cubeList[DBM] == cubeList[DML] == cubeList[DMR] == botColor and \
          cubeList[FBM] == cubeList[FMM] and \
