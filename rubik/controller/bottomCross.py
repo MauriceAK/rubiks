@@ -28,7 +28,7 @@ def     solveBottomCross(theCube: Cube) -> str:
     l_edges = [LTM, LML, LMR, LBM]
     d_edges = [DTM, DML, DMR, DBM]
     
-    return cubeList
+    
     # checks completion
     if cubeList[DTM] == cubeList[DBM] == cubeList[DML] == cubeList[DMR] == botColor and \
          cubeList[FBM] == cubeList[FMM] and \
@@ -36,7 +36,7 @@ def     solveBottomCross(theCube: Cube) -> str:
          cubeList[BBM] == cubeList[BMM] and \
          cubeList[LBM] == cubeList[LMM]:
         return moves
-    
+    return cubeList
     botcolor_edges = [i for i in range(len(cubeList)) if cubeList[i] == botColor]
     
     #front top edge
