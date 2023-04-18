@@ -20,7 +20,7 @@ class SolveTest(TestCase):
     def test110_solve_bottomCrossIfValid(self):
         parms = {}
         parms['cube'] = 'oorybbrorwborrbbbrggoogwwgowrgrooyggbrwyywywgygywwybyb'
-        result = solve(parms)
+        result = solveBottomCross(parms)
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
