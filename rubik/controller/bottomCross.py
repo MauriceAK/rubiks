@@ -17,7 +17,7 @@ def     solveBottomCross(theCube: Cube) -> str:
     '''  
     
     moves = []
-    cubeList = Cube(theCube)
+    cubeList = list(Cube)
     
     botColor = cubeList[DMM]
     botEdges = [DTM, DML, DMR, DBM]
