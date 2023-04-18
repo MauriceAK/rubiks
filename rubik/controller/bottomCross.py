@@ -42,13 +42,13 @@ def     solveBottomCross(theCube: Cube) -> str:
     #front top edge
     while cubeList[UBM] != botColor:
         if botColor in {cubeList[RML], cubeList[DTM], cubeList[LMR]}:
-            moves.append('F')
+            moves += 'F'
             theCube._rotateF()
         elif botColor in {cubeList[FTM], cubeList[FMR], cubeList[FML], cubeList[FBM]}:
             while cubeList[FMR] != botColor:
-                moves.append('F')
+                moves += 'F'
                 theCube._rotateF()
-            moves.append('uRU')
+            moves += 'uRU'
             theCube._rotateU()
             theCube._rotateU()
             theCube._rotateU()
@@ -58,13 +58,13 @@ def     solveBottomCross(theCube: Cube) -> str:
     #right top edge        
     while cubeList[UMR] != botColor:
         if botColor in {cubeList[BML], cubeList[DMR], cubeList[FMR]}:
-            moves.append('R')
+            moves +='R'
             theCube._rotateR()
         elif botColor in {cubeList[RTM], cubeList[RMR], cubeList[RML], cubeList[RBM]}:
             while cubeList[RMR] != botColor:
-                moves.append('R')
+                moves +='R'
                 theCube._rotateR()
-            moves.append('uBU')
+            moves += 'uBU'
             theCube._rotateU()
             theCube._rotateU()
             theCube._rotateU()
@@ -74,13 +74,13 @@ def     solveBottomCross(theCube: Cube) -> str:
     #back top edge        
     while cubeList[UTM] != botColor:
         if botColor in {cubeList[RML], cubeList[DTM], cubeList[LMR]}:
-            moves.append('B')
+            moves += 'B'
             theCube._rotateB()
         elif botColor in {cubeList[FTM], cubeList[FMR], cubeList[FML], cubeList[FBM]}:
             while cubeList[BMR] != botColor:
-                moves.append('B')
+                moves += 'B'
                 theCube._rotateB()
-            moves.append('uLU')
+            moves += 'uLU'
             theCube._rotateU()
             theCube._rotateU()
             theCube._rotateU()
@@ -90,13 +90,13 @@ def     solveBottomCross(theCube: Cube) -> str:
     #left top edge        
     while cubeList[UML] != botColor:
         if botColor in {cubeList[RML], cubeList[DTM], cubeList[LMR]}:
-            moves.append('L')
+            moves += 'L'
             theCube._rotateL()
         elif botColor in {cubeList[FTM], cubeList[FMR], cubeList[FML], cubeList[FBM]}:
             while cubeList[LMR] != botColor:
-                moves.append('L')
+                moves += 'L' 
                 theCube._rotateL()
-            moves.append('uFU')
+            moves += 'uFU'
             theCube._rotateU()
             theCube._rotateU()
             theCube._rotateU()
@@ -106,30 +106,30 @@ def     solveBottomCross(theCube: Cube) -> str:
     
     if checkDaisy(cubeList) is True:
         while cubeList[FTM] != cubeList[FMM] or cubeList[UBM] != botColor:
-            moves.append('U')
+            moves += 'U'
             theCube._rotateU()
-        moves.append('FF')
+        moves += 'FF'
         theCube._rotateF()
         theCube._rotateF()
         
         while cubeList[RTM] != cubeList[RMM] or cubeList[UMR] != botColor:
-            moves.append('U')
+            moves += 'U'
             theCube._rotateU()
-        moves.append('RR')
+        moves +='RR'
         theCube._rotateR()
         theCube._rotateR()
         
         while cubeList[BTM] != cubeList[BMM] or cubeList[UTM] != botColor:
-            moves.append('U')
+            moves += 'U'
             theCube._rotateU()
-        moves.append('BB')
+        moves += 'BB'
         theCube._rotateB()
         theCube._rotateB()
         
         while cubeList[LTM] != cubeList[LMM] or cubeList[UML] != botColor:
-            moves.append('U')
+            moves += 'U'
             theCube._rotateU()
-        moves.append('LL')
+        moves += 'LL'
         theCube._rotateL()
         theCube._rotateL()
     
