@@ -17,7 +17,7 @@ def     solveBottomCross(theCube: Cube) -> str:
     '''  
     
     moves = []
-    cubeList = list(theCube)
+    #cubeList = list(theCube)
     botColor = cubeList[DMM]
     botEdges = [DTM, DML, DMR, DBM]
     f_edges = [FTM, FML, FMR, FBM]
@@ -100,14 +100,7 @@ def     solveBottomCross(theCube: Cube) -> str:
             theCube._rotateU()
             theCube._rotateF()
             theCube._rotateU()  
-    
-        
-    
      
-    
-    
-    
-    
     
     if checkDaisy(cubeList) is True:
         while cubeList[FTM] != cubeList[FMM] or cubeList[UBM] != botColor:
