@@ -16,7 +16,7 @@ def     solveBottomCross(theCube: Cube) -> str:
         output: the rotations required to transform the input cube into the down-face cross 
     '''  
     cubeList = theCube.get()
-    
+    return theCube.get()
     moves = []
     
     
