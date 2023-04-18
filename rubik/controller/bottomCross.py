@@ -41,10 +41,10 @@ def     solveBottomCross(theCube: Cube) -> str:
     
     #front top edge
     while cubeList[UBM] != botColor:
+        return 'X'
         if botColor in {cubeList[RML], cubeList[DTM], cubeList[LMR]}:
             moves += 'F'
             theCube._rotateF()
-            return 'X'
         elif botColor in {cubeList[FTM], cubeList[FMR], cubeList[FML], cubeList[FBM]}:
             while cubeList[FMR] != botColor:
                 moves += 'F'
