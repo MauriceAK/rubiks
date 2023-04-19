@@ -2,6 +2,7 @@ import rubik.model.constants
 from rubik.model.constants import *
 from rubik.model.cube import Cube
 
+#removes whites from any side of bottom corner piece
 def removeWhiteCorners(theCube: Cube) -> str:
     moves = ''
     botColor = theCube.get()[DMM]
@@ -50,6 +51,7 @@ def removeWhiteCorners(theCube: Cube) -> str:
         
     return moves
 
+#orients front right bottom corner piece properly
 def frontRightCorner(theCube:Cube) -> str:
     moves = ''
     botColor = theCube.get()[DMM]
@@ -59,22 +61,34 @@ def frontRightCorner(theCube:Cube) -> str:
         if theCube.get()[FTR] in ['w', 'r', 'b'] and \
                  theCube.get()[RTL] in ['w', 'r', 'b'] and \
                  theCube.get()[UBR] in ['w', 'r', 'b']:
-
-                while theCube.get()[DTR] != botColor:
-                    moves += 'RUru'
-                    theCube._rotateR()
-                    theCube._rotateU()
-                    theCube._rotateR()
-                    theCube._rotateR()
-                    theCube._rotateR()
-                    theCube._rotateU()
-                    theCube._rotateU()
-                    theCube._rotateU()
+                if theCube.get()[FTR] == 'w':
+                    while theCube.get()[DTR] != botColor:
+                        moves += 'URur'
+                        theCube._rotateU()
+                        theCube._rotateR()
+                        theCube._rotateU()
+                        theCube._rotateU()
+                        theCube._rotateU()
+                        theCube._rotateR()
+                        theCube._rotateR()
+                        theCube._rotateR()
+                else:
+                    while theCube.get()[DTR] != botColor:
+                        moves += 'RUru'
+                        theCube._rotateR()
+                        theCube._rotateU()
+                        theCube._rotateR()
+                        theCube._rotateR()
+                        theCube._rotateR()
+                        theCube._rotateU()
+                        theCube._rotateU()
+                        theCube._rotateU()
         else:
                 moves += 'U'
                 theCube._rotateU()
     return moves
 
+#orients back right bottom corner piece properly
 def backRightCorner(theCube:Cube) -> str:
     moves = ''
     botColor = theCube.get()[DMM]
@@ -104,6 +118,7 @@ def backRightCorner(theCube:Cube) -> str:
                 
     return moves
 
+#orients back left bottom corner piece properly
 def backLeftCorner(theCube:Cube) -> str:
     moves = ''
     botColor = theCube.get()[DMM]
@@ -131,6 +146,7 @@ def backLeftCorner(theCube:Cube) -> str:
                 theCube._rotateU()
     return moves
 
+#orients front left bottom corner piece properly
 def frontLeftCorner(theCube:Cube) -> str:
     moves = ''
     botColor = theCube.get()[DMM]
