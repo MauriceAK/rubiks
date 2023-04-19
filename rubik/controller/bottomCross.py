@@ -2,9 +2,9 @@ import rubik.model.constants
 from rubik.model.constants import *
 from rubik.model.cube import Cube
 
-def checkDaisy(theCube):
-    botColor = theCube.get()[DMM]
-    if theCube.get()[UTM] == theCube.get()[UML] == theCube.get()[UMR] == theCube.get()[UBM] == botColor:
+def checkDaisy(string):
+    botColor = string[DMM]
+    if string[UTM] == string[UML] == string[UMR] == string[UBM] == botColor:
         return True
 
 def     solveBottomCross(theCube: Cube) -> str:
@@ -115,7 +115,7 @@ def     solveBottomCross(theCube: Cube) -> str:
         moves += 'u'
         theCube._rotateU()    
     
-    if checkDaisy(theCube) is True:
+    if checkDaisy(theCube.get()) is True:
         while theCube.get()[FTM] != theCube.get()[FMM] or theCube.get()[UBM] != botColor:
             moves += 'U'
             theCube._rotateU()
