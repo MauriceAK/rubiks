@@ -162,6 +162,7 @@ def solveBottomLayer(theCube: Cube) -> str:
                 theCube._rotateU()
     
     '''
+    moves += frontRightCorner(theCube)
     while theCube.get()[DBR] != botColor or theCube.get()[RBR] != theCube.get()[RMM] or \
      theCube.get()[BBL] != theCube.get()[BMM]:
         
