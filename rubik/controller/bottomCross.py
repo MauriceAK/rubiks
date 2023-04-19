@@ -55,7 +55,7 @@ def     solveBottomCross(theCube: Cube) -> str:
         theCube._rotateR()
         theCube._rotateU()
     else:
-        moves += 'U'
+        moves += 'u'
         theCube._rotateU()   
        
     #right top edge      
@@ -74,7 +74,7 @@ def     solveBottomCross(theCube: Cube) -> str:
         theCube._rotateB()
         theCube._rotateU()           
     else:
-        moves += 'U'
+        moves += 'u'
         theCube._rotateU()   
        
     #back top edge     
@@ -93,7 +93,7 @@ def     solveBottomCross(theCube: Cube) -> str:
         theCube._rotateL()
         theCube._rotateU()  
     else:
-        moves += 'U'
+        moves += 'u'
         theCube._rotateU()   
            
     #left top edge  
@@ -112,7 +112,7 @@ def     solveBottomCross(theCube: Cube) -> str:
         theCube._rotateF()
         theCube._rotateU()  
     else:
-        moves += 'U'
+        moves += 'u'
         theCube._rotateU()    
     
     if checkDaisy(theCube) is True:
