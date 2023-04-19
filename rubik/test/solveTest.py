@@ -40,8 +40,33 @@ class SolveTest(TestCase):
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
         self.assertEqual('uRUuBUBBuLUUFFRRUBBUULL', botCross)
-        
-    def test130_solve_bottomCornersIfValid(self):
+     
+    
+    def test130_solve_bottomCrossIfValid(self):
+        parms = {}
+        parms['cube'] = 'ywwobwwyybbwgrybyyrbgoggowoyorrogwrgrobwyrbborboywggrg'
+        cubeBotCross = 'ywwobwwyybbwgrybyyrbgoggowoyorrogwrgrobwyrbborboywggrg'
+        theCube = cube.Cube(cubeBotCross)
+        result = solve(parms)
+        botCross = solveBottomCross(theCube)
+        self.assertIn('status', result)
+        self.assertEqual('ok', result['status'])
+        self.assertIn('integrity', result)
+        self.assertEqual('uRUuBUBBuLUUFFRRUBBUULL', botCross)   
+    
+    def test140_solve_returnEmptyForSolvedBottom(self):
+        parms = {}
+        parms['cube'] = 'rrbbbobbbyyyyrrrrrgrrbgggggggbyoooooyyooybygowwwwwwwww'
+        cubeBotLayer = 'rrbbbobbbyyyyrrrrrgrrbgggggggbyoooooyyooybygowwwwwwwww'
+        theCube = cube.Cube(cubeBotLayer)
+        result = solve(parms)
+        botLayer = solveBottomLayer(theCube)
+        self.assertIn('status', result)
+        self.assertEqual('ok', result['status'])
+        self.assertIn('integrity', result)
+        self.assertEqual('', botLayer)   
+    
+    def test150_solve_bottomCornersIfValid(self):
         parms = {}
         parms['cube'] = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
         cubeBotLayer = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
@@ -53,7 +78,7 @@ class SolveTest(TestCase):
         self.assertIn('integrity', result)
         self.assertEqual('BUbUBUbUURUruRUruRUruUBUbuBUbuBUbuBUbuBUbuULUluLUluLUluUFUfuFUfuFUfuFUfuFUfu', botLayer)
         
-    def test140_solve_bottomCornersIfValid(self):
+    def test160_solve_bottomCornersIfValid(self):
         parms = {}
         parms['cube'] = 'yrrrbggbbwbrorbwrobbbyggwggrobyogyoyyrwyyooygrwowwwowg'
         cubeBotLayer = 'yrrrbggbbwbrorbwrobbbyggwggrobyogyoyyrwyyooygrwowwwowg'
