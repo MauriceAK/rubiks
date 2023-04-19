@@ -55,6 +55,7 @@ def     solveBottomCross(theCube: Cube) -> str:
         theCube._rotateR()
         theCube._rotateU()
         
+    return 'X'     
     #right top edge      
     if botColor in {theCube.get()[BML], theCube.get()[DMR], theCube.get()[FMR]}:
         while theCube.get()[UMR] != botColor:       
