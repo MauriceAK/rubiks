@@ -38,7 +38,8 @@ def     solveBottomCross(theCube: Cube) -> str:
         return moves
    
     #botcolor_edges = [i for i in range(len(cubeList)) if cubeList[i] == botColor]
-    #return 'X'
+    #return 'X' 
+    
     if botColor == theCube.get()[RML] or botColor == theCube.get()[DTM] or botColor == theCube.get()[LMR]:
         while theCube.get()[UBM] != botColor:
             moves += 'F'
@@ -71,7 +72,7 @@ def     solveBottomCross(theCube: Cube) -> str:
         theCube._rotateU()           
         
     #back top edge     
-    if botColor in {theCube.get()[RML], theCube.get()[DTM], theCube.get()[LMR]}:   
+    if botColor in {theCube.get()[RMR], theCube.get()[DBM], theCube.get()[LML]}:   
         while theCube.get()[UTM] != botColor:
             moves += 'B'
             theCube._rotateB()
@@ -87,7 +88,7 @@ def     solveBottomCross(theCube: Cube) -> str:
         theCube._rotateU()  
             
     #left top edge  
-    if botColor in {theCube.get()[RML], theCube.get()[DTM], theCube.get()[LMR]}:      
+    if botColor in {theCube.get()[FML], theCube.get()[DML], theCube.get()[BMR]}:      
         while theCube.get()[UML] != botColor:
             moves += 'L'
             theCube._rotateL()
