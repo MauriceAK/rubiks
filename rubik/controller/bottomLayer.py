@@ -103,6 +103,64 @@ def backRightCorner(theCube:Cube) -> str:
                 theCube._rotateU()
                 
     return moves
+
+def backLeftCorner(theCube:Cube) -> str:
+    moves = ''
+    botColor = theCube.get()[DMM]
+    while theCube.get()[DBL] != botColor or theCube.get()[BBR] != theCube.get()[BMM] or \
+     theCube.get()[LBL] != theCube.get()[LMM]:
+        
+        if theCube.get()[BTR] in ['w', 'o', 'g'] and \
+                 theCube.get()[LTL] in ['w', 'o', 'g'] and \
+                 theCube.get()[UTL] in ['w', 'o', 'g']:
+                
+               
+                while theCube.get()[DBL] != botColor:
+                    moves += 'LUlu'
+                    theCube._rotateL()
+                    theCube._rotateU()
+                    theCube._rotateL()
+                    theCube._rotateL()
+                    theCube._rotateL()
+                    theCube._rotateU()
+                    theCube._rotateU()
+                    theCube._rotateU()
+                   
+        else:
+                moves += 'U'
+                theCube._rotateU()
+    return moves
+
+def frontLeftCorner(theCube:Cube) -> str:
+    moves = ''
+    botColor = theCube.get()[DMM]
+    while theCube.get()[DTR] != botColor or theCube.get()[LBR] != theCube.get()[LMM] or \
+     theCube.get()[FBL] != theCube.get()[FMM]:
+        
+        if theCube.get()[LTR] in ['w', 'o', 'b'] and \
+                 theCube.get()[FTL] in ['w', 'o', 'b'] and \
+                 theCube.get()[UBL] in ['w', 'o', 'b']:
+                
+               
+                while theCube.get()[DTL] != botColor:
+                    moves += 'FUfu'
+                    theCube._rotateF()
+                    theCube._rotateU()
+                    theCube._rotateF()
+                    theCube._rotateF()
+                    theCube._rotateF()
+                    theCube._rotateU()
+                    theCube._rotateU()
+                    theCube._rotateU()
+                   
+        else:
+                moves += 'U'
+                theCube._rotateU()     
+                
+    return moves
+
+
+
 def solveBottomLayer(theCube: Cube) -> str:
     '''
         This is the top-level function  for rotating
@@ -219,6 +277,7 @@ def solveBottomLayer(theCube: Cube) -> str:
     '''   
     moves += backRightCorner(theCube)     
     
+    '''
     while theCube.get()[DBL] != botColor or theCube.get()[BBR] != theCube.get()[BMM] or \
      theCube.get()[LBL] != theCube.get()[LMM]:
         
@@ -243,7 +302,9 @@ def solveBottomLayer(theCube: Cube) -> str:
                 theCube._rotateU()            
         
     
-    
+    '''
+    moves += backLeftCorner(theCube) 
+    '''
     while theCube.get()[DTR] != botColor or theCube.get()[LBR] != theCube.get()[LMM] or \
      theCube.get()[FBL] != theCube.get()[FMM]:
         
@@ -268,5 +329,5 @@ def solveBottomLayer(theCube: Cube) -> str:
                 theCube._rotateU()            
         
     
-           
+    '''       
     return moves      #TODO:  remove this stubbed value
