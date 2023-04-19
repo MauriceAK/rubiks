@@ -49,7 +49,7 @@ def removeWhiteCorners(theCube) -> str:
                     theCube.get()[LBL], theCube.get()[FBL], theCube.get()[LBR], theCube.get()[DTL]]
         #return moves + 'x'
     
-      
+    return moves  
 
 
 
