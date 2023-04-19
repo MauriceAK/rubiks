@@ -56,7 +56,7 @@ def     solveBottomCross(theCube: Cube) -> str:
             theCube._rotateR()
             theCube._rotateU()
         else:
-            moves += 'u'
+            moves += 'U'
             theCube._rotateU()   
            
         #right top edge      
@@ -75,7 +75,7 @@ def     solveBottomCross(theCube: Cube) -> str:
             theCube._rotateB()
             theCube._rotateU()           
         else:
-            moves += 'u'
+            moves += 'U'
             theCube._rotateU()   
            
         #back top edge     
@@ -94,7 +94,7 @@ def     solveBottomCross(theCube: Cube) -> str:
             theCube._rotateL()
             theCube._rotateU()  
         else:
-            moves += 'u'
+            moves += 'U'
             theCube._rotateU()   
                
         #left top edge  
@@ -113,13 +113,13 @@ def     solveBottomCross(theCube: Cube) -> str:
             theCube._rotateF()
             theCube._rotateU()  
         else:
-            moves += 'u'
+            moves += 'U'
             theCube._rotateU()    
     
     
     if theCube.get()[UTM] == theCube.get()[UML] == theCube.get()[UMR] == theCube.get()[UBM] == botColor:
-        return theCube.get()
-        moves += 'x'
+        #return theCube.get()
+        #moves += 'x'
         while theCube.get()[FTM] != theCube.get()[FMM] or theCube.get()[UBM] != botColor:
             moves += 'U'
             theCube._rotateU()
