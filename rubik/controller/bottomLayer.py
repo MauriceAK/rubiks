@@ -33,7 +33,7 @@ def solveBottomLayer(theCube: Cube) -> str:
         if theCube.get()[FTR] in ['w', 'r', 'b'] and \
          theCube.get()[RTL] in ['w', 'r', 'b'] and \
          theCube.get()[UBR] in ['w', 'r', 'b']:
-            return 'x'
+            #return 'x'
             moves += 'RUru'
             theCube._rotateR()
             theCube._rotateU()
