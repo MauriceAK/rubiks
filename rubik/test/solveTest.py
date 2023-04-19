@@ -35,3 +35,12 @@ class SolveTest(TestCase):
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
         self.assertEqual('uRUuBUBBuLUUFFRRUBBUULL', result.get('solution'))
+        
+    def test120_solve_bottomCornersIfValid(self):
+        parms = {}
+        parms['cube'] = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
+        result = solve(parms)
+        self.assertIn('status', result)
+        self.assertEqual('ok', result['status'])
+        self.assertIn('integrity', result)
+        self.assertEqual('uRUuBUBBuLUUFFRRUBBUULL', result.get('solution'))
