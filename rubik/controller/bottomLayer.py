@@ -99,19 +99,28 @@ def backRightCorner(theCube:Cube) -> str:
         if theCube.get()[BTL] in ['w', 'r', 'g'] and \
                  theCube.get()[RTR] in ['w', 'r', 'g'] and \
                  theCube.get()[UTR] in ['w', 'r', 'g']:
-                
-               
-                while theCube.get()[DBR] != botColor:
-                    moves += 'BUbu'
-                    theCube._rotateB()
-                    theCube._rotateU()
-                    theCube._rotateB()
-                    theCube._rotateB()
-                    theCube._rotateB()
-                    theCube._rotateU()
-                    theCube._rotateU()
-                    theCube._rotateU()
-                 
+                if theCube.get()[RTR] == 'w':
+                    while theCube.get()[DBR] != botColor:
+                        moves += 'UBub'
+                        theCube._rotateU()
+                        theCube._rotateB()
+                        theCube._rotateU()
+                        theCube._rotateU()
+                        theCube._rotateU()
+                        theCube._rotateB()
+                        theCube._rotateB()
+                        theCube._rotateB()
+                else:
+                    while theCube.get()[DBR] != botColor:
+                        moves += 'BUbu'
+                        theCube._rotateB()
+                        theCube._rotateU()
+                        theCube._rotateB()
+                        theCube._rotateB()
+                        theCube._rotateB()
+                        theCube._rotateU()
+                        theCube._rotateU()
+                        theCube._rotateU()         
         else:
                 moves += 'U'
                 theCube._rotateU()
@@ -129,18 +138,28 @@ def backLeftCorner(theCube:Cube) -> str:
                  theCube.get()[LTL] in ['w', 'o', 'g'] and \
                  theCube.get()[UTL] in ['w', 'o', 'g']:
                 
-               
-                while theCube.get()[DBL] != botColor:
-                    moves += 'LUlu'
-                    theCube._rotateL()
-                    theCube._rotateU()
-                    theCube._rotateL()
-                    theCube._rotateL()
-                    theCube._rotateL()
-                    theCube._rotateU()
-                    theCube._rotateU()
-                    theCube._rotateU()
-                   
+                if theCube.get()[BTR] == 'w':
+                    while theCube.get()[DBL] != botColor:
+                        moves += 'ULul'
+                        theCube._rotateU()
+                        theCube._rotateL()
+                        theCube._rotateU()
+                        theCube._rotateU()
+                        theCube._rotateU()
+                        theCube._rotateL()
+                        theCube._rotateL()
+                        theCube._rotateL()
+                else:        
+                    while theCube.get()[DBL] != botColor:
+                        moves += 'LUlu'
+                        theCube._rotateL()
+                        theCube._rotateU()
+                        theCube._rotateL()
+                        theCube._rotateL()
+                        theCube._rotateL()
+                        theCube._rotateU()
+                        theCube._rotateU()
+                        theCube._rotateU()        
         else:
                 moves += 'U'
                 theCube._rotateU()
@@ -157,18 +176,28 @@ def frontLeftCorner(theCube:Cube) -> str:
                  theCube.get()[FTL] in ['w', 'o', 'b'] and \
                  theCube.get()[UBL] in ['w', 'o', 'b']:
                 
-               
-                while theCube.get()[DTL] != botColor:
-                    moves += 'FUfu'
-                    theCube._rotateF()
-                    theCube._rotateU()
-                    theCube._rotateF()
-                    theCube._rotateF()
-                    theCube._rotateF()
-                    theCube._rotateU()
-                    theCube._rotateU()
-                    theCube._rotateU()
-                   
+                if theCube.get()[LTR] == 'w':
+                    while theCube.get()[DTL] != botColor:
+                        moves += 'UFuf'
+                        theCube._rotateU()
+                        theCube._rotateF()
+                        theCube._rotateU()
+                        theCube._rotateU()
+                        theCube._rotateU()
+                        theCube._rotateF()
+                        theCube._rotateF()
+                        theCube._rotateF()
+                else:  
+                    while theCube.get()[DTL] != botColor:
+                        moves += 'FUfu'
+                        theCube._rotateF()
+                        theCube._rotateU()
+                        theCube._rotateF()
+                        theCube._rotateF()
+                        theCube._rotateF()
+                        theCube._rotateU()
+                        theCube._rotateU()
+                        theCube._rotateU()
         else:
                 moves += 'U'
                 theCube._rotateU()     
