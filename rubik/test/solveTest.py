@@ -68,6 +68,19 @@ class SolveTest(TestCase):
             x = True
         self.assertEqual(True, x)  
         
+    def test180_frontRightCorner(self):
+        parms = {}
+        parms['cube'] = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
+        cubeFrontRight = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo' 
+        theCube = cube.Cube(cubeFrontRight)
+        frontRightCorner(theCube)
+        x = False
+        if theCube.get()[DTR] == theCube.get()[DMM] and theCube.get()[FBR] == theCube.get()[FMM] and \
+         theCube.get()[RBL] == theCube.get()[RMM]:
+            x = True
+        self.assertEqual(True, x) 
+            
+        
         
     
     def test140_solve_returnEmptyForSolvedBottom(self):
