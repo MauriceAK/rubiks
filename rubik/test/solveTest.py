@@ -67,7 +67,7 @@ class SolveTest(TestCase):
         x = False
         if 'w' not in cornerWhites:
             x = True
-        self.assertEqual('True', x)  
+        self.assertEqual(True, x)  
         
         
     
