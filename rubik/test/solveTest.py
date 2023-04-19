@@ -91,7 +91,7 @@ class SolveTest(TestCase):
          theCube.get()[BBL] == theCube.get()[BMM]:
             x = True
         self.assertEqual(True, x) 
-       
+    '''   
     def test200_backLeftCorner(self):
         parms = {}
         parms['cube'] = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
@@ -111,12 +111,12 @@ class SolveTest(TestCase):
         theCube = cube.Cube(cubeFrontRight)
         frontRightCorner(theCube)
         x = False
-        if theCube.get()[DTR] == theCube.get()[DMM] and theCube.get()[FBR] == theCube.get()[FMM] and \
+        if theCube.get()[DTL] == theCube.get()[DMM] and theCube.get()[LBR] == theCube.get()[LMM] and \
          theCube.get()[FBL] == theCube.get()[FMM]:
             x = True
         self.assertEqual(True, x) 
             
-    '''    
+       
         
     
     def test140_solve_returnEmptyForSolvedBottom(self):
