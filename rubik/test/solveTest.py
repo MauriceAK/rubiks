@@ -1,6 +1,6 @@
 from unittest import TestCase
 from rubik.view.solve import solve
-from rubik.controller.bottomCross import solveBottomCross
+
 
 
 class SolveTest(TestCase):

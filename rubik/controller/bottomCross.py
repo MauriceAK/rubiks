@@ -15,18 +15,10 @@ def     solveBottomCross(theCube: Cube) -> str:
         input:  an instance of the cube class
         output: the rotations required to transform the input cube into the down-face cross 
     '''  
-    
-    
+
     moves = ''
-    
     cubeList = theCube.get()
     botColor = cubeList[DMM]
-    botEdges = [DTM, DML, DMR, DBM]
-    f_edges = [FTM, FML, FMR, FBM]
-    r_edges = [RTM, RML, RMR, RBM]
-    b_edges = [BTM, BML, BMR, BBM]
-    l_edges = [LTM, LML, LMR, LBM]
-    d_edges = [DTM, DML, DMR, DBM]
     
     #return cubeList
     # checks completion
@@ -37,10 +29,10 @@ def     solveBottomCross(theCube: Cube) -> str:
          cubeList[LBM] == cubeList[LMM]:
         return moves
    
-    #botcolor_edges = [i for i in range(len(cubeList)) if cubeList[i] == botColor]
-    #return 'X' 
+    #loop for making daisy on top 
     while botColor != theCube.get()[UTM] or botColor != theCube.get()[UML] or botColor != theCube.get()[UMR] or botColor != theCube.get()[UBM]:
         
+        #front top edge
         if botColor == theCube.get()[RML] or botColor == theCube.get()[DTM] or botColor == theCube.get()[LMR] or botColor == theCube.get()[UBM]:
             while theCube.get()[UBM] != botColor:
                 moves += 'F'
@@ -117,9 +109,9 @@ def     solveBottomCross(theCube: Cube) -> str:
             theCube._rotateU()    
     
     
+    #flips top edges to bottom after aligning center squares with edge to make proper white cross
     if theCube.get()[UTM] == theCube.get()[UML] == theCube.get()[UMR] == theCube.get()[UBM] == botColor:
-        #return theCube.get()
-        #moves += 'x'
+        
         while theCube.get()[FTM] != theCube.get()[FMM] or theCube.get()[UBM] != botColor:
             moves += 'U'
             theCube._rotateU()
