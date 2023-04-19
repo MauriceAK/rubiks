@@ -149,12 +149,12 @@ def solveBottomLayer(theCube: Cube) -> str:
                 
                
                 while theCube.get()[DTL] != botColor:
-                    moves += 'LUlu'
-                    theCube._rotateL()
+                    moves += 'FUfu'
+                    theCube._rotateF()
                     theCube._rotateU()
-                    theCube._rotateL()
-                    theCube._rotateL()
-                    theCube._rotateL()
+                    theCube._rotateFL()
+                    theCube._rotateF()
+                    theCube._rotateF()
                     theCube._rotateU()
                     theCube._rotateU()
                     theCube._rotateU()
