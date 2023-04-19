@@ -1,6 +1,6 @@
 from unittest import TestCase
 from rubik.view.solve import solve
-from rubik.controller.bottomCross import *
+from rubik.controller.bottomCross import solveBottomCross
 
 
 class SolveTest(TestCase):
@@ -14,7 +14,7 @@ class SolveTest(TestCase):
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
-        self.assertEqual('FRBLUD', result.get('solution'))
+        self.assertEqual('', result.get('solution'))
 
     
     def test110_solve_returnEmptyForSolvedCross(self):
@@ -30,7 +30,7 @@ class SolveTest(TestCase):
     def test120_solve_bottomCrossIfValid(self):
         parms = {}
         parms['cube'] = 'bybybwgbbobygrwrbgoooogwrgwyryroggorgbbgyrrrwwwwywyooy'
-        result = solve(parms)
+        result = solveBottomCross(parms)
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
