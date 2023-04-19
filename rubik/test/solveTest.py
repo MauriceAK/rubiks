@@ -61,7 +61,7 @@ class SolveTest(TestCase):
         theCube = cube.Cube(cubeWhiteCorners)
         result = solve(parms)
         whiteCorners = removeWhiteCorners(theCube)
-        cornerWhites = [theCube.get()[DTR], theCube.get()[FBR], theCube.get()[RBL], theCube.get()[RBR], 
+        cornerWhites = ['w',theCube.get()[DTR], theCube.get()[FBR], theCube.get()[RBL], theCube.get()[RBR], 
                     theCube.get()[BBL], theCube.get()[DBR], theCube.get()[DBL], theCube.get()[BBR], 
                     theCube.get()[LBL], theCube.get()[FBL], theCube.get()[LBR], theCube.get()[DTL]]
         x = False
