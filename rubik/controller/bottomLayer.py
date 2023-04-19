@@ -15,6 +15,9 @@ def solveBottomLayer(theCube: Cube) -> str:
     
     botColor = theCube.get()[DMM]
     cornerWRB = [botColor, theCube.get()[FMM], theCube.get()[RMM]]
+    cornerWhites = [theCube.get()[DTR], theCube.get()[FBR], theCube.get()[LBL], theCube.get()[RBR], 
+                    theCube.get()[BBL], theCube.get()[UBR], theCube.get()[UBL], theCube.get()[BBR], 
+                    theCube.get()[LBL], theCube.get()[FBL], theCube.get()[LBR], theCube.get()[UTL]]
 
     
     if theCube.get()[DTL] == theCube.get()[DBL] == theCube.get()[DTR] == theCube.get()[DBR] == botColor and \
@@ -25,29 +28,63 @@ def solveBottomLayer(theCube: Cube) -> str:
         return moves
     
     
-    while theCube.get()[DTR] != botColor:
-        #return theCube.get()[FTR] + theCube.get()[RTL] + theCube.get()[UBR] + ''.join(cornerWRB)
-        #if theCube.get()[FTR] in ['w', 'r', 'b'] and theCube.get()[RTL] in ['w', 'r', 'b'] :
-            #return 'xyz'
-        #if white and green and blue in white blue green
-        if theCube.get()[FTR] in ['w', 'r', 'b'] and \
-         theCube.get()[RTL] in ['w', 'r', 'b'] and \
-         theCube.get()[UBR] in ['w', 'r', 'b']:
-            #return 'x'
-            moves += 'RUru'
+    while botColor in cornerWhites:
+        if botColor in [theCube.get()[DTL], theCube.get()[FBL], theCube.get()[LBR]]:
+            moves += 'FUf'
+            theCube._rotateF()
+            theCube._rotateU()
+            theCube._rotateF()
+            theCube._rotateF()
+            theCube._rotateF()
+            
+        if botColor in [theCube.get()[DTR], theCube.get()[FBR], theCube.get()[RBL]]:
+            moves += 'RUr'
             theCube._rotateR()
             theCube._rotateU()
             theCube._rotateR()
             theCube._rotateR()
             theCube._rotateR()
+             
+        if botColor in [theCube.get()[DBR], theCube.get()[RBR], theCube.get()[BBL]]:
+            moves += 'BUb'
+            theCube._rotateB()
             theCube._rotateU()
+            theCube._rotateB()
+            theCube._rotateB()
+            theCube._rotateB()
+            
+        if botColor in [theCube.get()[DBL], theCube.get()[LBL], theCube.get()[BBR]]:
+            moves += 'LUl'
+            theCube._rotateL()
             theCube._rotateU()
-            theCube._rotateU()
-        else:
+            theCube._rotateL()
+            theCube._rotateL()
+            theCube._rotateL()
+        
+        moves += 'U'   
+        theCube._rotateU()
+    
+    return 'x'
+    
+        
+    if theCube.get()[FTR] in ['w', 'r', 'b'] and \
+             theCube.get()[RTL] in ['w', 'r', 'b'] and \
+             theCube.get()[UBR] in ['w', 'r', 'b']:
+            
+            while theCube.get()[DTR] != botColor:
+                moves += 'RUru'
+                theCube._rotateR()
+                theCube._rotateU()
+                theCube._rotateR()
+                theCube._rotateR()
+                theCube._rotateR()
+                theCube._rotateU()
+                theCube._rotateU()
+                theCube._rotateU()
+    else:
             moves += 'U'
             theCube._rotateU()
         
-        return moves +'y'
             
     
     
