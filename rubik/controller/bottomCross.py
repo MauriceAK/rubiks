@@ -89,7 +89,7 @@ def     solveBottomCross(theCube: Cube) -> str:
         theCube._rotateL()
         theCube._rotateU()  
     
-    return 'X'         
+          
     #left top edge  
     if botColor in {theCube.get()[FML], theCube.get()[DML], theCube.get()[BMR]}:      
         while theCube.get()[UML] != botColor:
@@ -106,7 +106,7 @@ def     solveBottomCross(theCube: Cube) -> str:
         theCube._rotateF()
         theCube._rotateU()  
      
-    
+    return 'X'   
     if checkDaisy(theCube) is True:
         while theCube.get()[FTM] != theCube.get()[FMM] or theCube.get()[UBM] != botColor:
             moves += 'U'
