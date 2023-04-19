@@ -107,6 +107,7 @@ def solveBottomLayer(theCube: Cube) -> str:
                     theCube._rotateU()
                     theCube._rotateU()
                     theCube._rotateU()
+                    return moves + 'x'
         else:
                 moves += 'U'
                 theCube._rotateU()
