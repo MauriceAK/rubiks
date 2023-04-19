@@ -50,6 +50,30 @@ def removeWhiteCorners(theCube: Cube) -> str:
         
     return moves
 
+def frontRightCorner(theCube:Cube) -> str:
+    moves = ''
+    botColor = theCube.get()[DMM]
+    while theCube.get()[DTR] != botColor or theCube.get()[FBR] != theCube.get()[FMM] or \
+     theCube.get()[RBL] != theCube.get()[RMM]:
+           
+        if theCube.get()[FTR] in ['w', 'r', 'b'] and \
+                 theCube.get()[RTL] in ['w', 'r', 'b'] and \
+                 theCube.get()[UBR] in ['w', 'r', 'b']:
+
+                while theCube.get()[DTR] != botColor:
+                    moves += 'RUru'
+                    theCube._rotateR()
+                    theCube._rotateU()
+                    theCube._rotateR()
+                    theCube._rotateR()
+                    theCube._rotateR()
+                    theCube._rotateU()
+                    theCube._rotateU()
+                    theCube._rotateU()
+        else:
+                moves += 'U'
+                theCube._rotateU()
+    return moves
 def solveBottomLayer(theCube: Cube) -> str:
     '''
         This is the top-level function  for rotating
@@ -115,7 +139,7 @@ def solveBottomLayer(theCube: Cube) -> str:
                     theCube.get()[BBL], theCube.get()[DBR], theCube.get()[DBL], theCube.get()[BBR], 
                     theCube.get()[LBL], theCube.get()[FBL], theCube.get()[LBR], theCube.get()[DTL]]
     '''
-    
+    '''
     while theCube.get()[DTR] != botColor or theCube.get()[FBR] != theCube.get()[FMM] or \
      theCube.get()[RBL] != theCube.get()[RMM]:
            
@@ -137,7 +161,7 @@ def solveBottomLayer(theCube: Cube) -> str:
                 moves += 'U'
                 theCube._rotateU()
     
-    
+    '''
     while theCube.get()[DBR] != botColor or theCube.get()[RBR] != theCube.get()[RMM] or \
      theCube.get()[BBL] != theCube.get()[BMM]:
         
