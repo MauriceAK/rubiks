@@ -142,7 +142,7 @@ def solveBottomLayer(theCube: Cube) -> str:
     
     while theCube.get()[DTR] != botColor or theCube.get()[LBR] != theCube.get()[LMM] or \
      theCube.get()[FBL] != theCube.get()[FMM]:
-        
+        return moves + 'x'
         if theCube.get()[LTR] in ['w', 'o', 'b'] and \
                  theCube.get()[FTL] in ['w', 'o', 'b'] and \
                  theCube.get()[UTL] in ['w', 'o', 'b']:
