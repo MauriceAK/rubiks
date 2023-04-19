@@ -44,7 +44,7 @@ class SolveTest(TestCase):
     def test130_solve_bottomCornersIfValid(self):
         parms = {}
         parms['cube'] = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
-        cubeBotLayer = 'ywwobwwyybbwgrybyyrbgoggowoyorrogwrgrobwyrbborboywggrg'
+        cubeBotLayer = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
         theCube = cube.Cube(cubeBotLayer)
         result = solve(parms)
         botLayer = solveBottomLayer(theCube)
