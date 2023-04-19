@@ -47,7 +47,8 @@ def solveBottomLayer(theCube: Cube) -> str:
             moves += 'U'
             theCube._rotateU()
         
-    
+        return 'x'
+            
     
     
     return moves      #TODO:  remove this stubbed value
