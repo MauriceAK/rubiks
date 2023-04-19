@@ -59,11 +59,11 @@ class SolveTest(TestCase):
         parms['cube'] = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
         cubeWhiteCorners = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
         theCube = cube.Cube(cubeWhiteCorners)
+        result = solve(parms)
+        whiteCorners = removeWhiteCorners(theCube)
         cornerWhites = [theCube.get()[DTR], theCube.get()[FBR], theCube.get()[RBL], theCube.get()[RBR], 
                     theCube.get()[BBL], theCube.get()[DBR], theCube.get()[DBL], theCube.get()[BBR], 
                     theCube.get()[LBL], theCube.get()[FBL], theCube.get()[LBR], theCube.get()[DTL]]
-        result = solve(parms)
-        whiteCorners = removeWhiteCorners(theCube)
         x = False
         if 'w' not in cornerWhites:
             x = True
