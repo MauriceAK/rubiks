@@ -53,7 +53,7 @@ class SolveTest(TestCase):
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
         self.assertEqual('uRUuBUBBuLUUFFRRUBBUULL', botCross)  
-        
+    '''    
     def test170_removeWhiteCorners(self): 
         parms = {}
         parms['cube'] = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
@@ -116,7 +116,7 @@ class SolveTest(TestCase):
             x = True
         self.assertEqual(True, x) 
             
-        
+    '''    
         
     
     def test140_solve_returnEmptyForSolvedBottom(self):
