@@ -2,23 +2,6 @@ import rubik.model.constants
 from rubik.model.constants import *
 from rubik.model.cube import Cube
 
-def removeWhiteCorners(string) -> str:
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 def solveBottomLayer(theCube: Cube) -> str:
