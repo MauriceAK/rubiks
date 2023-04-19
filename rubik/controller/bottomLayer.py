@@ -228,6 +228,7 @@ def solveBottomLayer(theCube: Cube) -> str:
         return moves
     
     moves += removeWhiteCorners(theCube)
+    return 'x'
     moves += frontRightCorner(theCube)
     moves += backRightCorner(theCube)     
     moves += backLeftCorner(theCube) 
