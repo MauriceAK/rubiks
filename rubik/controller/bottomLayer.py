@@ -329,5 +329,6 @@ def solveBottomLayer(theCube: Cube) -> str:
                 theCube._rotateU()            
         
     
-    '''       
+    '''  
+    moves += frontLeftCorner(theCube)   
     return moves      #TODO:  remove this stubbed value
