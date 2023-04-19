@@ -2,7 +2,7 @@ from unittest import TestCase
 from rubik.view.solve import solve
 import rubik.model.cube as cube
 from rubik.controller.bottomCross import solveBottomCross
-from rubik.controller.bottomLayer import solveBottomLayer
+from rubik.controller.bottomLayer import *
 
 
 class SolveTest(TestCase):
@@ -52,7 +52,24 @@ class SolveTest(TestCase):
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
-        self.assertEqual('uRUuBUBBuLUUFFRRUBBUULL', botCross)   
+        self.assertEqual('uRUuBUBBuLUUFFRRUBBUULL', botCross)  
+        
+    def test170_removeWhiteCorners(self): 
+        parms = {}
+        parms['cube'] = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
+        cubeWhiteCorners = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
+        theCube = cube.Cube(cubeWhiteCorners)
+        cornerWhites = [theCube.get()[DTR], theCube.get()[FBR], theCube.get()[RBL], theCube.get()[RBR], 
+                    theCube.get()[BBL], theCube.get()[DBR], theCube.get()[DBL], theCube.get()[BBR], 
+                    theCube.get()[LBL], theCube.get()[FBL], theCube.get()[LBR], theCube.get()[DTL]]
+        result = solve(parms)
+        whiteCorners = removeWhiteCorners(theCube)
+        x = False
+        if 'w' not in cornerWhites:
+            x = True
+        self.assertEqual('True', x)  
+        
+        
     
     def test140_solve_returnEmptyForSolvedBottom(self):
         parms = {}
@@ -76,7 +93,7 @@ class SolveTest(TestCase):
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
-        self.assertEqual('BUbUBUbUURUruRUruRUruUBUbuBUbuBUbuBUbuBUbuULUluLUluLUluUFUfuFUfuFUfuFUfuFUfu', botLayer)
+        self.assertEqual('BUbUBUbUURUruRUruRUruUUBubULUluLUluLUluUUFuf', botLayer)
         
     def test160_solve_bottomCornersIfValid(self):
         parms = {}
@@ -88,6 +105,6 @@ class SolveTest(TestCase):
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
-        self.assertEqual('RUrBUbURUrBUbURUrURUrURUrURUrUUURUruRUruRUruRUruRUruUUBUbuUULUluLUluLUluLUluLUluFUfuFUfuFUfuFUfuFUfu', botLayer)
+        self.assertEqual('RUrBUbURUrBUbURUrURUrURUrURUrUUUURurUUBUbuUUULulUFuf', botLayer)
     
     

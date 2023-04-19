@@ -218,11 +218,8 @@ def solveBottomLayer(theCube: Cube) -> str:
     moves = ''
     
     botColor = theCube.get()[DMM]
-    cornerWhites = [theCube.get()[DTR], theCube.get()[FBR], theCube.get()[RBL], theCube.get()[RBR], 
-                    theCube.get()[BBL], theCube.get()[DBR], theCube.get()[DBL], theCube.get()[BBR], 
-                    theCube.get()[LBL], theCube.get()[FBL], theCube.get()[LBR], theCube.get()[DTL]]
-
     
+    #checks if already solved
     if theCube.get()[DTL] == theCube.get()[DBL] == theCube.get()[DTR] == theCube.get()[DBR] == botColor and \
          theCube.get()[FBL] == theCube.get()[FBR] == theCube.get()[FMM] and \
          theCube.get()[RBL] == theCube.get()[RBR] == theCube.get()[RMM] and \
