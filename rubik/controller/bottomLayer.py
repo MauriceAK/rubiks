@@ -61,35 +61,36 @@ def solveBottomLayer(theCube: Cube) -> str:
             theCube._rotateL()
             theCube._rotateL()
         
-        
         moves += 'U'   
         theCube._rotateU()
         cornerWhites = [theCube.get()[DTR], theCube.get()[FBR], theCube.get()[RBL], theCube.get()[RBR], 
                     theCube.get()[BBL], theCube.get()[DBR], theCube.get()[DBL], theCube.get()[BBR], 
                     theCube.get()[LBL], theCube.get()[FBL], theCube.get()[LBR], theCube.get()[DTL]]
         #return moves + 'x'
-    return 'x'
     
-        
-    if theCube.get()[FTR] in ['w', 'r', 'b'] and \
-             theCube.get()[RTL] in ['w', 'r', 'b'] and \
-             theCube.get()[UBR] in ['w', 'r', 'b']:
+    
+    while theCube.get()[DTR] != botColor or theCube.get()[FBR] != theCube.get()[FMM] or \
+     theCube.get()[RBL] != theCube.get()[RMM]:
+           
+        if theCube.get()[FTR] in ['w', 'r', 'b'] and \
+                 theCube.get()[RTL] in ['w', 'r', 'b'] and \
+                 theCube.get()[UBR] in ['w', 'r', 'b']:
+
+                while theCube.get()[DTR] != botColor:
+                    moves += 'RUru'
+                    theCube._rotateR()
+                    theCube._rotateU()
+                    theCube._rotateR()
+                    theCube._rotateR()
+                    theCube._rotateR()
+                    theCube._rotateU()
+                    theCube._rotateU()
+                    theCube._rotateU()
+        else:
+                moves += 'U'
+                theCube._rotateU()
             
-            while theCube.get()[DTR] != botColor:
-                moves += 'RUru'
-                theCube._rotateR()
-                theCube._rotateU()
-                theCube._rotateR()
-                theCube._rotateR()
-                theCube._rotateR()
-                theCube._rotateU()
-                theCube._rotateU()
-                theCube._rotateU()
-    else:
-            moves += 'U'
-            theCube._rotateU()
+                
         
-            
-    
-    
+        
     return moves      #TODO:  remove this stubbed value
