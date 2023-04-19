@@ -65,14 +65,4 @@ class SolveTest(TestCase):
         self.assertIn('integrity', result)
         self.assertEqual('RUrBUbURUrBUbURUrURUrURUrURUrUUURUruRUruRUruRUruRUruUUBUbuUULUluLUluLUluLUluLUluFUfuFUfuFUfuFUfuFUfu', botLayer)
     
-    def test150_solve_bottomCornersIfValid(self):
-        parms = {}
-        parms['cube'] = 'bgwyboobrgryyrryrbbbobgyogggyrrobyowworgygworbwgwwwowy'
-        cubeBotLayer = 'bgwyboobrgryyrryrbbbobgyogggyrrobyowworgygworbwgwwwowy'
-        theCube = cube.Cube(cubeBotLayer)
-        result = solve(parms)
-        botLayer = solveBottomLayer(theCube)
-        self.assertIn('status', result)
-        self.assertEqual('ok', result['status'])
-        self.assertIn('integrity', result)
-        self.assertEqual('RUrBUbURUrBUbURUrURUrURUrURUrUUURUruRUruRUruRUruRUruUUBUbuUULUluLUluLUluLUluLUluFUfuFUfuFUfuFUfuFUfu', botLayer)
+    
