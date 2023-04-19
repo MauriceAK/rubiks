@@ -91,7 +91,7 @@ class SolveTest(TestCase):
          theCube.get()[BBL] == theCube.get()[BMM]:
             x = True
         self.assertEqual(True, x) 
-    '''    
+       
     def test200_backLeftCorner(self):
         parms = {}
         parms['cube'] = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
@@ -103,7 +103,7 @@ class SolveTest(TestCase):
          theCube.get()[LBL] == theCube.get()[LMM]:
             x = True
         self.assertEqual(True, x) 
-        
+    '''    
     def test210_frontLeftCorner(self):
         parms = {}
         parms['cube'] = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
