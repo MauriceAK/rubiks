@@ -114,14 +114,14 @@ def     solveBottomCross(theCube: Cube) -> str:
         moves += 'FF'
         theCube._rotateF()
         theCube._rotateF()
-        return 'X'   
+         
         while theCube.get()[RTM] != theCube.get()[RMM] or theCube.get()[UMR] != botColor:
             moves += 'U'
             theCube._rotateU()
         moves +='RR'
         theCube._rotateR()
         theCube._rotateR()
-        
+        return 'X'  
         while theCube.get()[BTM] != theCube.get()[BMM] or theCube.get()[UTM] != botColor:
             moves += 'U'
             theCube._rotateU()
