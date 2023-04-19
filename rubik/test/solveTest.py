@@ -40,7 +40,7 @@ class SolveTest(TestCase):
         self.assertIn('integrity', result)
         self.assertEqual('uRUuBUBBuLUUFFRRUBBUULL', botCross)
         
-    def test120_solve_bottomCornersIfValid(self):
+    def test130_solve_bottomCornersIfValid(self):
         parms = {}
         parms['cube'] = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
         result = solve(parms)
