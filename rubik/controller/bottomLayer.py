@@ -123,7 +123,7 @@ def solveBottomLayer(theCube: Cube) -> str:
                  theCube.get()[UTL] in ['w', 'o', 'g']:
                 
                
-                while theCube.get()[DBR] != botColor:
+                while theCube.get()[DBL] != botColor:
                     moves += 'LUlu'
                     theCube._rotateL()
                     theCube._rotateU()
@@ -139,5 +139,5 @@ def solveBottomLayer(theCube: Cube) -> str:
                 theCube._rotateU()            
         
     
-        return moves + 'x'     
+            
     return moves      #TODO:  remove this stubbed value
