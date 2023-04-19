@@ -24,8 +24,8 @@ def solveBottomLayer(theCube: Cube) -> str:
     
     while theCube.get()[DTR] != botColor:
         #if white and green and blue in white blue green
-        if theCube.get()[FTR] == botColor or theCube.get()[FTR] == theCube.get()[FMM] or theCube.get()[FTR] == theCube.get()[RMM] and \
-         theCube.get()[LTL] == botColor or theCube.get()[LTL] == theCube.get()[LMM] or theCube.get()[LTL] == theCube.get()[RMM] and \
+        if theCube.get()[FTR] == botColor or theCube.get()[FTR] == theCube.get()[FMM] or theCube.get()[FTR] == theCube.get()[LMM] and \
+         theCube.get()[RTL] == botColor or theCube.get()[RTL] == theCube.get()[FMM] or theCube.get()[RTL] == theCube.get()[RMM] and \
          theCube.get()[UBR] == botColor or theCube.get()[UBR] == theCube.get()[FMM] or theCube.get()[UBR] == theCube.get()[RMM]:
             return 'x'
             moves += 'RUru'
