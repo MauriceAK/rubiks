@@ -82,7 +82,7 @@ def     solveBottomCross(theCube: Cube) -> str:
         while theCube.get()[UTM] != botColor:
             moves += 'B'
             theCube._rotateB()
-    elif botColor in {theCube.get()[FTM], theCube.get()[FMR], theCube.get()[FML], theCube.get()[FBM]}:
+    elif botColor in {theCube.get()[BTM], theCube.get()[BMR], theCube.get()[BML], theCube.get()[BBM]}:
         while theCube.get()[BMR] != botColor:
             moves += 'B'
             theCube._rotateB()
@@ -101,7 +101,7 @@ def     solveBottomCross(theCube: Cube) -> str:
         while theCube.get()[UML] != botColor:
             moves += 'L'
             theCube._rotateL()
-    elif botColor in {theCube.get()[FTM], theCube.get()[FMR], theCube.get()[FML], theCube.get()[FBM]}:
+    elif botColor in {theCube.get()[LTM], theCube.get()[LMR], theCube.get()[LML], theCube.get()[LBM]}:
         while theCube.get()[LMR] != botColor:
             moves += 'L' 
             theCube._rotateL()
