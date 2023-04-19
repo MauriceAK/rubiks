@@ -25,7 +25,6 @@ def solveBottomLayer(theCube: Cube) -> str:
         return moves
     
     while theCube.get()[DTR] != botColor:
-        return theCube.get()[FTR]
         #if white and green and blue in white blue green
         if theCube.get()[FTR] in cornerWRB and \
          theCube.get()[RTL] in cornerWRB and \
