@@ -40,7 +40,7 @@ def     solveBottomCross(theCube: Cube) -> str:
     botcolor_edges = [i for i in range(len(cubeList)) if cubeList[i] == botColor]
     
     #front top edge
-    
+    return 'X'
     if botColor in {cubeList[RML], cubeList[DTM], cubeList[LMR]}:
         while cubeList[UBM] != botColor:
             moves += 'F'
