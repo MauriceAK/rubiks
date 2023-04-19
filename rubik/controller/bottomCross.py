@@ -118,7 +118,7 @@ def     solveBottomCross(theCube: Cube) -> str:
     
     
     if theCube.get()[UTM] == theCube.get()[UML] == theCube.get()[UMR] == theCube.get()[UBM] == botColor:
-        return 'x'
+        moves += 'x'
         while theCube.get()[FTM] != theCube.get()[FMM] or theCube.get()[UBM] != botColor:
             moves += 'U'
             theCube._rotateU()
