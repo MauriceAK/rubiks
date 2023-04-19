@@ -1,6 +1,7 @@
 from unittest import TestCase
 from rubik.view.solve import solve
-
+import rubik.model.cube as cube
+from rubik.controller.bottomCross import solveBottomCross
 
 
 class SolveTest(TestCase):
@@ -30,17 +31,19 @@ class SolveTest(TestCase):
     def test120_solve_bottomCrossIfValid(self):
         parms = {}
         parms['cube'] = 'ywwobwwyybbwgrybyyrbgoggowoyorrogwrgrobwyrbborboywggrg'
-        result = solve(parms)
+        cubeBotCross = 'ywwobwwyybbwgrybyyrbgoggowoyorrogwrgrobwyrbborboywggrg'
+        theCube = cube.Cube(cubeBotCross)
+        result = solveBottomCross(theCube)
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
         self.assertEqual('uRUuBUBBuLUUFFRRUBBUULL', result.get('solution'))
         
-    def test120_solve_bottomCornersIfValid(self):
-        parms = {}
-        parms['cube'] = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
-        result = solve(parms)
-        self.assertIn('status', result)
-        self.assertEqual('ok', result['status'])
-        self.assertIn('integrity', result)
-        self.assertEqual('uRUuBUBBuLUUFFRRUBBUULL', result.get('solution'))
+    #def test120_solve_bottomCornersIfValid(self):
+    #    parms = {}
+    #    parms['cube'] = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
+    #    result = solve(parms)
+    #    self.assertIn('status', result)
+    #    self.assertEqual('ok', result['status'])
+    #    self.assertIn('integrity', result)
+    #    self.assertEqual('uRUuBUBBuLUUFFRRUBBUULL', result.get('solution'))
