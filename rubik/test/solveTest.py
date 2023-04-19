@@ -17,7 +17,17 @@ class SolveTest(TestCase):
         self.assertEqual('FRBLUD', result.get('solution'))
 
     
-    def test110_solve_bottomCrossIfValid(self):
+    def test110_solve_returnEmptyForSolvedCross(self):
+        parms = {}
+        parms['cube'] = 'bbbbbbbbbrrrrrrrrrooooooooogggggggggyyyyyyyyywwwwwwwww'
+        result = solve(parms)
+        self.assertIn('status', result)
+        self.assertEqual('ok', result['status'])
+        self.assertIn('integrity', result)
+        self.assertEqual('', result.get('solution'))
+        
+        
+    def test120_solve_bottomCrossIfValid(self):
         parms = {}
         parms['cube'] = 'bybybwgbbobygrwrbgoooogwrgwyryroggorgbbgyrrrwwwwywyooy'
         result = solve(parms)
