@@ -96,7 +96,7 @@ def solveBottomLayer(theCube: Cube) -> str:
         if theCube.get()[BTL] in ['w', 'r', 'g'] and \
                  theCube.get()[RTR] in ['w', 'r', 'g'] and \
                  theCube.get()[UTL] in ['w', 'r', 'g']:
-                return 'x'
+                return moves + 'x'
                 while theCube.get()[DTR] != botColor:
                     moves += 'BUbu'
                     theCube._rotateB()
