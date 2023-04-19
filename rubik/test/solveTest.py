@@ -75,8 +75,44 @@ class SolveTest(TestCase):
         theCube = cube.Cube(cubeFrontRight)
         frontRightCorner(theCube)
         x = False
-        if theCube.get()[DTR] != theCube.get()[DMM] and theCube.get()[FBR] == theCube.get()[FMM] and \
+        if theCube.get()[DTR] == theCube.get()[DMM] and theCube.get()[FBR] == theCube.get()[FMM] and \
          theCube.get()[RBL] == theCube.get()[RMM]:
+            x = True
+        self.assertEqual(True, x) 
+    
+    def test190_backRightCorner(self):
+        parms = {}
+        parms['cube'] = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
+        cubeBackRight = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo' 
+        theCube = cube.Cube(cubeBackRight)
+        backRightCorner(theCube)
+        x = False
+        if theCube.get()[DBR] == theCube.get()[DMM] and theCube.get()[RBR] == theCube.get()[RMM] and \
+         theCube.get()[BBL] == theCube.get()[BMM]:
+            x = True
+        self.assertEqual(True, x) 
+        
+    def test200_backLeftCorner(self):
+        parms = {}
+        parms['cube'] = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
+        cubeBackLeft = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo' 
+        theCube = cube.Cube(cubeBackLeft)
+        backLeftCorner(theCube)
+        x = False
+        if theCube.get()[DBL] == theCube.get()[DMM] and theCube.get()[BBR] == theCube.get()[BMM] and \
+         theCube.get()[LBL] == theCube.get()[LMM]:
+            x = True
+        self.assertEqual(True, x) 
+        
+    def test210_frontLeftCorner(self):
+        parms = {}
+        parms['cube'] = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
+        cubeFrontRight = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo' 
+        theCube = cube.Cube(cubeFrontRight)
+        frontRightCorner(theCube)
+        x = False
+        if theCube.get()[DTR] == theCube.get()[DMM] and theCube.get()[FBR] == theCube.get()[FMM] and \
+         theCube.get()[FBL] == theCube.get()[FMM]:
             x = True
         self.assertEqual(True, x) 
             
