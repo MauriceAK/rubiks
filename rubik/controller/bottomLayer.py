@@ -15,7 +15,7 @@ def solveBottomLayer(theCube: Cube) -> str:
     
     botColor = theCube.get()[DMM]
     cornerWRB = [botColor, theCube.get()[FMM], theCube.get()[RMM]]
-    print (*cornerWRB)
+    return (*cornerWRB)
     
     if theCube.get()[DTL] == theCube.get()[DBL] == theCube.get()[DTR] == theCube.get()[DBR] == botColor and \
          theCube.get()[FBL] == theCube.get()[FBR] == theCube.get()[FMM] and \
