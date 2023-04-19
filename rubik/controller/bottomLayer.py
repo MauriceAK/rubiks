@@ -152,7 +152,7 @@ def solveBottomLayer(theCube: Cube) -> str:
                     moves += 'FUfu'
                     theCube._rotateF()
                     theCube._rotateU()
-                    theCube._rotateFL()
+                    theCube._rotateF()
                     theCube._rotateF()
                     theCube._rotateF()
                     theCube._rotateU()
