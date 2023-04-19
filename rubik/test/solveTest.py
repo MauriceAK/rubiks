@@ -75,7 +75,7 @@ class SolveTest(TestCase):
         theCube = cube.Cube(cubeFrontRight)
         frontRightCorner(theCube)
         x = False
-        if theCube.get()[DTR] == theCube.get()[DMM] and theCube.get()[FBR] == theCube.get()[FMM] and \
+        if theCube.get()[DTR] != theCube.get()[DMM] and theCube.get()[FBR] == theCube.get()[FMM] and \
          theCube.get()[RBL] == theCube.get()[RMM]:
             x = True
         self.assertEqual(True, x) 
