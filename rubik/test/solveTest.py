@@ -2,6 +2,7 @@ from unittest import TestCase
 from rubik.view.solve import solve
 import rubik.model.cube as cube
 from rubik.controller.bottomCross import solveBottomCross
+from rubik.controller.bottomLayer import solveBottomLayer
 
 
 class SolveTest(TestCase):
@@ -43,8 +44,11 @@ class SolveTest(TestCase):
     def test130_solve_bottomCornersIfValid(self):
         parms = {}
         parms['cube'] = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
+        cubeBotLayer = 'ywwobwwyybbwgrybyyrbgoggowoyorrogwrgrobwyrbborboywggrg'
+        theCube = cube.Cube(cubeBotLayer)
         result = solve(parms)
+        botLayer = solveBottomLayer(theCube)
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
-        self.assertEqual('uRUuBUBBuLUUFFRRUBBUULL', result.get('solution'))
+        self.assertEqual('uRUuBUBBuLUUFFRRUBBUULL', botLayer)
