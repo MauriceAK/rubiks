@@ -169,7 +169,7 @@ def backLeftCorner(theCube:Cube) -> str:
 def frontLeftCorner(theCube:Cube) -> str:
     moves = ''
     botColor = theCube.get()[DMM]
-    while theCube.get()[DTL] != botColor or theCube.get()[LBR] != theCube.get()[LMM] or \
+    while theCube.get()[DTR] != botColor or theCube.get()[LBR] != theCube.get()[LMM] or \
      theCube.get()[FBL] != theCube.get()[FMM]:
         
         if theCube.get()[LTR] in ['w', 'o', 'b'] and \
