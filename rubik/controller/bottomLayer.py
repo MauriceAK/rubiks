@@ -15,9 +15,9 @@ def solveBottomLayer(theCube: Cube) -> str:
     
     botColor = theCube.get()[DMM]
     cornerWRB = [botColor, theCube.get()[FMM], theCube.get()[RMM]]
-    cornerWhites = [theCube.get()[DTR], theCube.get()[FBR], theCube.get()[LBL], theCube.get()[RBR], 
-                    theCube.get()[BBL], theCube.get()[UBR], theCube.get()[UBL], theCube.get()[BBR], 
-                    theCube.get()[LBL], theCube.get()[FBL], theCube.get()[LBR], theCube.get()[UTL]]
+    cornerWhites = [theCube.get()[DTR], theCube.get()[FBR], theCube.get()[RBL], theCube.get()[RBR], 
+                    theCube.get()[BBL], theCube.get()[DBR], theCube.get()[DBL], theCube.get()[BBR], 
+                    theCube.get()[LBL], theCube.get()[FBL], theCube.get()[LBR], theCube.get()[DTL]]
 
     
     if theCube.get()[DTL] == theCube.get()[DBL] == theCube.get()[DTR] == theCube.get()[DBR] == botColor and \
@@ -29,7 +29,7 @@ def solveBottomLayer(theCube: Cube) -> str:
     
     
     while botColor in cornerWhites:
-        return 'x'
+        #return 'x'
         if botColor in [theCube.get()[DTL], theCube.get()[FBL], theCube.get()[LBR]]:
             moves += 'FUf'
             theCube._rotateF()
