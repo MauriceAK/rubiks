@@ -29,7 +29,6 @@ def solveBottomLayer(theCube: Cube) -> str:
     
     
     while botColor in cornerWhites:
-        
         if botColor in [theCube.get()[DTL], theCube.get()[FBL], theCube.get()[LBR]]:
             moves += 'FUf'
             theCube._rotateF()
@@ -65,6 +64,9 @@ def solveBottomLayer(theCube: Cube) -> str:
         
         moves += 'U'   
         theCube._rotateU()
+        cornerWhites = [theCube.get()[DTR], theCube.get()[FBR], theCube.get()[RBL], theCube.get()[RBR], 
+                    theCube.get()[BBL], theCube.get()[DBR], theCube.get()[DBL], theCube.get()[BBR], 
+                    theCube.get()[LBL], theCube.get()[FBL], theCube.get()[LBR], theCube.get()[DTL]]
         #return moves + 'x'
     return 'x'
     
