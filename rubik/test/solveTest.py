@@ -33,11 +33,12 @@ class SolveTest(TestCase):
         parms['cube'] = 'ywwobwwyybbwgrybyyrbgoggowoyorrogwrgrobwyrbborboywggrg'
         cubeBotCross = 'ywwobwwyybbwgrybyyrbgoggowoyorrogwrgrobwyrbborboywggrg'
         theCube = cube.Cube(cubeBotCross)
-        result = solveBottomCross(theCube)
+        result = solve(parms)
+        botCross = solveBottomCross(theCube)
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
-        self.assertEqual('uRUuBUBBuLUUFFRRUBBUULL', result.get('solution'))
+        self.assertEqual('uRUuBUBBuLUUFFRRUBBUULL', botCross)
         
     #def test120_solve_bottomCornersIfValid(self):
     #    parms = {}
