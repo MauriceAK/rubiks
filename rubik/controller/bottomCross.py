@@ -2,9 +2,9 @@ import rubik.model.constants
 from rubik.model.constants import *
 from rubik.model.cube import Cube
 
-def checkDaisy(cubeList):
-    botColor = cubeList[DMM]
-    if cubeList[UTM] == cubeList[UML] == cubeList[UMR] == cubeList[UBM] == botColor:
+def checkDaisy(theCube):
+    botColor = theCube.get()[DMM]
+    if theCube.get()[UTM] == theCube.get()[UML] == theCube.get()[UMR] == theCube.get()[UBM] == botColor:
         return True
 
 def     solveBottomCross(theCube: Cube) -> str:
@@ -39,12 +39,12 @@ def     solveBottomCross(theCube: Cube) -> str:
    
     #botcolor_edges = [i for i in range(len(cubeList)) if cubeList[i] == botColor]
     #return 'X'
-    if botColor == cubeList[RML] or botColor == cubeList[DTM] or botColor == cubeList[LMR]:
+    if botColor == theCube.get()[RML] or botColor == theCube.get()[DTM] or botColor == theCube.get()[LMR]:
         while theCube.get()[UBM] != botColor:
             moves += 'F'
             theCube._rotateF()
-    elif botColor == cubeList[FTM] or botColor == cubeList[FMR] or botColor == cubeList[FML] or botColor == cubeList[FBM]:
-        while cubeList[FMR] != botColor:
+    elif botColor == theCube.get()[FTM] or botColor == theCube.get()[FMR] or botColor == theCube.get()[FML] or botColor == theCube.get()[FBM]:
+        while theCube.get()[FMR] != botColor:
             moves += 'F'
             theCube._rotateF()
         moves += 'uRU'
