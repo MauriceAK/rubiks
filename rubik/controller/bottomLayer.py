@@ -139,5 +139,30 @@ def solveBottomLayer(theCube: Cube) -> str:
                 theCube._rotateU()            
         
     
+    
+    while theCube.get()[DTR] != botColor or theCube.get()[LBR] != theCube.get()[LMM] or \
+     theCube.get()[FBL] != theCube.get()[FMM]:
+        
+        if theCube.get()[LTR] in ['w', 'o', 'b'] and \
+                 theCube.get()[FTL] in ['w', 'o', 'b'] and \
+                 theCube.get()[UTL] in ['w', 'o', 'b']:
+                
+               
+                while theCube.get()[DTL] != botColor:
+                    moves += 'LUlu'
+                    theCube._rotateL()
+                    theCube._rotateU()
+                    theCube._rotateL()
+                    theCube._rotateL()
+                    theCube._rotateL()
+                    theCube._rotateU()
+                    theCube._rotateU()
+                    theCube._rotateU()
+                   
+        else:
+                moves += 'U'
+                theCube._rotateU()            
+        
+    
             
     return moves      #TODO:  remove this stubbed value
