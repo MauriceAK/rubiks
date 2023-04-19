@@ -38,7 +38,7 @@ def     solveBottomCross(theCube: Cube) -> str:
         return moves
    
     #botcolor_edges = [i for i in range(len(cubeList)) if cubeList[i] == botColor]
-    #return 'X' 
+    return 'X' 
     
     if botColor == theCube.get()[RML] or botColor == theCube.get()[DTM] or botColor == theCube.get()[LMR]:
         while theCube.get()[UBM] != botColor:
