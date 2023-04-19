@@ -91,7 +91,7 @@ def solveBottomLayer(theCube: Cube) -> str:
                 theCube._rotateU()
     
     
-    while theCube.get()[DBR] == botColor and theCube.get()[RBR] == theCube.get()[RMM] and \
+    while theCube.get()[DBR] == botColor is False and theCube.get()[RBR] == theCube.get()[RMM] is False and \
      theCube.get()[BBL] == theCube.get()[BMM] is False:
         
         if theCube.get()[BTL] in ['w', 'r', 'g'] and \
