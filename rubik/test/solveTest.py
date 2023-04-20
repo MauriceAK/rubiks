@@ -3,6 +3,7 @@ from rubik.view.solve import solve
 import rubik.model.cube as cube
 from rubik.controller.bottomCross import solveBottomCross
 from rubik.controller.bottomLayer import *
+from rubik.controller.middleLayer import *
 
 
 class SolveTest(TestCase):
@@ -153,4 +154,14 @@ class SolveTest(TestCase):
         self.assertIn('integrity', result)
         self.assertEqual('RUrBUbURUrBUbURUrURUrURUrURUrUUUURurUUBUbuUUULulUFuf', botLayer)
     
-    
+    def test220_solve_middleEdgesIfValid(self):
+        parms = {}
+        parms['cube'] = 'robybobbbrrbbrrrrryogbgygggoyyrogoooyyobygggywwwwwwwww'
+        cubeMidLayer = 'robybobbbrrbbrrrrryogbgygggoyyrogoooyyobygggywwwwwwwww'
+        theCube = cube.Cube(cubeMidLayer)
+        result = solve(parms)
+        midLayer = solveMiddleLayer(theCube)
+        self.assertIn('status', result)
+        self.assertEqual('ok', result['status'])
+        self.assertIn('integrity', result)
+        self.assertEqual('RUrBUbURUrBUbURUrURUrURUrURUrUUUURurUUBUbuUUULulUFuf', midLayer)
