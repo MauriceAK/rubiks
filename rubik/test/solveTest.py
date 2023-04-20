@@ -117,8 +117,6 @@ class SolveTest(TestCase):
         self.assertEqual(True, x) 
             
        
-        
-    
     def test140_solve_returnEmptyForSolvedBottom(self):
         parms = {}
         parms['cube'] = 'rrbbbobbbyyyyrrrrrgrrbgggggggbyoooooyyooybygowwwwwwwww'
