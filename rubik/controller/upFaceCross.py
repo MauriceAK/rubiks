@@ -163,7 +163,7 @@ def solveUpCross(theCube: Cube) -> str:
     theCube.get()[UMR] == theCube.get()[UML]:
         return moves
     
-    return 'x'
+    return moves
     makeTopCross(theCube)
     
     

@@ -320,7 +320,7 @@ class SolveTest(TestCase):
         self.assertEqual('UBUburuRUULUlubuBUUBUburuRUULUlubuBUUFUfuluLUURUrufuFUUUFUfuluLUUUURUrufuFUUuruRUBUbuuubuBULUlu', midLayer)
         self.assertIn(result['integrity'],'d1fb44852b3724cb340f1d228a17b3b74473f7270bc914dd01582d582900078b')
         
-    def test450_solve_topCross(self):
+    def test510_solve_topCross(self):
         parms = {}
         parms['cube'] = 'oyobbbbbbyyrrrrrrrgobggggggrryooooooyyyyybbggwwwwwwwww'
         cubeTopCross = 'oyobbbbbbyyrrrrrrrgobggggggrryooooooyyyyybbggwwwwwwwww'
