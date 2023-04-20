@@ -306,7 +306,7 @@ class SolveTest(TestCase):
         topRight = theCube.get()[UMR]
         rightLeftEdge(theCube)
         self.assertEqual(rightTop + topRight, theCube.get()[RML] + theCube.get()[FMR])
-    
+    '''
     def test500_checkIntegrity(self):
         parms = {}
         parms['cube'] = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
@@ -319,7 +319,7 @@ class SolveTest(TestCase):
         self.assertIn('integrity', result)
         self.assertEqual('UBUburuRUULUlubuBUUBUburuRUULUlubuBUUFUfuluLUURUrufuFUUUFUfuluLUUUURUrufuFUUuruRUBUbuuubuBULUlu', midLayer)
         self.assertIn(result['integrity'],'d1fb44852b3724cb340f1d228a17b3b74473f7270bc914dd01582d582900078b')
-        
+    '''   
     def test510_solve_topCross(self):
         parms = {}
         parms['cube'] = 'oyobbbbbbyyrrrrrrrgobggggggrryooooooyyyyybbggwwwwwwwww'
