@@ -205,7 +205,7 @@ def solveMiddleLayer(theCube: Cube) -> str:
         if theCube.get()[FMM] != theCube.get()[FML] or theCube.get()[FMM] != theCube.get()[FMR] or \
         theCube.get()[LMR] != theCube.get()[LMM] or \
         theCube.get()[RMR] != theCube.get()[RMM]:
-            return moves + 'x'    
+            return theCube.get()   
     
     
     
