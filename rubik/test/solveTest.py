@@ -166,3 +166,15 @@ class SolveTest(TestCase):
         self.assertIn('integrity', result)
         self.assertEqual('ULUlubuBUUFUfuluLUURUrufuFUUFUfuluLUURUrufuFUUBUburuRUUUURUrufuFUUUUuluLUFUfuUUULUlubuBUUUUuruRUBUbu', midLayer)
     
+    def test230_solve_middleEdgesIfValid(self):
+        parms = {}
+        parms['cube'] = 'bbygbybbbryobrrrrrbyybgrgggggygooooooryyyorogwwwwwwwww'
+        cubeMidLayer = 'bbygbybbbryobrrrrrbyybgrgggggygooooooryyyorogwwwwwwwww'
+        theCube = cube.Cube(cubeMidLayer)
+        result = solve(parms)
+        midLayer = solveMiddleLayer(theCube)
+        self.assertIn('status', result)
+        self.assertEqual('ok', result['status'])
+        self.assertIn('integrity', result)
+        self.assertEqual('ULUlubuBUUFUfuluLUURUrufuFUUFUfuluLUURUrufuFUUBUburuRUUUURUrufuFUUUUuluLUFUfuUUULUlubuBUUUUuruRUBUbu', midLayer)
+    
