@@ -262,11 +262,11 @@ def solveMiddleLayer(theCube: Cube) -> str:
     while theCube.get()[BMM] != theCube.get()[BML] or theCube.get()[BMM] != theCube.get()[BMR] or \
         theCube.get()[LML] != theCube.get()[LMM] or \
         theCube.get()[RMR] != theCube.get()[RMM]:
-        return 'x'
+        
         while theCube.get()[BMM] not in [theCube.get()[BTM], theCube.get()[UTM]]:
             moves += 'U'
             theCube._rotateU()
-        
+            return 'x'
         if theCube.get()[BMM] == theCube.get()[BTM] and theCube.get()[UTM] == theCube.get()[LMM]:
             moves += backRightEdge(theCube)
             
