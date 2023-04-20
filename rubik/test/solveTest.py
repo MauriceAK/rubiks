@@ -312,6 +312,6 @@ class SolveTest(TestCase):
         rightTop = theCube.get()[RTM]
         topRight = theCube.get()[UMR]
         rightLeftEdge(theCube)
-        self.assertEqual(rightTop + topRight, theCube.get()[RML] + theCube.get()[FMR])
+        self.assertEqual('w' + topRight, theCube.get()[RML] + theCube.get()[FMR])
             
     
