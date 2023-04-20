@@ -1,4 +1,5 @@
 import rubik.model.constants
+from rubik.model.constants import *
 from rubik.model.cube import Cube
 
 def solveUpSurface(theCube: Cube) -> str:
@@ -9,4 +10,14 @@ def solveUpSurface(theCube: Cube) -> str:
         input:  an instance of the cube class with up-face cross solved
         output: the rotations required to solve the up surface  
     '''  
-    return ''      #TODO:  remove this stubbed value
+    
+    moves = ''
+    
+    if ['b','r'] in [theCube.get()[FTR], theCube.get()[RTL], theCube.get()[UBR]]:
+        return 'x'
+    
+    
+    
+    
+    
+    return moves      #TODO:  remove this stubbed value

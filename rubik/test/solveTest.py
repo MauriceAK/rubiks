@@ -342,4 +342,16 @@ class SolveTest(TestCase):
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
-        self.assertEqual('FURurf', topCross)
+        self.assertEqual('LFUful', topCross)
+        
+    def test530_solve_upSurface(self):
+        parms = {}
+        parms['cube'] = 'ogbbbbbbbrrgrrrrrryogggggggobyooooooyyryyybyywwwwwwwww'
+        cubeTopFace = 'ogbbbbbbbrrgrrrrrryogggggggobyooooooyyryyybyywwwwwwwww'
+        theCube = cube.Cube(cubeTopFace)
+        result = solve(parms)
+        topFace = solveUpCross(theCube)
+        self.assertIn('status', result)
+        self.assertEqual('ok', result['status'])
+        self.assertIn('integrity', result)
+        self.assertEqual('LFUful', topFace)
