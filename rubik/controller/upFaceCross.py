@@ -138,11 +138,11 @@ def makeTopCross(theCube: Cube) -> str:
             return moves
         #back
         elif theCube.get()[UMM] == theCube.get()[UML] == theCube.get()[UTM]:
-            return 'x'
             angleCross(theCube)
             return moves
         #right
         elif theCube.get()[UMM] == theCube.get()[UTM] == theCube.get()[UMR]:
+            return 'x'
             angleCross(theCube)
             return moves
         #middle
