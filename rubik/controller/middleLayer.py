@@ -176,7 +176,7 @@ def solveMiddleLayer(theCube: Cube) -> str:
                    theCube.get()[BTM], theCube.get()[UTM], theCube.get()[LTM], theCube.get()[UML]]
     
     
-    
+    return theCube.get()  
     while theCube.get()[FMM] != theCube.get()[FML] or theCube.get()[FMM] != theCube.get()[FMR] or \
         theCube.get()[LMR] != theCube.get()[LMM] or \
         theCube.get()[RMR] != theCube.get()[RMM]:
