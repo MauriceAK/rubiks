@@ -34,6 +34,6 @@ def solve(parms):
     fullToken = sha256Hash.hexdigest()
     hashRand = random.randrange(len(fullToken) - 8)
     integrity = fullToken[hashRand:hashRand + 8]
-    result['integrity'] = integrity              #iteration 3
+    result['integrity'] = fullToken + '\n' + hashToken + '\n' + integrity              #iteration 3
                      
     return result
