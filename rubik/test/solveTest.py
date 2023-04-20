@@ -4,6 +4,7 @@ import rubik.model.cube as cube
 from rubik.controller.bottomCross import solveBottomCross
 from rubik.controller.bottomLayer import *
 from rubik.controller.middleLayer import *
+from rubik.controller.upFaceCross import *
 
 
 class SolveTest(TestCase):
@@ -306,7 +307,7 @@ class SolveTest(TestCase):
         rightLeftEdge(theCube)
         self.assertEqual(rightTop + topRight, theCube.get()[RML] + theCube.get()[FMR])
     
-    def test500_solve_middleEdgesIfValid(self):
+    def test500_checkIntegrity(self):
         parms = {}
         parms['cube'] = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
         cubeMidLayer = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
@@ -318,3 +319,15 @@ class SolveTest(TestCase):
         self.assertIn('integrity', result)
         self.assertEqual('UBUburuRUULUlubuBUUBUburuRUULUlubuBUUFUfuluLUURUrufuFUUUFUfuluLUUUURUrufuFUUuruRUBUbuuubuBULUlu', midLayer)
         self.assertIn(result['integrity'],'d1fb44852b3724cb340f1d228a17b3b74473f7270bc914dd01582d582900078b')
+        
+    def test450_solve_topCross(self):
+        parms = {}
+        parms['cube'] = 'oyobbbbbbyyrrrrrrrgobggggggrryooooooyyyyybbggwwwwwwwww'
+        cubeTopCross = 'oyobbbbbbyyrrrrrrrgobggggggrryooooooyyyyybbggwwwwwwwww'
+        theCube = cube.Cube(cubeTopCross)
+        result = solve(parms)
+        topCross = solveUpCross(theCube)
+        self.assertIn('status', result)
+        self.assertEqual('ok', result['status'])
+        self.assertIn('integrity', result)
+        self.assertEqual('URUrufuFUUBUburuRUULUlubuBUUUUFUfuluLUUUuufuFURUruULUlubuBUuruRUBUbu', topCross)
