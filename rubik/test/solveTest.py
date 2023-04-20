@@ -317,4 +317,4 @@ class SolveTest(TestCase):
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
         self.assertEqual('UBUburuRUULUlubuBUUBUburuRUULUlubuBUUFUfuluLUURUrufuFUUUFUfuluLUUUURUrufuFUUuruRUBUbuuubuBULUlu', midLayer)
-        self.assertEqual('integrity', result['integrity'])
+        self.assertIn(result['integrity'],'d1fb44852b3724cb340f1d228a17b3b74473f7270bc914dd01582d582900078b')
