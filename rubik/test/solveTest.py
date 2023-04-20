@@ -107,9 +107,9 @@ class SolveTest(TestCase):
     def test210_frontLeftCorner(self):
         parms = {}
         parms['cube'] = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
-        cubeFrontRight = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo' 
-        theCube = cube.Cube(cubeFrontRight)
-        frontRightCorner(theCube)
+        cubeFrontLeft = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo' 
+        theCube = cube.Cube(cubeFrontLeft)
+        frontLeftCorner(theCube)
         x = False
         if theCube.get()[DTL] == theCube.get()[DMM] and theCube.get()[LBR] == theCube.get()[LMM] and \
          theCube.get()[FBL] == theCube.get()[FMM]:
