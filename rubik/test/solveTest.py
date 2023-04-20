@@ -19,7 +19,7 @@ class SolveTest(TestCase):
         self.assertIn('integrity', result)
         self.assertEqual('', result.get('solution'))
 
-    '''
+    
     def test110_solve_returnEmptyForSolvedCross(self):
         parms = {}
         parms['cube'] = 'bbbbbbbbbrrrrrrrrrooooooooogggggggggyyyyyyyyywwwwwwwww'
@@ -165,4 +165,4 @@ class SolveTest(TestCase):
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
         self.assertEqual('RUrBUbURUrBUbURUrURUrURUrURUrUUUURurUUBUbuUUULulUFuf', midLayer)
-    '''
+    
