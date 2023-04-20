@@ -234,7 +234,8 @@ def solveMiddleLayer(theCube: Cube) -> str:
         theCube.get()[LMR] != theCube.get()[LMM] or \
         theCube.get()[RML] != theCube.get()[RMM]:
         
-        while theCube.get()[FMM] not in [theCube.get()[FTM], theCube.get()[UBM]]:
+        while theCube.get()[FMM] not in [theCube.get()[FTM], theCube.get()[UBM]] and \
+         theCube.get()[UMM] not in [theCube.get()[FTM], theCube.get()[UBM]]:
             moves += 'U'
             theCube._rotateU()
            
@@ -261,7 +262,8 @@ def solveMiddleLayer(theCube: Cube) -> str:
         theCube.get()[LML] != theCube.get()[LMM] or \
         theCube.get()[RMR] != theCube.get()[RMM]:
         
-        while theCube.get()[BMM] not in [theCube.get()[BTM], theCube.get()[UTM]]:
+        while theCube.get()[BMM] not in [theCube.get()[BTM], theCube.get()[UTM]] and \
+        theCube.get()[BMM] not in [theCube.get()[BTM], theCube.get()[UTM]]:
             moves += 'U'
             theCube._rotateU()
             
