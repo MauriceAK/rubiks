@@ -344,7 +344,7 @@ class SolveTest(TestCase):
         self.assertIn('integrity', result)
         self.assertEqual('LFUful', topCross)
     
-        
+    '''    
     def test530_solve_upSurfaceSolved(self):
         parms = {}
         parms['cube'] = 'bbbbbbbbbrrrrrrrrrooooooooogggggggggyyyyyyyyywwwwwwwww'
@@ -368,5 +368,5 @@ class SolveTest(TestCase):
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
         self.assertEqual('LFUful', topFace)
-    '''    
+        
         
