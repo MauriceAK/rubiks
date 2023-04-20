@@ -147,7 +147,7 @@ class SolveTest(TestCase):
         cubeBotLayer = 'yrrrbggbbwbrorbwrobbbyggwggrobyogyoyyrwyyooygrwowwwowg'
         theCube = cube.Cube(cubeBotLayer)
         result = solve(parms)
-        botLayer = solveBottomLayer(theCube)
+        botLayer = solve(theCube)
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
