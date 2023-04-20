@@ -22,8 +22,8 @@ def makeTopCross(theCube: Cube) -> str:
         theCube._rotateF()
         theCube._rotateF()
         theCube._rotateF()
-        return moves
-
+        
+    return moves
 def solveUpCross(theCube: Cube) -> str:
     '''
         This is the top-level function  for rotating
