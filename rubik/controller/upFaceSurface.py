@@ -85,7 +85,7 @@ def solveUpSurface(theCube: Cube) -> str:
     '''
     #return 'xyz'
 
-    while theCube.get()[FMM] not in [theCube.get()[FTR], theCube.get()[RTL], theCube.get()[UBR]] or \
+    if theCube.get()[FMM] not in [theCube.get()[FTR], theCube.get()[RTL], theCube.get()[UBR]] or \
         theCube.get()[RMM] not in [theCube.get()[FTR], theCube.get()[RTL], theCube.get()[UBR]] or \
         theCube.get()[RMM] not in [theCube.get()[RTR], theCube.get()[BTL], theCube.get()[UTR]] or \
         theCube.get()[BMM] not in [theCube.get()[RTR], theCube.get()[BTL], theCube.get()[UTR]] or \
