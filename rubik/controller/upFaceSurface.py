@@ -70,7 +70,7 @@ def solveUpSurface(theCube: Cube) -> str:
     '''  
     
     moves = ''
-    
+    return 'x'
     #check if solved
     if theCube.get()[FMM] in [theCube.get()[FTR], theCube.get()[RTL], theCube.get()[UBR]] and \
         theCube.get()[RMM] in [theCube.get()[FTR], theCube.get()[RTL], theCube.get()[UBR]] and \
