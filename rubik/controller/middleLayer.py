@@ -205,6 +205,14 @@ def solveMiddleLayer(theCube: Cube) -> str:
     
     moves = ''
     
+    #checks if solved
+    if theCube.get()[FMM] == theCube.get()[FMR] == theCube.get()[FML] and \
+        theCube.get()[RMM] == theCube.get()[RMR] == theCube.get()[RML] and \
+        theCube.get()[LMM] == theCube.get()[LMR] == theCube.get()[LML] and \
+        theCube.get()[BMM] == theCube.get()[BMR] == theCube.get()[BML]:
+        return moves
+    
+    
     topColor = theCube.get()[UMM]
     middleEdges = [theCube.get()[FTM], theCube.get()[UBM], theCube.get()[RTM], theCube.get()[UMR],
                    theCube.get()[BTM], theCube.get()[UTM], theCube.get()[LTM], theCube.get()[UML]]
