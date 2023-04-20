@@ -121,7 +121,7 @@ def leftRightEdge(theCube: Cube) -> str:
 
 def leftLeftEdge(theCube: Cube) -> str:
     moves = ''
-    moves += 'ubuBULulu'
+    moves += 'ubuBULUlu'
     theCube._rotateU()
     theCube._rotateU()
     theCube._rotateU()
@@ -134,8 +134,6 @@ def leftLeftEdge(theCube: Cube) -> str:
     theCube._rotateB()
     theCube._rotateU()
     theCube._rotateL()
-    theCube._rotateU()
-    theCube._rotateU()
     theCube._rotateU()
     theCube._rotateL()
     theCube._rotateL()
@@ -292,5 +290,5 @@ def solveMiddleLayer(theCube: Cube) -> str:
     
     
     
-        return moves + 'x'   
+        #return moves + 'x'   
     return moves      #TODO:  remove this stubbed value
