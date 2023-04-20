@@ -111,5 +111,6 @@ def solveUpSurface(theCube: Cube) -> str:
         if theCube.get()[FMM] not in [theCube.get()[FTL], theCube.get()[LTR], theCube.get()[UBL]]:
             moves += swapLeftCorners(theCube)
         
-        return 'xy'            
+        return 'xyz'            
+    
     return moves      #TODO:  remove this stubbed value
