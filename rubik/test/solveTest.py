@@ -231,7 +231,6 @@ class SolveTest(TestCase):
         parms['cube'] = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
         cubeMidLayer = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
         theCube = cube.Cube(cubeMidLayer)
-        result = solve(parms)
         frontTop = theCube.get()[FTM]
         topBottom = theCube.get()[UBM]
         frontRightEdge(theCube)
@@ -242,7 +241,6 @@ class SolveTest(TestCase):
         parms['cube'] = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
         cubeMidLayer = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
         theCube = cube.Cube(cubeMidLayer)
-        result = solve(parms)
         rightTop = theCube.get()[RTM]
         topRight = theCube.get()[UMR]
         rightRightEdge(theCube)
@@ -253,7 +251,6 @@ class SolveTest(TestCase):
         parms['cube'] = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
         cubeMidLayer = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
         theCube = cube.Cube(cubeMidLayer)
-        result = solve(parms)
         backTop = theCube.get()[BTM]
         topTop = theCube.get()[UTM]
         backRightEdge(theCube)
@@ -264,7 +261,6 @@ class SolveTest(TestCase):
         parms['cube'] = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
         cubeMidLayer = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
         theCube = cube.Cube(cubeMidLayer)
-        result = solve(parms)
         backTop = theCube.get()[BTM]
         topTop = theCube.get()[UTM]
         backLeftEdge(theCube)
@@ -275,7 +271,6 @@ class SolveTest(TestCase):
         parms['cube'] = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
         cubeMidLayer = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
         theCube = cube.Cube(cubeMidLayer)
-        result = solve(parms)
         leftTop = theCube.get()[LTM]
         topLeft = theCube.get()[UML]
         leftRightEdge(theCube)
@@ -286,7 +281,6 @@ class SolveTest(TestCase):
         parms['cube'] = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
         cubeMidLayer = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
         theCube = cube.Cube(cubeMidLayer)
-        result = solve(parms)
         leftTop = theCube.get()[LTM]
         topLeft = theCube.get()[UML]
         leftLeftEdge(theCube)
@@ -297,7 +291,6 @@ class SolveTest(TestCase):
         parms['cube'] = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
         cubeMidLayer = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
         theCube = cube.Cube(cubeMidLayer)
-        result = solve(parms)
         frontTop = theCube.get()[FTM]
         topBottom = theCube.get()[UBM]
         frontLeftEdge(theCube)
@@ -308,10 +301,20 @@ class SolveTest(TestCase):
         parms['cube'] = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
         cubeMidLayer = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
         theCube = cube.Cube(cubeMidLayer)
-        result = solve(parms)
         rightTop = theCube.get()[RTM]
         topRight = theCube.get()[UMR]
         rightLeftEdge(theCube)
         self.assertEqual(rightTop + topRight, theCube.get()[RML] + theCube.get()[FMR])
-            
+    
+    def test999_solve_middleEdgesIfValid(self):
+        parms = {}
+        parms['cube'] = 'yyrrbgbbbyyrrrgrrrgyoogbgggyybooboooggybyroobwwwwwwwww'
+        cubeMidLayer = 'yyrrbgbbbyyrrrgrrrgyoogbgggyybooboooggybyroobwwwwwwwww'
+        theCube = cube.Cube(cubeMidLayer)
+        result = solve(parms)
+        midLayer = solveMiddleLayer(theCube)
+        self.assertIn('status', result)
+        self.assertEqual('ok', result['status'])
+        self.assertIn('integrity', result)
+        self.assertEqual('URUrufuFUUBUburuRUULUlubuBUUUUFUfuluLUUUuufuFURUruULUlubuBUuruRUBUbu', midLayer)      
     

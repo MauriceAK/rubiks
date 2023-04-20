@@ -209,6 +209,7 @@ def solveMiddleLayer(theCube: Cube) -> str:
     middleEdges = [theCube.get()[FTM], theCube.get()[UBM], theCube.get()[RTM], theCube.get()[UMR],
                    theCube.get()[BTM], theCube.get()[UTM], theCube.get()[LTM], theCube.get()[UML]]
     
+    #removes top color from middle layer edges
     while topColor in middleEdges:
         
         if topColor in [theCube.get()[FTM], theCube.get()[UBM]]:
@@ -228,7 +229,8 @@ def solveMiddleLayer(theCube: Cube) -> str:
     
      
     #moves += 'x'   
-     
+    
+    #solves for front left and right edge
     while theCube.get()[FMM] != theCube.get()[FML] or theCube.get()[FMM] != theCube.get()[FMR] or \
         theCube.get()[LMR] != theCube.get()[LMM] or \
         theCube.get()[RML] != theCube.get()[RMM]:
@@ -259,7 +261,8 @@ def solveMiddleLayer(theCube: Cube) -> str:
 
                
     #moves += 'x'
-     
+    
+    #solves for back left and right edge 
     while theCube.get()[BMM] != theCube.get()[BML] or theCube.get()[BMM] != theCube.get()[BMR] or \
         theCube.get()[LML] != theCube.get()[LMM] or \
         theCube.get()[RMR] != theCube.get()[RMM]:
@@ -288,8 +291,6 @@ def solveMiddleLayer(theCube: Cube) -> str:
             theCube._rotateU()
             moves += rightRightEdge(theCube)
             
-    
-    
         #moves += 'x'
         #return moves + 'x' 
-    return moves      #TODO:  remove this stubbed value
+    return moves      
