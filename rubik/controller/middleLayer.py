@@ -285,7 +285,11 @@ def solveMiddleLayer(theCube: Cube) -> str:
             theCube._rotateU()
             moves += rightRightEdge(theCube)
             
-        return 'x' 
+        
+        if theCube.get()[BMM] != theCube.get()[BML] or theCube.get()[BMM] != theCube.get()[BMR] or \
+        theCube.get()[LML] != theCube.get()[LMM] or \
+        theCube.get()[RMR] != theCube.get()[RMM]:
+            return 'x' 
     
     
     
