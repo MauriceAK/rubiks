@@ -80,7 +80,7 @@ def solveUpSurface(theCube: Cube) -> str:
         theCube.get()[LMM] in [theCube.get()[BTR], theCube.get()[LTL], theCube.get()[UTL]] and \
         theCube.get()[FMM] in [theCube.get()[LTR], theCube.get()[FTL], theCube.get()[UBL]] and \
         theCube.get()[LMM] in [theCube.get()[LTR], theCube.get()[FTL], theCube.get()[UBL]]:
-        return moves + 'x'
+        return moves + 'xy'
     return 'xyz'
 
     while theCube.get()[FMM] not in [theCube.get()[FTR], theCube.get()[RTL], theCube.get()[UBR]] or \
