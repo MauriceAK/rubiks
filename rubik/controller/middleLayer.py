@@ -159,7 +159,7 @@ def solveMiddleLayer(theCube: Cube) -> str:
                    theCube.get()[BTM], theCube.get()[UTM], theCube.get()[LTM], theCube.get()[UML]]
     
     while topColor in middleEdges:
-        return moves + 'x'
+        
         if topColor in [theCube.get()[FTM], theCube.get()[UBM]]:
             frontRightEdge(theCube)
             
@@ -180,7 +180,7 @@ def solveMiddleLayer(theCube: Cube) -> str:
     while theCube.get()[FMM] != theCube.get()[FML] or theCube.get()[FMM] != theCube.get()[FMR] or \
         theCube.get()[LMR] != theCube.get()[LMM] or \
         theCube.get()[RMR] != theCube.get()[RMM]:
-        
+        return moves + 'x'
         while theCube.get()[FMM] not in [theCube.get()[FTM], theCube.get()[UBM]]:
             moves += 'U'
             theCube._rotateU()
