@@ -100,7 +100,7 @@ def solveUpSurface(theCube: Cube) -> str:
             moves += 'U'
             theCube._rotateU()
         #return theCube.get()[RTR] + theCube.get()[BTL] + theCube.get()[UTR] + theCube.get()[RMM]  
-        if theCube.get()[RMM] in [theCube.get()[RTR], theCube.get()[BTL], theCube.get()[UTR]]:
+        if theCube.get()[RMM] not in [theCube.get()[RTR], theCube.get()[BTL], theCube.get()[UTR]]:
             return 'x'
             if theCube.get()[RMM] in [theCube.get()[BTR], theCube.get()[LTL], theCube.get()[UTL]]:
                 moves += swapBackCorners(theCube) 
@@ -110,5 +110,6 @@ def solveUpSurface(theCube: Cube) -> str:
         
         if theCube.get()[FMM] not in [theCube.get()[FTL], theCube.get()[LTR], theCube.get()[UBL]]:
             moves += swapLeftCorners(theCube)
-                    
+        
+        return 'x'            
     return moves      #TODO:  remove this stubbed value
