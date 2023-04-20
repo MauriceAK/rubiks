@@ -20,7 +20,7 @@ class SolveTest(TestCase):
         self.assertEqual('', result.get('solution'))
 
     
-    def test110_solve_returnEmptyForSolvedCross(self):
+    def test200_solve_returnEmptyForSolvedCross(self):
         parms = {}
         parms['cube'] = 'bbbbbbbbbrrrrrrrrrooooooooogggggggggyyyyyyyyywwwwwwwww'
         result = solve(parms)
@@ -30,7 +30,7 @@ class SolveTest(TestCase):
         self.assertEqual('', result.get('solution'))
         
         
-    def test120_solve_bottomCrossIfValid(self):
+    def test210_solve_bottomCrossIfValid(self):
         parms = {}
         parms['cube'] = 'ywwobwwyybbwgrybyyrbgoggowoyorrogwrgrobwyrbborboywggrg'
         cubeBotCross = 'ywwobwwyybbwgrybyyrbgoggowoyorrogwrgrobwyrbborboywggrg'
@@ -43,7 +43,7 @@ class SolveTest(TestCase):
         self.assertEqual('uRUuBUBBuLUUFFRRUBBUULL', botCross)
      
     
-    def test130_solve_bottomCrossIfValid(self):
+    def test220_solve_bottomCrossIfValid(self):
         parms = {}
         parms['cube'] = 'ywwobwwyybbwgrybyyrbgoggowoyorrogwrgrobwyrbborboywggrg'
         cubeBotCross = 'ywwobwwyybbwgrybyyrbgoggowoyorrogwrgrobwyrbborboywggrg'
@@ -55,7 +55,7 @@ class SolveTest(TestCase):
         self.assertIn('integrity', result)
         self.assertEqual('uRUuBUBBuLUUFFRRUBBUULL', botCross)  
        
-    def test170_removeWhiteCorners(self): 
+    def test300_removeWhiteCorners(self): 
         parms = {}
         parms['cube'] = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
         cubeWhiteCorners = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
@@ -69,7 +69,7 @@ class SolveTest(TestCase):
             x = True
         self.assertEqual(True, x)  
       
-    def test180_frontRightCorner(self):
+    def test310_frontRightCorner(self):
         parms = {}
         parms['cube'] = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
         cubeFrontRight = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo' 
@@ -81,7 +81,7 @@ class SolveTest(TestCase):
             x = True
         self.assertEqual(True, x) 
     
-    def test190_backRightCorner(self):
+    def test320_backRightCorner(self):
         parms = {}
         parms['cube'] = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
         cubeBackRight = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo' 
@@ -93,7 +93,7 @@ class SolveTest(TestCase):
             x = True
         self.assertEqual(True, x) 
        
-    def test200_backLeftCorner(self):
+    def test330_backLeftCorner(self):
         parms = {}
         parms['cube'] = 'rrrrbggbbwbgorywrrwyooggwggbbbyogyoyyboryoyygrwowwwowb'
         cubeBackLeft = 'rrrrbggbbwbgorywrrwyooggwggbbbyogyoyyboryoyygrwowwwowb' 
@@ -105,7 +105,7 @@ class SolveTest(TestCase):
             x = True
         self.assertEqual(True, x) 
       
-    def test210_frontLeftCorner(self):
+    def test340_frontLeftCorner(self):
         parms = {}
         parms['cube'] = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
         cubeFrontLeft = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo' 
@@ -118,7 +118,7 @@ class SolveTest(TestCase):
         self.assertEqual(True, x) 
             
        
-    def test140_solve_returnEmptyForSolvedBottom(self):
+    def test350_solve_returnEmptyForSolvedBottom(self):
         parms = {}
         parms['cube'] = 'rrbbbobbbyyyyrrrrrgrrbgggggggbyoooooyyooybygowwwwwwwww'
         cubeBotLayer = 'rrbbbobbbyyyyrrrrrgrrbgggggggbyoooooyyooybygowwwwwwwww'
@@ -130,7 +130,7 @@ class SolveTest(TestCase):
         self.assertIn('integrity', result)
         self.assertEqual('', botLayer)   
     
-    def test150_solve_bottomCornersIfValid(self):
+    def test360_solve_bottomCornersIfValid(self):
         parms = {}
         parms['cube'] = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
         cubeBotLayer = 'wyrbbybbgbooorrrrwwrgygyggbogrgoryoyygboybgbwowywwwrwo'
@@ -142,7 +142,7 @@ class SolveTest(TestCase):
         self.assertIn('integrity', result)
         self.assertEqual('BUbUBUbUURUruRUruRUruUUBubULUluLUluLUluUUFuf', botLayer)
         
-    def test160_solve_bottomCornersIfValid(self):
+    def test370_solve_bottomCornersIfValid(self):
         parms = {}
         parms['cube'] = 'yrrrbggbbwbrorbwrobbbyggwggrobyogyoyyrwyyooygrwowwwowg'
         cubeBotLayer = 'yrrrbggbbwbrorbwrobbbyggwggrobyogyoyyrwyyooygrwowwwowg'
@@ -154,7 +154,7 @@ class SolveTest(TestCase):
         self.assertIn('integrity', result)
         self.assertEqual('RUrBUbURUrBUbURUrURUrURUrURUrUUUURurUUBUbuUUULulUFuf', botLayer)
     
-    def test220_solve_middleEdgesIfValid(self):
+    def test400_solve_middleEdgesIfValid(self):
         parms = {}
         parms['cube'] = 'robybobbbrrbbrrrrryogbgygggoyyrogoooyyobygggywwwwwwwww'
         cubeMidLayer = 'robybobbbrrbbrrrrryogbgygggoyyrogoooyyobygggywwwwwwwww'
@@ -166,7 +166,7 @@ class SolveTest(TestCase):
         self.assertIn('integrity', result)
         self.assertEqual('ULUlubuBUUFUfuluLUURUrufuFUUFUfuluLUURUrufuFUUBUburuRUUUURUrufuFUUUUuluLUFUfuUUULUlubuBUUUUuruRUBUbu', midLayer)
     
-    def test230_solve_middleEdgesIfValid(self):
+    def test410_solve_middleEdgesIfValid(self):
         parms = {}
         parms['cube'] = 'bbygbybbbryobrrrrrbyybgrgggggygooooooryyyorogwwwwwwwww'
         cubeMidLayer = 'bbygbybbbryobrrrrrbyybgrgggggygooooooryyyorogwwwwwwwww'
@@ -178,7 +178,7 @@ class SolveTest(TestCase):
         self.assertIn('integrity', result)
         self.assertEqual('UBUburuRUUFUfuluLUULUlubuBUUuufuFURUruUUUFUfuluLUULUlubuBUUUBUburuRU', midLayer)
         
-    def test240_solve_middleEdgesIfValid(self):
+    def test420_solve_middleEdgesIfValid(self):
         parms = {}
         parms['cube'] = 'byrybbbbbgborrgrrryyorgbgggbgyyogoooyogoyorrywwwwwwwww'
         cubeMidLayer = 'byrybbbbbgborrgrrryyorgbgggbgyyogoooyogoyorrywwwwwwwww'
@@ -190,7 +190,7 @@ class SolveTest(TestCase):
         self.assertIn('integrity', result)
         self.assertEqual('URUrufuFUULUlubuBUUFUfuluLUURUrufuFUUBUburuRUUuufuFURUruUUUuluLUFUfuuruRUBUbuUuubuBULUlu', midLayer)
         
-    def test250_solve_middleEdgesIfValid(self):
+    def test430_solve_middleEdgesIfValid(self):
         parms = {}
         parms['cube'] = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
         cubeMidLayer = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
@@ -202,7 +202,7 @@ class SolveTest(TestCase):
         self.assertIn('integrity', result)
         self.assertEqual('UBUburuRUULUlubuBUUBUburuRUULUlubuBUUFUfuluLUURUrufuFUUUFUfuluLUUUURUrufuFUUuruRUBUbuuubuBULUlu', midLayer)
         
-    def test260_solve_middleEdgesIfValid(self):
+    def test440_solve_middleEdgesIfValid(self):
         parms = {}
         parms['cube'] = 'yoyobrbbbbyryrbrrrgygrgogggorbgoboooygygyboyrwwwwwwwww'
         cubeMidLayer = 'yoyobrbbbbyryrbrrrgygrgogggorbgoboooygygyboyrwwwwwwwww'
@@ -214,7 +214,7 @@ class SolveTest(TestCase):
         self.assertIn('integrity', result)
         self.assertEqual('URUrufuFUUBUburuRUUFUfuluLUULUlubuBUUUFUfuluLUUUURUrufuFUUuubuBULUluUuruRUBUbu', midLayer)
         
-    def test270_solve_middleEdgesIfValid(self):
+    def test450_solve_middleEdgesIfValid(self):
         parms = {}
         parms['cube'] = 'rrgybybbbyoogrbrrrbryygoggggbbgoooooogyrybyyrwwwwwwwww'
         cubeMidLayer = 'rrgybybbbyoogrbrrrbryygoggggbbgoooooogyrybyyrwwwwwwwww'
@@ -225,4 +225,16 @@ class SolveTest(TestCase):
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
         self.assertEqual('URUrufuFUUBUburuRUULUlubuBUUUUFUfuluLUUUuufuFURUruULUlubuBUuruRUBUbu', midLayer)
+        
+    def test450_frontRightEdge(self):
+        parms = {}
+        parms['cube'] = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
+        cubeMidLayer = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
+        theCube = cube.Cube(cubeMidLayer)
+        result = solve(parms)
+        frontTop = theCube.get()[FTM]
+        topBottom = theCube.get()[UBM]
+        frontRightEdge(theCube)
+        self.assertEqual(frontTop + topBottom, theCube.get()[FMR] + theCube.get()[RML])
+        
     
