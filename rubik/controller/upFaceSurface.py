@@ -91,7 +91,7 @@ def solveUpSurface(theCube: Cube) -> str:
         theCube.get()[LMM] not in [theCube.get()[BTR], theCube.get()[LTL], theCube.get()[UTL]] or \
         theCube.get()[FMM] not in [theCube.get()[LTR], theCube.get()[FTL], theCube.get()[UBL]] or \
         theCube.get()[LMM] not in [theCube.get()[LTR], theCube.get()[FTL], theCube.get()[UBL]]:
-        return moves
+        #return moves
         #rotate top until blue red corner is correct
         while theCube.get()[FMM] not in [theCube.get()[FTR], theCube.get()[RTL], theCube.get()[UBR]] and \
             theCube.get()[RMM] not in [theCube.get()[FTR], theCube.get()[RTL], theCube.get()[UBR]]:
