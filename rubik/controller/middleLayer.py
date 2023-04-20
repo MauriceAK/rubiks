@@ -206,6 +206,7 @@ def solveMiddleLayer(theCube: Cube) -> str:
     '''  
     
     moves = ''
+    return moves + 'x'
     topColor = theCube.get()[UMM]
     middleEdges = [theCube.get()[FTM], theCube.get()[UBM], theCube.get()[RTM], theCube.get()[UMR],
                    theCube.get()[BTM], theCube.get()[UTM], theCube.get()[LTM], theCube.get()[UML]]
