@@ -107,7 +107,7 @@ def solveUpSurface(theCube: Cube) -> str:
             else: 
                 moves += swapLeftCorners(theCube)
                 moves += swapBackCorners(theCube)    
-        return 'x'
+        
         if theCube.get()[FMM] not in [theCube.get()[FTL], theCube.get()[LTR], theCube.get()[UBL]]:
             moves += swapLeftCorners(theCube)
         
