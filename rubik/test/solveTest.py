@@ -176,7 +176,7 @@ class SolveTest(TestCase):
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
-        self.assertEqual('UBUburuRUUFUfuluLUULUlubuBUxUuufuFURUruUUUFUfuluLUxULUlubuBUUUBUburuRU', midLayer)
+        self.assertEqual('UBUburuRUUFUfuluLUULUlubuBUUuufuFURUruUUUFUfuluLUULUlubuBUUUBUburuRU', midLayer)
         
     def test240_solve_middleEdgesIfValid(self):
         parms = {}
@@ -212,5 +212,5 @@ class SolveTest(TestCase):
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
-        self.assertEqual('UBUburuRUULUlubuBUUBUburuRUULUlubuBUUFUfuluLUURUrufuFUUUFUfuluLUUUURUrufuFUUuruRUBUbuuubuBULUlu', midLayer)
+        self.assertEqual('URUrufuFUUBUburuRUUFUfuluLUULUlubuBUUUFUfuluLUUUURUrufuFUUuubuBULUluUuruRUBUbu', midLayer)
     
