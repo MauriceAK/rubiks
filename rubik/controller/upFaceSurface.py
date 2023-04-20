@@ -100,7 +100,7 @@ def solveUpSurface(theCube: Cube) -> str:
             moves += 'U'
             theCube._rotateU()
         #return theCube.get()[RTR] + theCube.get()[BTL] + theCube.get()[UTR] + theCube.get()[RMM]  
-        if theCube.get()[RMM] not in [theCube.get()[RTR], theCube.get()[BTL], theCube.get()[UTR]]:
+        if not theCube.get()[RMM] in [theCube.get()[RTR], theCube.get()[BTL], theCube.get()[UTR]]:
             return 'x'
             if theCube.get()[RMM] in [theCube.get()[BTR], theCube.get()[LTL], theCube.get()[UTL]]:
                 moves += swapBackCorners(theCube) 
