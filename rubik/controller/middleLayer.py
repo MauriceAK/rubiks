@@ -289,7 +289,7 @@ def solveMiddleLayer(theCube: Cube) -> str:
         if theCube.get()[BMM] != theCube.get()[BML] or theCube.get()[BMM] != theCube.get()[BMR] or \
         theCube.get()[LML] != theCube.get()[LMM] or \
         theCube.get()[RMR] != theCube.get()[RMM]:
-            return moves + 'x' 
+            moves + 'x' 
     
     
     
