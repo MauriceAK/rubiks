@@ -71,6 +71,33 @@ def backRightEdge(theCube: Cube) -> str:
 
     return moves
 
+def backLeftEdge(theCube: Cube) -> str:
+    moves = ''
+    moves += 'uruRUBubu'
+    theCube._rotateU()
+    theCube._rotateU()
+    theCube._rotateU()
+    theCube._rotateR()
+    theCube._rotateR()
+    theCube._rotateR()
+    theCube._rotateU()
+    theCube._rotateU()
+    theCube._rotateU()
+    theCube._rotateR()
+    theCube._rotateU()
+    theCube._rotateB()
+    theCube._rotateU()
+    theCube._rotateU()
+    theCube._rotateU()
+    theCube._rotateB()
+    theCube._rotateB()
+    theCube._rotateB()
+    theCube._rotateU()
+    theCube._rotateU()
+    theCube._rotateU()
+
+    return moves
+
 def leftRightEdge(theCube: Cube) -> str:
     moves = ''
     moves += 'UFUfuluLU'
@@ -91,6 +118,33 @@ def leftRightEdge(theCube: Cube) -> str:
     theCube._rotateU()
     theCube._rotateL()
     theCube._rotateU()
+
+    return moves
+
+def leftLeftEdge(theCube: Cube) -> str:
+    moves = ''
+    moves += 'ubuBULulu'
+    theCube._rotateU()
+    theCube._rotateU()
+    theCube._rotateU()
+    theCube._rotateB()
+    theCube._rotateB()
+    theCube._rotateB()
+    theCube._rotateU()
+    theCube._rotateU()
+    theCube._rotateU()
+    theCube._rotateB()
+    theCube._rotateU()
+    theCube._rotateL()
+    theCube._rotateU()
+    theCube._rotateU()
+    theCube._rotateU()
+    theCube._rotateL()
+    theCube._rotateL()
+    theCube._rotateL()
+    theCube._rotateU()
+    theCube._rotateU()
+    theCube._rotateU() 
 
     return moves
 
@@ -177,6 +231,7 @@ def solveMiddleLayer(theCube: Cube) -> str:
     
     
     moves += 'x' 
+    
     while theCube.get()[FMM] != theCube.get()[FML] or theCube.get()[FMM] != theCube.get()[FMR] or \
         theCube.get()[LMR] != theCube.get()[LMM] or \
         theCube.get()[RML] != theCube.get()[RMM]:
@@ -200,8 +255,36 @@ def solveMiddleLayer(theCube: Cube) -> str:
             moves += 'U' 
             theCube._rotateU()
             moves += leftRightEdge(theCube)
+    
+
+    moves += 'x'
+     
+    while theCube.get()[BMM] != theCube.get()[BML] or theCube.get()[BMM] != theCube.get()[BMR] or \
+        theCube.get()[LML] != theCube.get()[LMM] or \
+        theCube.get()[RMR] != theCube.get()[RMM]:
         
+        while theCube.get()[BMM] not in [theCube.get()[BTM], theCube.get()[UTM]]:
+            moves += 'U'
+            theCube._rotateU()
         
+        if theCube.get()[BMM] == theCube.get()[BTM] and theCube.get()[UTM] == theCube.get()[LMM]:
+            moves += backRightEdge(theCube)
+            
+        elif theCube.get()[LMM] == theCube.get()[BTM] and theCube.get()[UTM] == theCube.get()[BMM]: 
+            moves += 'u' 
+            theCube._rotateU()
+            theCube._rotateU()
+            theCube._rotateU()
+            moves += leftLeftEdge(theCube)
+            
+        elif theCube.get()[BMM] == theCube.get()[BTM] and theCube.get()[UTM] == theCube.get()[RMM]: 
+            moves += backLeftEdge(theCube)
+            
+        elif theCube.get()[RMM] == theCube.get()[BTM] and theCube.get()[UTM] == theCube.get()[BMM]: 
+            moves += 'U' 
+            theCube._rotateU()
+            moves += rightRightEdge(theCube)
+            
           
     
     
