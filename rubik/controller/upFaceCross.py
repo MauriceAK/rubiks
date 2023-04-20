@@ -40,7 +40,7 @@ def vertLineCross(theCube: Cube) -> str:
 
 def angleCross(theCube: Cube) -> str:
     moves = ''
-    return 'x'
+    
     #front
     if theCube.get()[UMM] == theCube.get()[UBM] == theCube.get()[UMR]:
         moves += 'BULulb'
@@ -123,31 +123,31 @@ def makeTopCross(theCube: Cube) -> str:
      theCube.get()[UMM] != theCube.get()[UMR]:
         #horizontal
         if theCube.get()[UMM] == theCube.get()[UMR] == theCube.get()[UML]:
-            horizLineCross(theCube) 
+            moves += horizLineCross(theCube) 
             return moves
         #vertical
         elif theCube.get()[UMM] == theCube.get()[UTM] == theCube.get()[UBM]:
-            vertLineCross(theCube)
+            moves += vertLineCross(theCube)
             return moves
         #front
         elif theCube.get()[UMM] == theCube.get()[UMR] == theCube.get()[UBM]:
-            angleCross(theCube)
+            moves += angleCross(theCube)
             return moves
         #left
         elif theCube.get()[UMM] == theCube.get()[UBM] == theCube.get()[UML]:
-            angleCross(theCube)
+            moves += angleCross(theCube)
             return moves
         #back
         elif theCube.get()[UMM] == theCube.get()[UML] == theCube.get()[UTM]:
-            angleCross(theCube)
+            moves += angleCross(theCube)
             return moves
         #right
         elif theCube.get()[UMM] == theCube.get()[UTM] == theCube.get()[UMR]:
-            angleCross(theCube)
+            moves += angleCross(theCube)
             return moves
         #middle
         else: 
-            middleOnlyCross(theCube)
+            moves += middleOnlyCross(theCube)
             return moves
     return moves
 
