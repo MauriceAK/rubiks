@@ -227,8 +227,7 @@ def solveMiddleLayer(theCube: Cube) -> str:
         middleEdges = [theCube.get()[FTM], theCube.get()[UBM], theCube.get()[RTM], theCube.get()[UMR],
                    theCube.get()[BTM], theCube.get()[UTM], theCube.get()[LTM], theCube.get()[UML]]
     
-    
-    moves += 'x' 
+     
     
     while theCube.get()[FMM] != theCube.get()[FML] or theCube.get()[FMM] != theCube.get()[FMR] or \
         theCube.get()[LMR] != theCube.get()[LMM] or \
@@ -255,7 +254,6 @@ def solveMiddleLayer(theCube: Cube) -> str:
             moves += leftRightEdge(theCube)
     
 
-    moves += 'x'
      
     while theCube.get()[BMM] != theCube.get()[BML] or theCube.get()[BMM] != theCube.get()[BMR] or \
         theCube.get()[LML] != theCube.get()[LMM] or \
