@@ -359,8 +359,8 @@ class SolveTest(TestCase):
     '''   
     def test540_solve_upSurface(self):
         parms = {}
-        parms['cube'] = 'ogbbbbbbbrrgrrrrrryogggggggobyooooooyyryyybyywwwwwwwww'
-        cubeTopFace = 'ogbbbbbbbrrgrrrrrryogggggggobyooooooyyryyybyywwwwwwwww'
+        parms['cube'] = 'gbybbbbbbbrorrrrrrbyyggggggryyooooooggyoyyoyrwwwwwwwww'
+        cubeTopFace = 'gbybbbbbbbrorrrrrrbyyggggggryyooooooggyoyyoyrwwwwwwwww'
         theCube = cube.Cube(cubeTopFace)
         result = solve(parms)
         topFace = solveUpSurface(theCube)
