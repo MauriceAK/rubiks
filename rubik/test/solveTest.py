@@ -306,4 +306,15 @@ class SolveTest(TestCase):
         rightLeftEdge(theCube)
         self.assertEqual(rightTop + topRight, theCube.get()[RML] + theCube.get()[FMR])
     
-    
+    def test500_solve_middleEdgesIfValid(self):
+        parms = {}
+        parms['cube'] = 'rrgybybbbyoogrbrrrbryygoggggbbgoooooogyrybyyrwwwwwwwww'
+        cubeMidLayer = 'rrgybybbbyoogrbrrrbryygoggggbbgoooooogyrybyyrwwwwwwwww'
+        theCube = cube.Cube(cubeMidLayer)
+        result = solve(parms)
+        midLayer = solveMiddleLayer(theCube)
+        self.assertIn('status', result)
+        self.assertEqual('ok', result['status'])
+        self.assertIn('integrity', result)
+        self.assertEqual('URUrufuFUUBUburuRUULUlubuBUUUUFUfuluLUUUuufuFURUruULUlubuBUuruRUBUbu', midLayer)
+        self.assertEqual('integrity', result['integrity'])
