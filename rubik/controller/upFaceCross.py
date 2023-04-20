@@ -22,7 +22,7 @@ def makeTopCross(theCube: Cube) -> str:
         theCube._rotateF()
         theCube._rotateF()
         theCube._rotateF()
-        
+        return 'x'
     return moves
 def solveUpCross(theCube: Cube) -> str:
     '''
