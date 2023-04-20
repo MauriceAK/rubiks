@@ -256,7 +256,7 @@ def solveMiddleLayer(theCube: Cube) -> str:
             moves += leftRightEdge(theCube)
     
 
-        #return moves + 'x'     
+        return moves + 'x'     
     while theCube.get()[BMM] != theCube.get()[BML] or theCube.get()[BMM] != theCube.get()[BMR] or \
         theCube.get()[LML] != theCube.get()[LMM] or \
         theCube.get()[RMR] != theCube.get()[RMM]:
