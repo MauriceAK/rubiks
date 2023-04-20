@@ -116,6 +116,7 @@ def middleOnlyCross(theCube: Cube) -> str:
     
 def makeTopCross(theCube: Cube) -> str:
     moves = ''
+    return 'x'
     while theCube.get()[UMM] != theCube.get()[UTM] or \
      theCube.get()[UMM] != theCube.get()[UBM] or \
      theCube.get()[UMM] != theCube.get()[UML] or \
