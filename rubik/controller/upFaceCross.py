@@ -161,7 +161,7 @@ def solveUpCross(theCube: Cube) -> str:
     #check if top cross is present
     if theCube.get()[UMM] == theCube.get()[UTM] == theCube.get()[UBM] == \
     theCube.get()[UMR] == theCube.get()[UML]:
-        return moves
+        return 'x'
     
     makeTopCross(theCube)
     
