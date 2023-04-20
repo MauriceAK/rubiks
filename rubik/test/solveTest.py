@@ -226,7 +226,7 @@ class SolveTest(TestCase):
         self.assertIn('integrity', result)
         self.assertEqual('URUrufuFUUBUburuRUULUlubuBUUUUFUfuluLUUUuufuFURUruULUlubuBUuruRUBUbu', midLayer)
         
-    def test450_frontRightEdge(self):
+    def test460_frontRightEdge(self):
         parms = {}
         parms['cube'] = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
         cubeMidLayer = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
@@ -236,5 +236,82 @@ class SolveTest(TestCase):
         topBottom = theCube.get()[UBM]
         frontRightEdge(theCube)
         self.assertEqual(frontTop + topBottom, theCube.get()[FMR] + theCube.get()[RML])
+    
+    def test470_rightRightEdge(self):
+        parms = {}
+        parms['cube'] = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
+        cubeMidLayer = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
+        theCube = cube.Cube(cubeMidLayer)
+        result = solve(parms)
+        rightTop = theCube.get()[RTM]
+        topRight = theCube.get()[UMR]
+        rightRightEdge(theCube)
+        self.assertEqual(rightTop + topRight, theCube.get()[RMR] + theCube.get()[BML])
         
+    def test480_backRightEdge(self):
+        parms = {}
+        parms['cube'] = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
+        cubeMidLayer = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
+        theCube = cube.Cube(cubeMidLayer)
+        result = solve(parms)
+        backTop = theCube.get()[BTM]
+        topTop = theCube.get()[UTM]
+        backRightEdge(theCube)
+        self.assertEqual(backTop + topTop, theCube.get()[BMR] + theCube.get()[LML])
+        
+    def test490_backLeftEdge(self):
+        parms = {}
+        parms['cube'] = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
+        cubeMidLayer = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
+        theCube = cube.Cube(cubeMidLayer)
+        result = solve(parms)
+        backTop = theCube.get()[BTM]
+        topTop = theCube.get()[UTM]
+        backLeftEdge(theCube)
+        self.assertEqual(backTop + topTop, theCube.get()[BML] + theCube.get()[RMR])
+        
+    def test411_leftRightEdge(self):
+        parms = {}
+        parms['cube'] = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
+        cubeMidLayer = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
+        theCube = cube.Cube(cubeMidLayer)
+        result = solve(parms)
+        leftTop = theCube.get()[LTM]
+        topLeft = theCube.get()[UML]
+        leftRightEdge(theCube)
+        self.assertEqual(leftTop + topLeft, theCube.get()[LMR] + theCube.get()[FML])
+        
+    def test411_leftLeftEdge(self):
+        parms = {}
+        parms['cube'] = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
+        cubeMidLayer = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
+        theCube = cube.Cube(cubeMidLayer)
+        result = solve(parms)
+        leftTop = theCube.get()[LTM]
+        topLeft = theCube.get()[UML]
+        leftLeftEdge(theCube)
+        self.assertEqual(leftTop + topLeft, theCube.get()[LML] + theCube.get()[BMR])
+        
+    def test413_frontLeftEdge(self):
+        parms = {}
+        parms['cube'] = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
+        cubeMidLayer = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
+        theCube = cube.Cube(cubeMidLayer)
+        result = solve(parms)
+        frontTop = theCube.get()[FTM]
+        topBottom = theCube.get()[UBM]
+        frontLeftEdge(theCube)
+        self.assertEqual(frontTop + topBottom, theCube.get()[FML] + theCube.get()[LMR])
+        
+    def test470_rightLeftEdge(self):
+        parms = {}
+        parms['cube'] = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
+        cubeMidLayer = 'ooyobrbbbbbobryrrrbogggggggyygroyooorbyryyygrwwwwwwwww'
+        theCube = cube.Cube(cubeMidLayer)
+        result = solve(parms)
+        rightTop = theCube.get()[RTM]
+        topRight = theCube.get()[UMR]
+        rightLeftEdge(theCube)
+        self.assertEqual(rightTop + topRight, theCube.get()[RML] + theCube.get()[FMR])
+            
     
