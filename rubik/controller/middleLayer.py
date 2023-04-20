@@ -161,16 +161,16 @@ def solveMiddleLayer(theCube: Cube) -> str:
     while topColor in middleEdges:
         
         if topColor in [theCube.get()[FTM], theCube.get()[UBM]]:
-            frontRightEdge(theCube)
+            moves += frontRightEdge(theCube)
             
         if topColor in [theCube.get()[RTM], theCube.get()[UMR]]:
-            rightRightEdge(theCube)
+            moves +=rightRightEdge(theCube)
         
         if topColor in [theCube.get()[BTM], theCube.get()[UTM]]:
-            backRightEdge(theCube)
+            moves += backRightEdge(theCube)
         
         if topColor in [theCube.get()[LTM], theCube.get()[UML]]:
-            leftRightEdge(theCube)
+            moves += leftRightEdge(theCube)
     
         middleEdges = [theCube.get()[FTM], theCube.get()[UBM], theCube.get()[RTM], theCube.get()[UMR],
                    theCube.get()[BTM], theCube.get()[UTM], theCube.get()[LTM], theCube.get()[UML]]
@@ -186,22 +186,22 @@ def solveMiddleLayer(theCube: Cube) -> str:
             theCube._rotateU()
         
         if theCube.get()[FMM] == theCube.get()[FTM] and theCube.get()[UBM] == theCube.get()[RMM]:
-            frontRightEdge(theCube)
+            moves += frontRightEdge(theCube)
         elif theCube.get()[RMM] == theCube.get()[FTM] and theCube.get()[UBM] == theCube.get()[FMM]: 
             moves += 'u' 
             theCube._rotateU()
             theCube._rotateU()
             theCube._rotateU()
-            rightLeftEdge(theCube)
+            moves += rightLeftEdge(theCube)
             
         elif theCube.get()[FMM] == theCube.get()[FTM] and theCube.get()[UBM] == theCube.get()[LMM]: 
-            frontLeftEdge(theCube)
+            moves += frontLeftEdge(theCube)
         elif theCube.get()[LMM] == theCube.get()[FTM] and theCube.get()[UBM] == theCube.get()[FMM]: 
             moves += 'U' 
             theCube._rotateU()
-            leftRightEdge(theCube)
+            moves += leftRightEdge(theCube)
         
-        return moves + 'x'    
+        #return moves + 'x'    
     
     
     
