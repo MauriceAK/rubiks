@@ -290,5 +290,5 @@ def solveMiddleLayer(theCube: Cube) -> str:
     
     
     
-        #return moves + 'x'   
+        moves += 'x'   
     return moves      #TODO:  remove this stubbed value
