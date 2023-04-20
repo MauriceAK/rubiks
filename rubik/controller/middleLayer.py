@@ -201,7 +201,7 @@ def solveMiddleLayer(theCube: Cube) -> str:
             theCube._rotateU()
             moves += leftRightEdge(theCube)
         
-        #return moves + 'x'    
+        return moves + 'x'    
     
     
     
