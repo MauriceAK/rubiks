@@ -87,8 +87,6 @@ def backLeftEdge(theCube: Cube) -> str:
     theCube._rotateU()
     theCube._rotateB()
     theCube._rotateU()
-    theCube._rotateU()
-    theCube._rotateU()
     theCube._rotateB()
     theCube._rotateB()
     theCube._rotateB()
@@ -285,10 +283,6 @@ def solveMiddleLayer(theCube: Cube) -> str:
             theCube._rotateU()
             moves += rightRightEdge(theCube)
             
-        if theCube.get()[BMM] == theCube.get()[BML] and theCube.get()[BMM] == theCube.get()[BMR] and \
-        theCube.get()[LML] == theCube.get()[LMM] and \
-        theCube.get()[RMR] == theCube.get()[RMM]:  
-            return 'x' 
     
     
     
