@@ -205,6 +205,7 @@ def solveMiddleLayer(theCube: Cube) -> str:
     
     moves = ''
     
+    #checks if solved
     if theCube.get()[FMM] == theCube.get()[FMR] == theCube.get()[FML] and \
         theCube.get()[RMM] == theCube.get()[RMR] == theCube.get()[RML] and \
         theCube.get()[LMM] == theCube.get()[LMR] == theCube.get()[LML] and \
