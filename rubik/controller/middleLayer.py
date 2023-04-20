@@ -227,8 +227,8 @@ def solveMiddleLayer(theCube: Cube) -> str:
                    theCube.get()[BTM], theCube.get()[UTM], theCube.get()[LTM], theCube.get()[UML]]
     
      
-    moves + 'x'   
-    return moves + 'x'  
+    moves += 'x'   
+     
     while theCube.get()[FMM] != theCube.get()[FML] or theCube.get()[FMM] != theCube.get()[FMR] or \
         theCube.get()[LMR] != theCube.get()[LMM] or \
         theCube.get()[RML] != theCube.get()[RMM]:
@@ -291,5 +291,5 @@ def solveMiddleLayer(theCube: Cube) -> str:
     
     
     
-        
+        return moves + 'x' 
     return moves      #TODO:  remove this stubbed value
