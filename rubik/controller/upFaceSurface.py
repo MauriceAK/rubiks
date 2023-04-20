@@ -13,7 +13,8 @@ def solveUpSurface(theCube: Cube) -> str:
     
     moves = ''
     
-    if ['b','r'] in [theCube.get()[FTR], theCube.get()[RTL], theCube.get()[UBR]]:
+    if theCube.get()[FMM] in [theCube.get()[FTR], theCube.get()[RTL], theCube.get()[UBR]] and \
+        theCube.get()[RMM] in [theCube.get()[FTR], theCube.get()[RTL], theCube.get()[UBR]]:
         return 'x'
     
     
