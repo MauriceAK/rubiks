@@ -2,28 +2,151 @@ import rubik.model.constants
 from rubik.model.constants import *
 from rubik.model.cube import Cube
 
+def horizLineCross(theCube: Cube) -> str:
+    moves = ''
+    moves += 'FRUruf'
+    theCube._rotateF()
+    theCube._rotateR()
+    theCube._rotateU()
+    theCube._rotateR()
+    theCube._rotateR()
+    theCube._rotateR()
+    theCube._rotateU()
+    theCube._rotateU()
+    theCube._rotateU()
+    theCube._rotateF()
+    theCube._rotateF()
+    theCube._rotateF() 
+    return moves
+    
 
+def vertLineCross(theCube: Cube) -> str:
+    moves = ''
+    moves += 'LFUful'
+    theCube._rotateL()
+    theCube._rotateF()
+    theCube._rotateU()
+    theCube._rotateF()
+    theCube._rotateF()
+    theCube._rotateF()
+    theCube._rotateU()
+    theCube._rotateU()
+    theCube._rotateU()
+    theCube._rotateL()
+    theCube._rotateL()
+    theCube._rotateL() 
+    return moves
+    
+
+def angleCross(theCube: Cube) -> str:
+    moves = ''
+    #front
+    if theCube.get()[UMM] == theCube.get()[UBM] == theCube.get()[UMR]:
+        moves += 'BULulb'
+        theCube._rotateB()
+        theCube._rotateU()
+        theCube._rotateL()
+        theCube._rotateU()
+        theCube._rotateU()
+        theCube._rotateU()
+        theCube._rotateL()
+        theCube._rotateL()
+        theCube._rotateL()
+        theCube._rotateB()
+        theCube._rotateB()
+        theCube._rotateB() 
+        return moves
+    #left
+    elif theCube.get()[UMM] == theCube.get()[UML] == theCube.get()[UBM]:
+        moves += 'RUBubr'
+        theCube._rotateR()
+        theCube._rotateU()
+        theCube._rotateB()
+        theCube._rotateU()
+        theCube._rotateU()
+        theCube._rotateU()
+        theCube._rotateB()
+        theCube._rotateB()
+        theCube._rotateB()
+        theCube._rotateR()
+        theCube._rotateR()
+        theCube._rotateR() 
+        return moves
+    #back
+    elif theCube.get()[UMM] == theCube.get()[UML] == theCube.get()[UTM]:
+        moves += 'FURurf'
+        theCube._rotateF()
+        theCube._rotateU()
+        theCube._rotateR()
+        theCube._rotateU()
+        theCube._rotateU()
+        theCube._rotateU()
+        theCube._rotateR()
+        theCube._rotateR()
+        theCube._rotateR()
+        theCube._rotateF()
+        theCube._rotateF()
+        theCube._rotateF() 
+        return moves
+    #right  
+    elif theCube.get()[UMM] == theCube.get()[UTM] == theCube.get()[UMR]:
+        moves += 'LUFufl'
+        theCube._rotateL()
+        theCube._rotateU()
+        theCube._rotateF()
+        theCube._rotateU()
+        theCube._rotateU()
+        theCube._rotateU()
+        theCube._rotateF()
+        theCube._rotateF()
+        theCube._rotateF()
+        theCube._rotateL()
+        theCube._rotateL()
+        theCube._rotateL() 
+        return moves
+    return moves 
+
+def middleOnlyCross(theCube: Cube) -> str:
+    moves = ''
+    horizLineCross(theCube)
+    angleCross(theCube)
+    return moves
+    
+    
+    
 def makeTopCross(theCube: Cube) -> str:
     moves = ''
     while theCube.get()[UMM] != theCube.get()[UTM] or \
      theCube.get()[UMM] != theCube.get()[UBM] or \
      theCube.get()[UMM] != theCube.get()[UML] or \
      theCube.get()[UMM] != theCube.get()[UMR]:
-        moves += 'FRUruf'
-        theCube._rotateF()
-        theCube._rotateR()
-        theCube._rotateU()
-        theCube._rotateR()
-        theCube._rotateR()
-        theCube._rotateR()
-        theCube._rotateU()
-        theCube._rotateU()
-        theCube._rotateU()
-        theCube._rotateF()
-        theCube._rotateF()
-        theCube._rotateF()
-        return 'x'
+        if theCube.get()[UMM] == theCube.get()[UMR] == theCube.get()[UML]:
+            horizLineCross(theCube) 
+            return moves
+        elif theCube.get()[UMM] == theCube.get()[UTM] == theCube.get()[UBM]:
+            vertLineCross(theCube)
+            return moves
+        elif theCube.get()[UMM] == theCube.get()[UMR] == theCube.get()[UBM]:
+            angleCross(theCube)
+            return moves
+        elif theCube.get()[UMM] == theCube.get()[UBM] == theCube.get()[UML]:
+            angleCross(theCube)
+            return moves
+        elif theCube.get()[UMM] == theCube.get()[UML] == theCube.get()[UTM]:
+            angleCross(theCube)
+            return moves
+        elif theCube.get()[UMM] == theCube.get()[UTM] == theCube.get()[UMR]:
+            angleCross(theCube)
+            return moves
+        else: 
+            middleOnlyCross(theCube)
+            return moves
     return moves
+
+
+
+
+
 def solveUpCross(theCube: Cube) -> str:
     '''
         This is the top-level function  for rotating
