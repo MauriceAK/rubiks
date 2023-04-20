@@ -5,7 +5,7 @@ from rubik.controller.bottomCross import solveBottomCross
 from rubik.controller.bottomLayer import *
 from rubik.controller.middleLayer import *
 from rubik.controller.upFaceCross import *
-
+from rubik.controller.upFaceSurface import *
 
 class SolveTest(TestCase):
         
@@ -350,7 +350,7 @@ class SolveTest(TestCase):
         cubeTopFace = 'ogbbbbbbbrrgrrrrrryogggggggobyooooooyyryyybyywwwwwwwww'
         theCube = cube.Cube(cubeTopFace)
         result = solve(parms)
-        topFace = solveUpCross(theCube)
+        topFace = solveUpSurface(theCube)
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
