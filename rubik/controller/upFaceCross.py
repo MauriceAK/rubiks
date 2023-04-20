@@ -164,6 +164,7 @@ def solveUpCross(theCube: Cube) -> str:
         return moves
     
     
+    return 'x'
     moves += makeTopCross(theCube)
     
     
