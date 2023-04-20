@@ -73,7 +73,7 @@ def backRightEdge(theCube: Cube) -> str:
 
 def backLeftEdge(theCube: Cube) -> str:
     moves = ''
-    moves += 'uruRUBubu'
+    moves += 'uruRUBUbu'
     theCube._rotateU()
     theCube._rotateU()
     theCube._rotateU()
@@ -285,11 +285,6 @@ def solveMiddleLayer(theCube: Cube) -> str:
             theCube._rotateU()
             moves += rightRightEdge(theCube)
             
-        
-        if theCube.get()[BMM] != theCube.get()[BML] or theCube.get()[BMM] != theCube.get()[BMR] or \
-        theCube.get()[LML] != theCube.get()[LMM] or \
-        theCube.get()[RMR] != theCube.get()[RMM]:
-            moves + 'x' 
     
     
     
