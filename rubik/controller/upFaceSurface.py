@@ -2,7 +2,7 @@ import rubik.model.constants
 from rubik.model.constants import *
 from rubik.model.cube import Cube
 
-
+'''
 def swapBackCorners(theCube: Cube) -> str:
     moves = ''
     for x in range(3):
@@ -58,6 +58,15 @@ def swapLeftCorners(theCube: Cube) -> str:
     theCube._rotateU()
     theCube._rotateU() 
     return moves
+'''
+def makeFish(theCube: Cube) -> str:
+    moves = ''
+    if theCube.get()[UMM] != theCube.get()[UTR] and \
+     theCube.get()[UMM] != theCube.get()[UTL] and \
+     theCube.get()[UMM] != theCube.get()[UBR] and \
+     theCube.get()[UMM] != theCube.get()[UBL]:
+        return 'x'
+    return moves
 
 
 def solveUpSurface(theCube: Cube) -> str:
@@ -84,7 +93,8 @@ def solveUpSurface(theCube: Cube) -> str:
         return moves
     '''
     #return 'xyz'
-
+    
+    '''
     if theCube.get()[FMM] not in [theCube.get()[FTR], theCube.get()[RTL], theCube.get()[UBR]] or \
         theCube.get()[RMM] not in [theCube.get()[FTR], theCube.get()[RTL], theCube.get()[UBR]] or \
         theCube.get()[RMM] not in [theCube.get()[RTR], theCube.get()[BTL], theCube.get()[UTR]] or \
@@ -112,5 +122,29 @@ def solveUpSurface(theCube: Cube) -> str:
             moves += swapLeftCorners(theCube)
         
                     
+    '''
+    
+    while theCube.get()[UMM] == theCube.get()[UTR] == theCube.get()[UTM] == \
+     theCube.get()[UTL] == theCube.get()[UML] == theCube.get()[UMR] == \
+     theCube.get()[UBR] == theCube.get()[UBM] == theCube.get()[UBL] is False:
+        return 'x' 
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     return moves      #TODO:  remove this stubbed value
