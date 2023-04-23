@@ -122,7 +122,7 @@ def makeTopCross(theCube: Cube) -> str:
      theCube.get()[UMM] != theCube.get()[UBM] or \
      theCube.get()[UMM] != theCube.get()[UML] or \
      theCube.get()[UMM] != theCube.get()[UMR]:
-        return 'x'
+        
         #horizontal
         if theCube.get()[UMM] == theCube.get()[UMR] == theCube.get()[UML]:
             moves += horizLineCross(theCube) 
@@ -149,6 +149,7 @@ def makeTopCross(theCube: Cube) -> str:
             return moves
         #middle
         else: 
+            return 'x'
             moves += middleOnlyCross(theCube)
             return moves
     return moves
