@@ -149,8 +149,8 @@ def makeTopCross(theCube: Cube) -> str:
             return moves
         #middle
         else: 
-            return 'x'
             moves += middleOnlyCross(theCube)
+            return 'x'
             return moves
     return moves
 
