@@ -109,8 +109,8 @@ def angleCross(theCube: Cube) -> str:
 
 def middleOnlyCross(theCube: Cube) -> str:
     moves = ''
-    horizLineCross(theCube)
-    angleCross(theCube)
+    moves += horizLineCross(theCube)
+    moves += angleCross(theCube)
     return moves
     
     
@@ -150,7 +150,6 @@ def makeTopCross(theCube: Cube) -> str:
         #middle
         else: 
             moves += middleOnlyCross(theCube)
-            return 'x'
             return moves
     return moves
 
