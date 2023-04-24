@@ -25,7 +25,6 @@ def check_validamount(string):
 def rotate(parms):
     """Return rotated cube""" 
     
-    
     result = {}
     
     if parms.get('cube') == None:
@@ -45,7 +44,6 @@ def rotate(parms):
     if rotatedCube == 'DirException':
         result['status'] = 'Error: Invalid rotation'
         return result
-    
     if check_alphanum(encodedCube) == False:
         result['status'] = 'Error: Invalid characters present'
         return result

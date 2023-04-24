@@ -472,9 +472,9 @@ class SolveTest(TestCase):
         self.assertIn('integrity', result)
         self.assertEqual('BUbufuFUBUbuBUbuBUbuBUbuBUbufuFUfuFUfuFUfuFUfuFU', final) 
         
-    def test670_solveFinalFromRight(self):
+    def test900_missingCube(self):
         parms = {}
-        parms['cube'] = 'yborbbgbrboryrowyowyrygwbgygwobowrgwyggoyggryoobwwrbrw'
+        parms['cube'] = ''
         result = solve(parms)
         self.assertEqual(result['status'], 'Error: Missing cube')
         

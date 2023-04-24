@@ -3,11 +3,7 @@
     
     @author: Maurice Kenon
 '''
-
-
-
 from rubik.model.constants import *
-
 
 class Cube:
     '''
