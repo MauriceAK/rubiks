@@ -79,7 +79,7 @@ def solveUpSurface(theCube: Cube) -> str:
         input:  an instance of the cube class with up-face cross solved
         output: the rotations required to solve the up surface  
     '''  
-    return 'x'
+    
     moves = ''
     
     

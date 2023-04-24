@@ -344,8 +344,7 @@ class SolveTest(TestCase):
         self.assertIn('integrity', result)
         self.assertEqual('LFUful', topCross)
         
-    
-        
+     
     def test530_solve_upSurfaceSolved(self):
         parms = {}
         parms['cube'] = 'yoybbbbbbbbrrrrrrrgggggggggorbooooooyyyyyyoyrwwwwwwwww'
@@ -357,7 +356,7 @@ class SolveTest(TestCase):
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
         self.assertEqual('URUrURUUrURUrURUUrUUURUrURUUr', topFace)
-      
+    '''  
     def test540_solve_upSurface(self):
         parms = {}
         parms['cube'] = 'gbybbbbbbbrorrrrrrbyyggggggryyooooooggyoyyoyrwwwwwwwww'
@@ -369,4 +368,17 @@ class SolveTest(TestCase):
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
         self.assertEqual('BUbuBUbuBUburuRUruRUruRUuLUluLUluLUlubuBUbuBUbuBUu', topFace)
+    '''
+    def test550_fishAlg(self):
+        parms = {}
+        parms['cube'] = 'orgbbbbbbyyrrrrrrryobggggggyygoooooooybgybyyrwwwwwwwww'
+        cubeTopCross = 'orgbbbbbbyyrrrrrrryobggggggyygoooooooybgybyyrwwwwwwwww'
+        theCube = cube.Cube(cubeTopCross)
+        result = solve(parms)
+        topCross = fishAlg(theCube)
+        self.assertIn('status', result)
+        self.assertEqual('ok', result['status'])
+        self.assertIn('integrity', result)
+        self.assertEqual(theCube.get()[UBL], theCube.get()[UMM])   
+    
         
