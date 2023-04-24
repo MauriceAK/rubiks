@@ -412,17 +412,64 @@ class SolveTest(TestCase):
         self.assertIn('integrity', result)
         self.assertEqual('URUruluLURUruRUruRUruRUruRUruluLUluLUluLUluLUluLUBUbufuFUBUbuBUbuBUbuBUbuBUbufuFUfuFUfuFUfuFUfuFU', topLayer)
 
-    def test620_solveUpperLayer(self):
+    def test620_switchCorners(self):
         parms = {}
         parms['cube'] = 'orobbbbbbbgbrrrrrrrorgggggggbgooooooyyyyyyyyywwwwwwwww'
         cubeTopLayer = 'orobbbbbbbgbrrrrrrrorgggggggbgooooooyyyyyyyyywwwwwwwww'
         theCube = cube.Cube(cubeTopLayer)
         result = solve(parms)
-        topLayer = switchCorners(theCube)
+        final = switchCorners(theCube)
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
-        self.assertEqual(theCube.get()[BTL], 'b')  
+        self.assertEqual('', final)  
     
+    def test630_solveFinal(self):
+        parms = {}
+        parms['cube'] = 'bgbbbbbbbrorrrrrrrgbgggggggoroooooooyyyyyyyyywwwwwwwww'
+        cubeTopLayer = 'bgbbbbbbbrorrrrrrrgbgggggggoroooooooyyyyyyyyywwwwwwwww'
+        theCube = cube.Cube(cubeTopLayer)
+        result = solve(parms)
+        final = solveFinal(theCube)
+        self.assertIn('status', result)
+        self.assertEqual('ok', result['status'])
+        self.assertIn('integrity', result)
+        self.assertEqual('', final)  
+    
+    def test640_solveFinalFromBack(self):
+        parms = {}
+        parms['cube'] = 'bgbbbbbbbrorrrrrrrgbgggggggoroooooooyyyyyyyyywwwwwwwww'
+        cubeTopLayer = 'bgbbbbbbbrorrrrrrrgbgggggggoroooooooyyyyyyyyywwwwwwwww'
+        theCube = cube.Cube(cubeTopLayer)
+        result = solve(parms)
+        final = solveFinalFromBack(theCube)
+        self.assertIn('status', result)
+        self.assertEqual('ok', result['status'])
+        self.assertIn('integrity', result)
+        self.assertEqual('', final) 
+    
+    def test650_solveFinalFromLeft(self):
+        parms = {}
+        parms['cube'] = 'bgbbbbbbbrorrrrrrrgbgggggggoroooooooyyyyyyyyywwwwwwwww'
+        cubeTopLayer = 'bgbbbbbbbrorrrrrrrgbgggggggoroooooooyyyyyyyyywwwwwwwww'
+        theCube = cube.Cube(cubeTopLayer)
+        result = solve(parms)
+        final = solveFinalFromLeft(theCube)
+        self.assertIn('status', result)
+        self.assertEqual('ok', result['status'])
+        self.assertIn('integrity', result)
+        self.assertEqual('', final) 
+    
+    def test660_solveFinalFromRight(self):
+        parms = {}
+        parms['cube'] = 'bgbbbbbbbrorrrrrrrgbgggggggoroooooooyyyyyyyyywwwwwwwww'
+        cubeTopLayer = 'bgbbbbbbbrorrrrrrrgbgggggggoroooooooyyyyyyyyywwwwwwwww'
+        theCube = cube.Cube(cubeTopLayer)
+        result = solve(parms)
+        final = solveFinalFromRight(theCube)
+        self.assertIn('status', result)
+        self.assertEqual('ok', result['status'])
+        self.assertIn('integrity', result)
+        self.assertEqual('', final) 
     
         
