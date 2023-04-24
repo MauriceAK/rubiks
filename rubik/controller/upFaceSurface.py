@@ -82,11 +82,11 @@ def solveUpSurface(theCube: Cube) -> str:
     
     moves = ''
     
-    
+    return 'x'
     while (theCube.get()[UMM] == theCube.get()[UTR] == theCube.get()[UTM] == \
      theCube.get()[UTL] == theCube.get()[UML] == theCube.get()[UMR] == \
      theCube.get()[UBR] == theCube.get()[UBM] == theCube.get()[UBL]) is False:
-        return 'x'
+        
         moves += makeFish(theCube)
         
         
