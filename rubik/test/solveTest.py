@@ -380,5 +380,17 @@ class SolveTest(TestCase):
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
         self.assertEqual(theCube.get()[UBL], 'g')   
+        
+    def test560_makeFish(self):
+        parms = {}
+        parms['cube'] = 'rgobbbbbbybyrrrrrrorrggggggyoyoooooobybyyygygwwwwwwwww'
+        cubeTopCross = 'rgobbbbbbybyrrrrrrorrggggggyoyoooooobybyyygygwwwwwwwww'
+        theCube = cube.Cube(cubeTopCross)
+        result = solve(parms)
+        topCross = makeFish(theCube)
+        self.assertIn('status', result)
+        self.assertEqual('ok', result['status'])
+        self.assertIn('integrity', result)
+        self.assertEqual(theCube.get()[UBL], theCube.get()[UMM])   
     
         
