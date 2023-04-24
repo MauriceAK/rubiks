@@ -32,7 +32,6 @@ def solve(parms):
     
     rotations = ""
     rotations += solveBottomCross(theCube)      #iteration 2
-    
     rotations += solveBottomLayer(theCube)      #iteration 3
     rotations += solveMiddleLayer(theCube)      #iteration 4
     rotations += solveUpCross(theCube)          #iteration 5
