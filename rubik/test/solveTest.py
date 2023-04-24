@@ -371,14 +371,14 @@ class SolveTest(TestCase):
     '''
     def test550_fishAlg(self):
         parms = {}
-        parms['cube'] = 'orgbbbbbbyyrrrrrrryobggggggyygoooooooybgybyyrwwwwwwwww'
-        cubeTopCross = 'orgbbbbbbyyrrrrrrryobggggggyygoooooooybgybyyrwwwwwwwww'
+        parms['cube'] = 'ogbbbbbbbrrgrrrrrryogggggggobyooooooyyryyybyywwwwwwwww'
+        cubeTopCross = 'ogbbbbbbbrrgrrrrrryogggggggobyooooooyyryyybyywwwwwwwww'
         theCube = cube.Cube(cubeTopCross)
         result = solve(parms)
         topCross = fishAlg(theCube)
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
-        self.assertEqual(theCube.get()[UBL], theCube.get()[UMM])   
+        self.assertEqual(theCube.get()[UBL], 'g')   
     
         
