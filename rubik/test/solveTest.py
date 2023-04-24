@@ -357,7 +357,7 @@ class SolveTest(TestCase):
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
         self.assertEqual('URUrURUUrURUrURUUrUUURUrURUUr', topFace)
-    '''   
+      
     def test540_solve_upSurface(self):
         parms = {}
         parms['cube'] = 'gbybbbbbbbrorrrrrrbyyggggggryyooooooggyoyyoyrwwwwwwwww'
@@ -370,4 +370,4 @@ class SolveTest(TestCase):
         self.assertIn('integrity', result)
         self.assertEqual('BUbuBUbuBUburuRUruRUruRUuLUluLUluLUlubuBUbuBUbuBUu', topFace)
         
-    '''    
+       
