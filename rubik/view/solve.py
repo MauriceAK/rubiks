@@ -16,7 +16,7 @@ def solve(parms):
     encodedCube = parms.get('cube')
     theCube = Cube(encodedCube)
     
-    if parms.get('cube') == None:
+    if parms.get('cube') == '':
         result['status'] = 'Error: Missing cube'
         return result
     
