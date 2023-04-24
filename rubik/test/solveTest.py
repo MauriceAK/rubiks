@@ -471,7 +471,20 @@ class SolveTest(TestCase):
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
         self.assertEqual('BUbufuFUBUbuBUbuBUbuBUbuBUbufuFUfuFUfuFUfuFUfuFU', final) 
+    
+    def test670_solveFinalFromRight(self):
+        parms = {}
+        parms['cube'] = 'yoyrgroyyorwwogogwrrgwbyrorwogbrgbwwobbgyyrbbbogbwyywg'
+        cubeTopLayer = 'yoyrgroyyorwwogogwrrgwbyrorwogbrgbwwobbgyyrbbbogbwyywg'
+        theCube = cube.Cube(cubeTopLayer)
+        result = solve(parms)
+        final = solveFinalFromRight(theCube)
+        self.assertIn('status', result)
+        self.assertEqual('ok', result['status'])
+        self.assertIn('integrity', result)
+        self.assertEqual('BUbufuFUBUbuBUbuBUbuBUbuBUbufuFUfuFUfuFUfuFUfuFU', final) 
         
+            
     def test900_missingCube(self):
         parms = {}
         parms['cube'] = ''
