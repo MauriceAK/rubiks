@@ -364,10 +364,9 @@ class SolveTest(TestCase):
         cubeTopFace = 'gbybbbbbbbrorrrrrrbyyggggggryyooooooggyoyyoyrwwwwwwwww'
         theCube = cube.Cube(cubeTopFace)
         result = solve(parms)
-        #topFace = solveUpSurface(theCube)
+        topFace = solveUpSurface(theCube)
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
-        #self.assertEqual('BUbuBUbuBUburuRUruRUruRUuLUluLUluLUlubuBUbuBUbuBUu', topFace)
+        self.assertEqual('BUbuBUbuBUburuRUruRUruRUuLUluLUluLUlubuBUbuBUbuBUu', topFace)
         
-       
