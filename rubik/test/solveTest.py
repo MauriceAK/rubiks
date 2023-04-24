@@ -1,3 +1,9 @@
+'''
+    Created on 4/18/23
+    
+    @author: Maurice Kenon
+'''
+
 from unittest import TestCase
 from rubik.view.solve import solve
 import rubik.model.cube as cube
@@ -6,6 +12,7 @@ from rubik.controller.bottomLayer import *
 from rubik.controller.middleLayer import *
 from rubik.controller.upFaceCross import *
 from rubik.controller.upFaceSurface import *
+from rubik.controller.upperLayer import *
 
 class SolveTest(TestCase):
         
@@ -392,5 +399,18 @@ class SolveTest(TestCase):
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
         self.assertEqual(theCube.get()[UBL], theCube.get()[UMM])   
+        
+    def test610_makeFish(self):
+        parms = {}
+        parms['cube'] = 'orobbbbbbbgbrrrrrrrorgggggggbgooooooyyyyyyyyywwwwwwwww'
+        cubeTopLayer = 'orobbbbbbbgbrrrrrrrorgggggggbgooooooyyyyyyyyywwwwwwwww'
+        theCube = cube.Cube(cubeTopLayer)
+        result = solve(parms)
+        topLayer = solveUpperLayer(theCube)
+        self.assertIn('status', result)
+        self.assertEqual('ok', result['status'])
+        self.assertIn('integrity', result)
+        self.assertEqual('', topLayer)   
+    
     
         

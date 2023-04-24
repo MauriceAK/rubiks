@@ -1,3 +1,10 @@
+'''
+    Created on 4/18/23
+    
+    @author: Maurice Kenon
+'''
+
+
 import rubik.model.constants
 from rubik.model.constants import *
 from rubik.model.cube import Cube

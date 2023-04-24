@@ -1,3 +1,10 @@
+'''
+    Created on 4/18/23
+    
+    @author: Maurice Kenon
+'''
+
+
 import rubik.model.constants
 from rubik.model.cube import Cube
 from rubik.model.constants import *
@@ -260,14 +267,7 @@ def solveUpperLayer(theCube: Cube) -> str:
         theCube._rotateU()
         
     #CORNERS SHOULD BE ALIGNED NOW
-    '''
-    if theCube.get()[FMM] != theCube.get()[FTM] and \
-     theCube.get()[RMM] != theCube.get()[RTM] and \
-     theCube.get()[LMM] != theCube.get()[LTM] and \
-     theCube.get()[BMM] != theCube.get()[BTM]:
     
-        moves += solveFinal(theCube)
-    '''
     while theCube.get()[FMM] != theCube.get()[FTM] or \
      theCube.get()[RMM] != theCube.get()[RTM] or \
      theCube.get()[LMM] != theCube.get()[LTM] or \
