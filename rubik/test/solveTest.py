@@ -474,7 +474,7 @@ class SolveTest(TestCase):
         
     def test670_solveFinalFromRight(self):
         parms = {}
-        parms['cube'] = 'yborbbgbrboryrowyowyrygwbgygwobowrgwyggoyggryoobwwrwww'
+        parms['cube'] = 'yborbbgbrboryrowyowyrygwbgygwobowrgwyggoyggryoobwwrww!'
         result = solve(parms)
         self.assertEqual(result['status'], 'Error: Missing cube')
         
