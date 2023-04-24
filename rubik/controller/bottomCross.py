@@ -8,7 +8,7 @@ import rubik.model.constants
 from rubik.model.constants import *
 from rubik.model.cube import Cube
 
-def makeDaisy(theCube):
+def makeDaisy(theCube: Cube) -> str:
     moves = ''
     cubeList = theCube.get()
     botColor = cubeList[DMM]
@@ -90,7 +90,8 @@ def makeDaisy(theCube):
         else:
             moves += 'U'
             theCube._rotateU() 
-
+            
+    return moves        
 def     solveBottomCross(theCube: Cube) -> str:
     '''
         This is the top-level function  for rotating
