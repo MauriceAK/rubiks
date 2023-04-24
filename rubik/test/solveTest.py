@@ -412,14 +412,13 @@ class SolveTest(TestCase):
         self.assertIn('integrity', result)
         self.assertEqual('URUruluLURUruRUruRUruRUruRUruluLUluLUluLUluLUluLUBUbufuFUBUbuBUbuBUbuBUbuBUbufuFUfuFUfuFUfuFUfuFU', topLayer)
 
-def test610_solveUpperLayer(self):
+    def test620_solveUpperLayer(self):
         parms = {}
         parms['cube'] = 'orobbbbbbbgbrrrrrrrorgggggggbgooooooyyyyyyyyywwwwwwwww'
         cubeTopLayer = 'orobbbbbbbgbrrrrrrrorgggggggbgooooooyyyyyyyyywwwwwwwww'
         theCube = cube.Cube(cubeTopLayer)
         result = solve(parms)
         topLayer = switchCorners(theCube)
-        print(topLayer)
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
