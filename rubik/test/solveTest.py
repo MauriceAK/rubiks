@@ -160,7 +160,7 @@ class SolveTest(TestCase):
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
-        self.assertEqual('RUrBUbURUrBUbURUrURUrURUrURUrUUUURurUUBUbuUUULulUFuf', botLayer)
+        self.assertEqual('RUrBUbURUrBUbURUrURUrURUrURUrUUURUruRUruRUruRUruRUruUUBUbuUUULulUFuf', botLayer)
     
     def test400_solve_middleEdgesIfValid(self):
         parms = {}
