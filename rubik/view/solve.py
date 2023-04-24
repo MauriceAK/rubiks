@@ -19,7 +19,15 @@ def solve(parms):
     if theCube.get() == '':
         result['status'] = 'Error: Missing cube'
         return result
-    
+    if check_alphanum(theCube.get()) == False:
+        result['status'] = 'Error: Invalid characters present'
+        return result
+    elif check_validamount(theCube.get()) == False:
+        result['status'] = 'Error: Invalid amount of valid colors'
+        return result
+    elif check_middles(theCube.get()) == False:
+        result['status'] = 'Error: Cube middles are not unique'
+        return result
     
     rotations = ""
     rotations += solveBottomCross(theCube)      #iteration 2
