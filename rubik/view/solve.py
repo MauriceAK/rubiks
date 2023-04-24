@@ -29,9 +29,10 @@ def solve(parms):
         result['status'] = 'Error: Cube middles are not unique'
         return result
     
-    return 'x'
+    
     rotations = ""
     rotations += solveBottomCross(theCube)      #iteration 2
+    return 'x'
     rotations += solveBottomLayer(theCube)      #iteration 3
     rotations += solveMiddleLayer(theCube)      #iteration 4
     rotations += solveUpCross(theCube)          #iteration 5
