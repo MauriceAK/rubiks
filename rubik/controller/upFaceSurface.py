@@ -79,10 +79,10 @@ def solveUpSurface(theCube: Cube) -> str:
         input:  an instance of the cube class with up-face cross solved
         output: the rotations required to solve the up surface  
     '''  
-    
+    return 'x'
     moves = ''
     
-    return 'x'
+    
     while (theCube.get()[UMM] == theCube.get()[UTR] == theCube.get()[UTM] == \
      theCube.get()[UTL] == theCube.get()[UML] == theCube.get()[UMR] == \
      theCube.get()[UBR] == theCube.get()[UBM] == theCube.get()[UBL]) is False:
