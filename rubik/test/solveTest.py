@@ -476,7 +476,7 @@ class SolveTest(TestCase):
         parms = {}
         parms['cube'] = ''
         result = solve(parms)
-        self.assertEqual(result['status'], 'Error: Invalid cube length', result)
+        self.assertEqual(result['status'], 'Error: Missing cube')
         
     
     
