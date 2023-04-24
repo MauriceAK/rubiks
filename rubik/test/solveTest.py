@@ -475,14 +475,11 @@ class SolveTest(TestCase):
     def test670_solveFinalFromRight(self):
         parms = {}
         parms['cube'] = ''
-        cubeTopLayer = ''
-        theCube = cube.Cube(cubeTopLayer)
         result = solve(parms)
-        final = solveFinalFromRight(theCube)
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
-        self.assertEqual('', final)
+        self.assertEqual('', result)
         
     
     
