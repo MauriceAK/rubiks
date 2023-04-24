@@ -64,10 +64,10 @@ def frontRightCorner(theCube:Cube) -> str:
     while theCube.get()[DTR] != botColor or theCube.get()[FBR] != theCube.get()[FMM] or \
      theCube.get()[RBL] != theCube.get()[RMM]:
            
-        if theCube.get()[FTR] in ['w', 'r', 'b'] and \
-                 theCube.get()[RTL] in ['w', 'r', 'b'] and \
-                 theCube.get()[UBR] in ['w', 'r', 'b']:
-                if theCube.get()[FTR] == 'w':
+        if theCube.get()[FTR] in [theCube.get()[DMM], theCube.get()[RMM], theCube.get()[FMM]] and \
+                 theCube.get()[RTL] in [theCube.get()[DMM], theCube.get()[RMM], theCube.get()[FMM]] and \
+                 theCube.get()[UBR] in [theCube.get()[DMM], theCube.get()[RMM], theCube.get()[FMM]]:
+                if theCube.get()[FTR] == theCube.get()[FMM]:
                     while theCube.get()[DTR] != botColor:
                         moves += 'URur'
                         theCube._rotateU()
@@ -102,10 +102,10 @@ def backRightCorner(theCube:Cube) -> str:
     while theCube.get()[DBR] != botColor or theCube.get()[RBR] != theCube.get()[RMM] or \
      theCube.get()[BBL] != theCube.get()[BMM]:
         
-        if theCube.get()[BTL] in ['w', 'r', 'g'] and \
-                 theCube.get()[RTR] in ['w', 'r', 'g'] and \
-                 theCube.get()[UTR] in ['w', 'r', 'g']:
-                if theCube.get()[RTR] == 'w':
+        if theCube.get()[BTL] in [theCube.get()[DMM], theCube.get()[RMM], theCube.get()[BMM]] and \
+                 theCube.get()[RTR] in [theCube.get()[DMM], theCube.get()[RMM], theCube.get()[BMM]] and \
+                 theCube.get()[UTR] in [theCube.get()[DMM], theCube.get()[RMM], theCube.get()[BMM]]:
+                if theCube.get()[RTR] == theCube.get()[DMM]:
                     while theCube.get()[DBR] != botColor:
                         moves += 'UBub'
                         theCube._rotateU()
@@ -140,11 +140,11 @@ def backLeftCorner(theCube:Cube) -> str:
     while theCube.get()[DBL] != botColor or theCube.get()[BBR] != theCube.get()[BMM] or \
      theCube.get()[LBL] != theCube.get()[LMM]:
         
-        if theCube.get()[BTR] in ['w', 'o', 'g'] and \
-                 theCube.get()[LTL] in ['w', 'o', 'g'] and \
-                 theCube.get()[UTL] in ['w', 'o', 'g']:
+        if theCube.get()[BTR] in [theCube.get()[DMM], theCube.get()[LMM], theCube.get()[BMM]] and \
+                 theCube.get()[LTL] in [theCube.get()[DMM], theCube.get()[LMM], theCube.get()[BMM]] and \
+                 theCube.get()[UTL] in [theCube.get()[DMM], theCube.get()[LMM], theCube.get()[BMM]]:
                 
-                if theCube.get()[BTR] == 'w':
+                if theCube.get()[BTR] == theCube.get()[DMM]:
                     while theCube.get()[DBL] != botColor:
                         moves += 'ULul'
                         theCube._rotateU()
@@ -178,11 +178,11 @@ def frontLeftCorner(theCube:Cube) -> str:
     while theCube.get()[DTL] != botColor or theCube.get()[LBR] != theCube.get()[LMM] or \
      theCube.get()[FBL] != theCube.get()[FMM]:
         
-        if theCube.get()[LTR] in ['w', 'o', 'b'] and \
-                 theCube.get()[FTL] in ['w', 'o', 'b'] and \
-                 theCube.get()[UBL] in ['w', 'o', 'b']:
+        if theCube.get()[LTR] in [theCube.get()[DMM], theCube.get()[LMM], theCube.get()[FMM]] and \
+                 theCube.get()[FTL] in [theCube.get()[DMM], theCube.get()[LMM], theCube.get()[FMM]] and \
+                 theCube.get()[UBL] in [theCube.get()[DMM], theCube.get()[LMM], theCube.get()[FMM]]:
                 
-                if theCube.get()[LTR] == 'w':
+                if theCube.get()[LTR] == theCube.get()[DMM]:
                     while theCube.get()[DTL] != botColor:
                         moves += 'UFuf'
                         theCube._rotateU()
