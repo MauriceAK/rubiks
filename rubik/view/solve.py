@@ -5,6 +5,7 @@ from rubik.controller.upFaceCross import solveUpCross
 from rubik.controller.upFaceSurface import solveUpSurface
 from rubik.controller.upperLayer import solveUpperLayer
 from rubik.model.cube import Cube
+from rubik.view.rotate import *
 import hashlib
 import random
 
@@ -14,6 +15,11 @@ def solve(parms):
      
     encodedCube = parms.get('cube')
     theCube = Cube(encodedCube)
+    
+    if parms.get('cube') == None:
+        result['status'] = 'Error: Missing cube'
+        return result
+    
     
     rotations = ""
     rotations += solveBottomCross(theCube)      #iteration 2

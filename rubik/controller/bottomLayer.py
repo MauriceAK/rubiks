@@ -222,7 +222,6 @@ def solveBottomLayer(theCube: Cube) -> str:
     '''  
     
     moves = ''
-    
     botColor = theCube.get()[DMM]
     
     #checks if already solved
@@ -233,6 +232,7 @@ def solveBottomLayer(theCube: Cube) -> str:
          theCube.get()[LBL] == theCube.get()[LBR] == theCube.get()[LMM]:
         return moves
     
+    #aligns all corners
     moves += removeWhiteCorners(theCube)
     moves += frontRightCorner(theCube)
     moves += backRightCorner(theCube)     

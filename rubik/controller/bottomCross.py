@@ -21,7 +21,6 @@ def     solveBottomCross(theCube: Cube) -> str:
         input:  an instance of the cube class
         output: the rotations required to transform the input cube into the down-face cross 
     '''  
-
     moves = ''
     cubeList = theCube.get()
     botColor = cubeList[DMM]
@@ -113,7 +112,6 @@ def     solveBottomCross(theCube: Cube) -> str:
         else:
             moves += 'U'
             theCube._rotateU()    
-    
     
     #flips top edges to bottom after aligning center squares with edge to make proper white cross
     if theCube.get()[UTM] == theCube.get()[UML] == theCube.get()[UMR] == theCube.get()[UBM] == botColor:

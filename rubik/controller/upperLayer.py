@@ -9,7 +9,7 @@ import rubik.model.constants
 from rubik.model.cube import Cube
 from rubik.model.constants import *
 
-
+#switch corners on top layer
 def switchCorners(theCube: Cube) -> str:
     moves = ''
     moves += 'lURuLUUrURUUr'
@@ -38,7 +38,7 @@ def switchCorners(theCube: Cube) -> str:
     
     return moves
 
-
+#solve final cube
 def solveFinal(theCube: Cube) -> str:
     
     moves = ''
@@ -84,7 +84,8 @@ def solveFinal(theCube: Cube) -> str:
         
     
     return moves
-    
+  
+#solve final cube from back  
 def solveFinalFromBack(theCube: Cube) -> str:
     
     moves = ''
@@ -130,7 +131,8 @@ def solveFinalFromBack(theCube: Cube) -> str:
         
     
     return moves 
-  
+
+#solve final cube from right 
 def solveFinalFromRight(theCube: Cube) -> str:
     
     moves = ''
@@ -177,6 +179,7 @@ def solveFinalFromRight(theCube: Cube) -> str:
     
     return moves 
 
+#solve final cube from left
 def solveFinalFromLeft(theCube: Cube) -> str:
     
     moves = ''
@@ -230,13 +233,18 @@ def solveUpperLayer(theCube: Cube) -> str:
         input:  an instance of the cube class with up-face surface solved
         output: the rotations required to solve the upper layer  
     '''  
+    
     moves = ''
+    
+    #puts blue red piece in right spot
     while theCube.get()[FMM] != theCube.get()[FTR]:
         moves += 'U' 
         theCube._rotateU()
-        
+       
+    #if orange and blue piece not in right spot 
     if theCube.get()[FMM] != theCube.get()[FTL]:
-         
+        
+        #checking corners to see if needed to swap
         if theCube.get()[LMM] == theCube.get()[BTR]:
             moves += 'UU' 
             theCube._rotateU()
@@ -268,6 +276,7 @@ def solveUpperLayer(theCube: Cube) -> str:
         
     #CORNERS SHOULD BE ALIGNED NOW
     
+    #while cube not solved
     while theCube.get()[FMM] != theCube.get()[FTM] or \
      theCube.get()[RMM] != theCube.get()[RTM] or \
      theCube.get()[LMM] != theCube.get()[LTM] or \

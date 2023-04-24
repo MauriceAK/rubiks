@@ -9,7 +9,7 @@ import rubik.model.constants
 from rubik.model.constants import *
 from rubik.model.cube import Cube
 
-
+#fish alg to solve top face
 def fishAlg(theCube: Cube) -> str:
     moves = ''
     moves += 'RUrURUUr'
@@ -28,6 +28,7 @@ def fishAlg(theCube: Cube) -> str:
     
     return moves
 
+#makes fish on top of cube
 def makeFish(theCube: Cube) -> str:
     moves = ''
     
@@ -77,7 +78,7 @@ def makeFish(theCube: Cube) -> str:
             
     return moves
 
- 
+#solves up face of cube
 def solveUpSurface(theCube: Cube) -> str:
     '''
         This is the top-level function  for rotating

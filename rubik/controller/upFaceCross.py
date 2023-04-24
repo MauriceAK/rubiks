@@ -8,6 +8,7 @@ import rubik.model.constants
 from rubik.model.constants import *
 from rubik.model.cube import Cube
 
+#makes cross from horizontal yellow line
 def horizLineCross(theCube: Cube) -> str:
     moves = ''
     moves += 'FRUruf'
@@ -25,7 +26,7 @@ def horizLineCross(theCube: Cube) -> str:
     theCube._rotateF() 
     return moves
     
-
+#makes cross from vertical yellow line
 def vertLineCross(theCube: Cube) -> str:
     moves = ''
     moves += 'LFUful'
@@ -43,7 +44,7 @@ def vertLineCross(theCube: Cube) -> str:
     theCube._rotateL() 
     return moves
     
-
+#makes cross from UBM, UMM, UMR orientation
 def angleCross(theCube: Cube) -> str:
     moves = ''
     
@@ -113,6 +114,7 @@ def angleCross(theCube: Cube) -> str:
         return moves
     return moves 
 
+#makes cross when only middle dot (UMM) is present
 def middleOnlyCross(theCube: Cube) -> str:
     moves = ''
     moves += horizLineCross(theCube)
@@ -120,7 +122,7 @@ def middleOnlyCross(theCube: Cube) -> str:
     return moves
     
     
-    
+#identifies what needs to be used to make cross and solves it   
 def makeTopCross(theCube: Cube) -> str:
     moves = ''
     

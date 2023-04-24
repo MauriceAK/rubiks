@@ -8,6 +8,7 @@ import rubik.model.constants
 from rubik.model.constants import *
 from rubik.model.cube import Cube
 
+#front right edge piece
 def frontRightEdge(theCube: Cube) -> str:
     moves = ''
     moves += 'URUrufuFU'
@@ -31,6 +32,7 @@ def frontRightEdge(theCube: Cube) -> str:
 
     return moves
 
+#right right edge piece
 def rightRightEdge(theCube: Cube) -> str:
     moves = ''
     moves += 'UBUburuRU'
@@ -54,6 +56,7 @@ def rightRightEdge(theCube: Cube) -> str:
 
     return moves
 
+#back right edge piece
 def backRightEdge(theCube: Cube) -> str:
     moves = ''
     moves += 'ULUlubuBU'
@@ -77,6 +80,7 @@ def backRightEdge(theCube: Cube) -> str:
 
     return moves
 
+#back left edge piece
 def backLeftEdge(theCube: Cube) -> str:
     moves = ''
     moves += 'uruRUBUbu'
@@ -102,6 +106,7 @@ def backLeftEdge(theCube: Cube) -> str:
 
     return moves
 
+#left right edge piece
 def leftRightEdge(theCube: Cube) -> str:
     moves = ''
     moves += 'UFUfuluLU'
@@ -125,6 +130,7 @@ def leftRightEdge(theCube: Cube) -> str:
 
     return moves
 
+#left left edge piece
 def leftLeftEdge(theCube: Cube) -> str:
     moves = ''
     moves += 'ubuBULUlu'
@@ -150,6 +156,7 @@ def leftLeftEdge(theCube: Cube) -> str:
 
     return moves
 
+#front left edge piece
 def frontLeftEdge(theCube: Cube) -> str:
     moves = ''
     moves += 'uluLUFUfu'
@@ -175,6 +182,7 @@ def frontLeftEdge(theCube: Cube) -> str:
 
     return moves
 
+#right left edge
 def rightLeftEdge(theCube: Cube) -> str:
     moves = ''
     moves += 'ufuFURUru'
