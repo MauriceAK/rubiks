@@ -422,7 +422,7 @@ class SolveTest(TestCase):
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
-        self.assertEqual('', final)  
+        self.assertEqual('lURuLUUrURUUr', final)  
     
     def test630_solveFinal(self):
         parms = {}
@@ -434,7 +434,7 @@ class SolveTest(TestCase):
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
-        self.assertEqual('', final)  
+        self.assertEqual('RUruluLURUruRUruRUruRUruRUruluLUluLUluLUluLUluLU', final)  
     
     def test640_solveFinalFromBack(self):
         parms = {}
@@ -446,7 +446,7 @@ class SolveTest(TestCase):
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
-        self.assertEqual('', final) 
+        self.assertEqual('LUluruRULUluLUluLUluLUluLUluruRUruRUruRUruRUruRU', final) 
     
     def test650_solveFinalFromLeft(self):
         parms = {}
@@ -458,7 +458,7 @@ class SolveTest(TestCase):
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
-        self.assertEqual('', final) 
+        self.assertEqual('FUfubuBUFUfuFUfuFUfuFUfuFUfubuBUbuBUbuBUbuBUbuBU', final) 
     
     def test660_solveFinalFromRight(self):
         parms = {}
@@ -470,6 +470,6 @@ class SolveTest(TestCase):
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
-        self.assertEqual('', final) 
+        self.assertEqual('BUbufuFUBUbuBUbuBUbuBUbuBUbufuFUfuFUfuFUfuFUfuFU', final) 
     
         
