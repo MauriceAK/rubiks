@@ -400,7 +400,7 @@ class SolveTest(TestCase):
         self.assertIn('integrity', result)
         self.assertEqual(theCube.get()[UBL], theCube.get()[UMM])   
         
-    def test610_makeFish(self):
+    def test610_solveUpperLayer(self):
         parms = {}
         parms['cube'] = 'orobbbbbbbgbrrrrrrrorgggggggbgooooooyyyyyyyyywwwwwwwww'
         cubeTopLayer = 'orobbbbbbbgbrrrrrrrorgggggggbgooooooyyyyyyyyywwwwwwwww'
@@ -410,7 +410,7 @@ class SolveTest(TestCase):
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
-        self.assertEqual('', topLayer)   
+        self.assertEqual('URUruluLURUruRUruRUruRUruRUruluLUluLUluLUluLUluLUBUbufuFUBUbuBUbuBUbuBUbuBUbufuFUfuFUfuFUfuFUfuFU', topLayer)   
     
     
         
