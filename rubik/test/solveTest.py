@@ -419,6 +419,7 @@ def test610_solveUpperLayer(self):
         theCube = cube.Cube(cubeTopLayer)
         result = solve(parms)
         topLayer = switchCorners(theCube)
+        print(topLayer)
         self.assertIn('status', result)
         self.assertEqual('ok', result['status'])
         self.assertIn('integrity', result)
