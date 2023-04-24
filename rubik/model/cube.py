@@ -1,3 +1,11 @@
+'''
+    Created on 4/18/23
+    
+    @author: Maurice Kenon
+'''
+
+
+
 from rubik.model.constants import *
 
 
