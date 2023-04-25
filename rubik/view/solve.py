@@ -1,3 +1,9 @@
+'''
+Created on Feb 3, 2023
+
+@author: Maurice Kenon
+'''
+
 from rubik.controller.bottomCross import solveBottomCross
 from rubik.controller.bottomLayer import solveBottomLayer
 from rubik.controller.middleLayer import solveMiddleLayer

@@ -1,7 +1,7 @@
 '''
 Created on Feb 3, 2023
 
-@author: Maurice
+@author: Maurice Kenon
 '''
 import unittest
 import rubik.model.cube as cube
